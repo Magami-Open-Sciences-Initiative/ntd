@@ -8,7 +8,7 @@ export const SITE = {
   parent: "Magami Open Sciences Initiative",
   parentUrl: "https://magamios.org",
   /** Set this to the real deployment origin before publishing. */
-  url: "https://ntd.magamios.org",
+  url: "https://magami-open-sciences-initiative.github.io/ntd/",
   licenceCode: "MIT",
   licenceData: "CC BY-NC 4.0",
   tagline:
@@ -16,6 +16,8 @@ export const SITE = {
   description:
     "Magami NTD is a public, cited knowledge graph of neglected tropical diseases — one page for every disease, pathogen, vector, treatment, diagnostic, target, technology, trial, institution, roadmap, bottleneck and idea, with a plain-English TL;DR on every page.",
   repo: "https://github.com/Magami-Open-Sciences-Initiative/ntd",
+  /** Where verification notes and corrections can be emailed. */
+  contactEmail: "hello@magamios.org",
   /** Where contribution forms and issues live. */
   contribute: "/contribute/",
   updated: "2026-09",

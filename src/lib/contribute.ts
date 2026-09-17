@@ -23,12 +23,12 @@ export function issueUrl(
 }
 
 /** A plain-text verification statement an expert can paste into an issue or an email. */
-export function verificationStatement(r: ContributionRecord, date = new Date().toISOString().slice(0, 10)): string {
+export function verificationStatement(r: ContributionRecord, date?: string): string {
   return [
     `Expert verification: ${r.name}`,
     `Record: ${r.kind}/${r.id}`,
     `Page: ${r.url}`,
-    `Date: ${date}`,
+    `Date: ${date ?? "(today's date)"}`,
     `Current status: ${r.status ?? "unverified"}`,
     "",
     "My verdict (delete as appropriate): I have reviewed this page and it is accurate / it needs the corrections below.",
@@ -40,6 +40,31 @@ export function verificationStatement(r: ContributionRecord, date = new Date().t
     "",
     "Sources / citations I rely on:",
   ].join("\n");
+}
+
+/** A pre-filled email carrying the verification statement, to the editors. */
+export function mailtoUrl(r: ContributionRecord, to = SITE.contactEmail): string {
+  const subject = `Expert verification: ${r.name} (${r.kind}/${r.id})`;
+  const body = verificationStatement(r);
+  return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+/** A pre-filled email for a correction. */
+export function correctionMailtoUrl(r: ContributionRecord, to = SITE.contactEmail): string {
+  const subject = `Correction: ${r.name} (${r.kind}/${r.id})`;
+  const body = [
+    `Correction for ${r.name} (${r.kind}/${r.id})`,
+    `Page: ${r.url}`,
+    "",
+    "What is wrong (quote the sentence):",
+    "",
+    "What it should read:",
+    "",
+    "The source that settles it:",
+    "",
+    "Your name and affiliation (optional):",
+  ].join("\n");
+  return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 /** The one-line entry a maintainer adds to src/data/verification.ts. */

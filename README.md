@@ -143,9 +143,10 @@ Every page carries a verification control with three states — **expert verifie
 **not yet verified** (the default) — and a **Verify or correct this page** panel. Status is data in
 `src/data/verification.ts`, one line per record, so it is auditable in a single diff; `validate`
 rejects a record marked `verified` that names no reviewer or date, and no page can mark itself
-verified. Clinicians and researchers who do not write code contribute through **GitHub Issue
-Forms** (the per-page buttons pre-fill the record id, page URL and status), through a **copyable
-verification note** for anyone without a GitHub account, or by writing to the editors. The
+verified. Clinicians and researchers who do not write code contribute by **emailing a verification
+note to hello@magamios.org** (the per-page button opens their mail app pre-filled, no account
+needed), through **GitHub Issue Forms** (the same buttons pre-fill the record id, page URL and
+status), or by copying the note to paste wherever they prefer. The
 maintainers transcribe a review into the corpus and credit the reviewer by name. `/contribute/`
 explains it for a non-technical reader, and `CONTRIBUTING.md` for a developer.
 
@@ -287,6 +288,47 @@ several files into one kind, so nothing in the base files needs editing.
 See `CONTRIBUTING.md`. The most valuable contribution is a correction from someone who
 works on one of these diseases. CI (`.github/workflows/ci.yml`) runs `validate`,
 `typecheck`, `lint`, `test` and `build` on every push, and reports source-link health.
+
+## Deploying to GitHub Pages
+
+The site is a fully static export (`next.config.ts` sets `output: "export"`), so it deploys to
+GitHub Pages with no server. `.github/workflows/deploy-pages.yml` builds `out/` and publishes it
+with GitHub's Pages Actions pipeline on every push to `main` (or manually via
+**Actions → Deploy to GitHub Pages → Run workflow**). Nothing is committed to a branch.
+
+**One-time setup, in the repository:**
+
+1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
+2. **Settings → Pages → Custom domain:** `ntd.magamios.org`, then tick **Enforce HTTPS** once the
+   certificate is provisioned (minutes to a day).
+
+**DNS, at whoever hosts `magamios.org`:** add a record
+
+```
+CNAME   ntd   magami-open-sciences-initiative.github.io.
+```
+
+A `public/CNAME` file and a `public/.nojekyll` file ship in the export, so the custom domain and
+the `_next/` directory survive even if the project is deployed from a branch instead
+(`gh-pages` or `/docs`).
+
+**Custom domain vs. project URL.** `SITE.url` in `src/lib/nav.ts` is `https://ntd.magamios.org`,
+which is what canonical URLs, OpenGraph tags, JSON-LD, the sitemap and every contribution link
+use. If you instead serve the site from the default project URL
+(`https://<org>.github.io/ntd/`) with no custom domain, set `SITE.url` to that URL **and** add to
+`next.config.ts`:
+
+```ts
+basePath: "/ntd",
+assetPrefix: "/ntd",
+```
+
+Without the `basePath` the pages load but their CSS, JS and images 404, because the export assumes
+it is served from the root of `ntd.magamios.org`.
+
+CI (`.github/workflows/ci.yml`) still runs `validate`, `typecheck`, `lint`, `test` and the build on
+every push and pull request, and reports source-link health; the deploy workflow only runs on
+`main`.
 
 ## Data sources
 

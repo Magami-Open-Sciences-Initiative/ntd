@@ -15,9 +15,11 @@ control and a **Verify or correct this page** panel:
   rely on, and whether we may credit you by name. A maintainer turns it into the
   record.
 - **Report a correction** opens a shorter form for a wrong fact or a bad source.
-- **Copy a verification note** copies a structured statement you can paste into
-  an email or a message — the route for anyone who would rather not create even a
-  free GitHub account.
+- **Email a verification** opens your mail app with the note already written and
+  addressed to **hello@magamios.org** — the route for anyone who would rather not
+  create even a free GitHub account.
+- **Copy a verification note** copies the same structured statement, if you would
+  rather paste it elsewhere.
 
 The verification status shown on a page has three values:
 

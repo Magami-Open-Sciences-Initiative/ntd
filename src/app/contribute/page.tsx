@@ -45,17 +45,22 @@ export default function ContributePage() {
           </a>
         </p>
 
-        <h2 className="font-display text-2xl text-ink">No account? Copy a note</h2>
+        <h2 className="font-display text-2xl text-ink">No account needed: email or copy a note</h2>
         <p>
-          Every page has a <strong>Copy a verification note</strong> button. It copies a short,
-          structured statement — the page, your verdict, your expertise, the corrections and the
-          sources — that you can paste into an email, a document or a message to the editors, or send
-          to us through{" "}
-          <a className="link-underline" href={SITE.parentUrl}>
-            {SITE.parent}
-          </a>
-          . The maintainers will transcribe it. The forms use a free GitHub account only because that
-          is where the project&rsquo;s record lives; it is not otherwise required.
+          Every page has an <strong>Email a verification</strong> button. It opens your mail app with
+          the note already written and addressed to{" "}
+          <a className="link-underline" href={`mailto:${SITE.contactEmail}`}>
+            {SITE.contactEmail}
+          </a>{" "}
+          — the page, your verdict, your expertise, the corrections and the sources. There is also a{" "}
+          <strong>Copy a verification note</strong> button if you would rather paste the statement
+          into a document or another channel. Neither of these needs a GitHub account. The
+          maintainers transcribe what you send into the corpus and credit you by name unless you ask
+          not to be.
+        </p>
+        <p>
+          The forms use a free GitHub account only because that is where the project&rsquo;s record
+          lives; the email route is just as welcome and is often easier from a phone.
         </p>
 
         <h2 className="font-display text-2xl text-ink">What the verification status means</h2>

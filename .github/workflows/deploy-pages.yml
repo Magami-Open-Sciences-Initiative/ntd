@@ -1,0 +1,63 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# GitHub's recommended Pages pipeline: build the static export, upload it as the
+# Pages artifact, and deploy it. No branch is used, so `out/` never has to be
+# committed.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time; do not cancel a run that is mid-deploy.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build the static site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # `build` runs validate → build:api → build:llms → next build, which
+      # writes the export to `out/`.
+      - name: Build
+        run: npm run build
+
+      # A custom domain and Jekyll opt-out must exist in the artifact. They ship
+      # in public/ as well; these lines make the deploy robust if that changes.
+      - name: Ensure Pages files are present
+        run: |
+          test -f out/CNAME || echo "ntd.magamios.org" > out/CNAME
+          touch out/.nojekyll
+          ls -la out | head
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
