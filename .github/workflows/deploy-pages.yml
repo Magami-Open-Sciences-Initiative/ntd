@@ -33,9 +33,15 @@ jobs:
       # base_path "/ntd" and base_url "https://<owner>.github.io/ntd"; for a
       # custom domain it yields base_path "" and the domain. The build uses both,
       # so the same workflow serves either without a code change.
+      #
+      # `enablement: true` switches Pages to the GitHub Actions source if it is
+      # still set to "Deploy from a branch" (which builds the README with Jekyll
+      # instead of this export).
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       # `build` runs validate → build:api → build:llms → next build → out/.
       - name: Build
