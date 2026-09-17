@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #faf8f5;
+  --bg-alt: #f5f2ed;
+  --surface: #ffffff;
+  --text: #1a1a18;
+  --text-2: #5c5a55;
+  --text-3: #9a9690;
+  --primary: #134e4a;
+  --accent: #a3e635;
+  --line: rgba(19, 78, 74, 0.1);
+  --rule: rgba(19, 78, 74, 0.14);
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0a0a0a;
+  --bg-alt: #0e0e0e;
+  --surface: #111111;
+  --text: #e8e3dd;
+  --text-2: #a09888;
+  --text-3: #6b655a;
+  --primary: #134e4a;
+  --accent: #a3e635;
+  --line: rgba(232, 227, 221, 0.08);
+  --rule: rgba(232, 227, 221, 0.12);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-alt: var(--bg-alt);
+  --color-surface: var(--surface);
+  --color-ink: var(--text);
+  --color-ink-2: var(--text-2);
+  --color-ink-3: var(--text-3);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-line: var(--line);
+  --color-rule: var(--rule);
+  --font-sans: var(--font-sora), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-jbmono), ui-monospace, SFMono-Regular, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sora), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: #1a1a18;
+}
+
+/* Kind colour badges read --kind-fg / --kind-fg-dark set inline per record. */
+.kind-badge {
+  color: var(--kind-fg);
+  background: color-mix(in srgb, var(--kind-fg) 9%, transparent);
+  border: 1px solid color-mix(in srgb, var(--kind-fg) 26%, transparent);
+}
+
+.dark .kind-badge {
+  color: var(--kind-fg-dark);
+  background: color-mix(in srgb, var(--kind-fg-dark) 13%, transparent);
+  border-color: color-mix(in srgb, var(--kind-fg-dark) 28%, transparent);
+}
+
+.kind-dot {
+  background: var(--kind-fg);
+}
+
+.dark .kind-dot {
+  background: var(--kind-fg-dark);
+}
+
+.hairline {
+  border-color: var(--line);
+}
+
+.rule {
+  border-color: var(--rule);
+}
+
+.prose-magami p {
+  margin-bottom: 0.9rem;
+  line-height: 1.75;
+  color: var(--text-2);
+}
+
+.prose-magami p:last-child {
+  margin-bottom: 0;
+}
+
+.link-underline {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--primary) 35%, transparent);
+  text-underline-offset: 3px;
+}
+
+.link-underline:hover {
+  text-decoration-color: var(--accent);
+}
+
+details.navgroup > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details.navgroup > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.navgroup[open] > summary {
+  color: var(--text);
+}
