@@ -232,7 +232,7 @@ export const africanPeopleMore: RecordOf<"people">[] = [
     links: [
       { label: "Wikipedia — Chikwe Ihekweazu", url: "https://en.wikipedia.org/wiki/Chikwe_Ihekweazu" },
     ],
-    diseases: ["dengue-chikungunya", "ebola"],
+    diseases: ["dengue", "chikungunya", "ebola"],
     countries: ["nigeria"],
     institutions: ["who", "africa-cdc"],
     technologies: ["genomic-surveillance", "mhealth-surveillance"],

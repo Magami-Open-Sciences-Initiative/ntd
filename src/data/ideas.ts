@@ -106,7 +106,7 @@ export const ideas: RecordOf<"ideas">[] = [
     links: [
       { label: "WHO — community engagement in vector control", url: "https://www.who.int/publications/i/item/9789241512978" },
     ],
-    diseases: ["dengue-chikungunya", "chagas"],
+    diseases: ["dengue", "chikungunya", "chagas"],
     bottlenecks: ["insecticide-resistance-crisis", "funding-gap"],
     technologies: ["vector-surveillance", "community-health-workers", "ai-vector-identification"],
     vectors: ["aedes-aegypti", "triatomine-bug"],
@@ -152,7 +152,7 @@ export const ideas: RecordOf<"ideas">[] = [
     links: [
       { label: "WHO — genomic surveillance", url: "https://www.who.int/initiatives/genomic-surveillance-strategy" },
     ],
-    diseases: ["hat", "buruli-ulcer", "leishmaniasis", "chagas", "dengue-chikungunya"],
+    diseases: ["hat", "buruli-ulcer", "leishmaniasis", "chagas", "dengue", "chikungunya"],
     bottlenecks: ["surveillance-data-gap", "funding-gap"],
     technologies: ["genomic-surveillance", "molecular-pcr", "mhealth-surveillance"],
     institutions: ["who", "wellcome", "kemi", "noguchi"],
@@ -199,7 +199,7 @@ export const ideas: RecordOf<"ideas">[] = [
     links: [
       { label: "WHO — climate change and health", url: "https://www.who.int/health-topics/climate-change" },
     ],
-    diseases: ["dengue-chikungunya", "leishmaniasis"],
+    diseases: ["dengue", "chikungunya", "leishmaniasis"],
     bottlenecks: ["climate-expansion", "surveillance-data-gap"],
     technologies: ["vector-surveillance", "mhealth-surveillance", "genomic-surveillance"],
     vectors: ["aedes-aegypti", "aedes-albopictus"],

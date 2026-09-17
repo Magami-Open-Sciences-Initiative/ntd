@@ -211,7 +211,7 @@ export const guidelines: RecordOf<"guidelines">[] = [
     links: [
       { label: "WHO — position papers: dengue", url: "https://www.who.int/teams/immunization-vaccines-and-biologicals/policies/position-papers/dengue" },
     ],
-    diseases: ["dengue-chikungunya"],
+    diseases: ["dengue"],
     institutions: ["who"],
     technologies: ["dengue-vaccination"],
     terms: ["vector-borne"],
@@ -240,7 +240,7 @@ export const guidelines: RecordOf<"guidelines">[] = [
     links: [
       { label: "WHO — Global vector control response 2017–2030", url: "https://www.who.int/publications/i/item/9789241512978" },
     ],
-    diseases: ["dengue-chikungunya", "lymphatic-filariasis", "chagas", "leishmaniasis", "hat", "onchocerciasis"],
+    diseases: ["dengue", "chikungunya", "lymphatic-filariasis", "chagas", "leishmaniasis", "hat", "onchocerciasis"],
     institutions: ["who", "ivcc"],
     technologies: ["insecticide-treated-nets", "indoor-residual-spraying", "gene-drive-mosquitoes", "sterile-insect-technique", "wolbachia-method"],
     terms: ["vector-borne", "insecticide-resistance"],
@@ -392,23 +392,26 @@ export const guidelines: RecordOf<"guidelines">[] = [
   {
     id: "buruli-ulcer-treatment-guidance",
     name: "WHO Buruli ulcer treatment guidance",
-    tldr: "The guidance that replaced surgery with an eight-week course of rifampicin and clarithromycin — and now seeks to shorten it.",
+    tldr: "The guidance that moved Buruli ulcer care from surgery to antibiotics — an eight-week course of rifampicin with clarithromycin, with moxifloxacin as the alternative.",
     summary:
-      "For decades surgery was the only treatment for Buruli ulcer, with wide excision and skin grafting. WHO's guidance changed that by recommending fully oral rifampicin plus clarithromycin for eight weeks, which cures most lesions and reserves surgery for complications such as contractures. It also set the research priorities the field is now pursuing: how the disease is transmitted, a point-of-care test for early diagnosis, and new regimens that shorten treatment. The last of these is why telacebec, a tuberculosis drug with exceptional potency against the organism, is now in a Phase 2 trial.",
+      "For decades surgery was the only treatment for Buruli ulcer, with wide excision and skin grafting. WHO's guidance for health workers set out antibiotic regimens that cure early lesions and reserve surgery for complications such as contractures: the combination of rifampicin with clarithromycin for eight weeks is now the standard all-oral course, with rifampicin plus moxifloxacin as the alternative when clarithromycin is unsuitable. The same guidance set the research priorities the field is still pursuing — how the disease is transmitted, a rapid test for early diagnosis, and regimens shorter than eight weeks — which is why telacebec, a tuberculosis drug with exceptional potency against the organism, is now in a Phase 2 trial.",
     asOf: "2026-09",
     issuer: "WHO",
-    issued: "All-oral regimen recommended 2017; guidance continuously updated",
+    issued: "2012 (guidance for health workers), recommendations maintained and updated since",
     status: "Current",
     scope: "Buruli ulcer treatment and research priorities",
     recommendation:
-      "Treat with eight weeks of oral rifampicin and clarithromycin, reserving surgery for complications; pursue early diagnosis and shorter regimens as research priorities.",
+      "Treat with eight weeks of oral rifampicin plus clarithromycin (rifampicin plus moxifloxacin if clarithromycin is unsuitable), reserving surgery for complications; pursue early diagnosis and shorter regimens as research priorities.",
     whatChanged:
-      "Replaced injectable streptomycin and surgery-first care with an all-oral regimen that cures most lesions.",
+      "Replaced injectable streptomycin and surgery-first care with an all-oral combination that cures most lesions.",
     links: [
+      { label: "WHO — Treatment of Mycobacterium ulcerans disease (2012)", url: "https://iris.who.int/handle/10665/77771" },
+      { label: "WHO — Routine health information system data: Buruli ulcer (2025)", url: "https://iris.who.int/handle/10665/382160" },
+      { label: "WHO — Target product profile for a rapid Buruli ulcer test (2022)", url: "https://iris.who.int/handle/10665/353982" },
       { label: "WHO — Buruli ulcer (guidance summary)", url: "https://www.who.int/news-room/fact-sheets/detail/buruli-ulcer" },
     ],
     diseases: ["buruli-ulcer"],
-    drugs: ["rifampicin", "clofazimine", "telacebec"],
+    drugs: ["rifampicin", "clarithromycin", "moxifloxacin", "telacebec"],
     institutions: ["who", "tb-alliance"],
     technologies: ["drug-repurposing", "early-warning-hotspots"],
     terms: [],

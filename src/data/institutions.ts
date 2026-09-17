@@ -65,7 +65,7 @@ export const institutions: RecordOf<"institutions">[] = [
     links: [
       { label: "TDR — research on infectious diseases of poverty", url: "https://tdr.who.int/" },
     ],
-    diseases: ["schistosomiasis", "sth", "leishmaniasis", "dengue-chikungunya"],
+    diseases: ["schistosomiasis", "sth", "leishmaniasis", "dengue", "chikungunya"],
     technologies: ["open-science-drug-discovery", "ai-microscopy"],
     stats: [
       { label: "Cosponsors", value: "UNICEF, UNDP, World Bank, WHO" },
@@ -157,7 +157,7 @@ export const institutions: RecordOf<"institutions">[] = [
     links: [
       { label: "KEMRI", url: "https://www.kemri.go.ke/" },
     ],
-    diseases: ["schistosomiasis", "leishmaniasis", "lymphatic-filariasis", "sth", "dengue-chikungunya"],
+    diseases: ["schistosomiasis", "leishmaniasis", "lymphatic-filariasis", "sth", "dengue", "chikungunya"],
     institutions: ["who", "tdr"],
   },
   {
@@ -174,7 +174,7 @@ export const institutions: RecordOf<"institutions">[] = [
     links: [
       { label: "Ifakara Health Institute", url: "https://ihi.or.tz/" },
     ],
-    diseases: ["dengue-chikungunya", "lymphatic-filariasis"],
+    diseases: ["dengue", "chikungunya", "lymphatic-filariasis"],
     technologies: ["vector-surveillance", "insecticide-treated-nets", "sterile-insect-technique"],
     vectors: ["aedes-aegypti", "culex-mosquito"],
   },
@@ -209,7 +209,7 @@ export const institutions: RecordOf<"institutions">[] = [
     links: [
       { label: "Institut Pasteur international network (includes Dakar)", url: "https://www.pasteur.fr/en" },
     ],
-    diseases: ["dengue-chikungunya", "rabies", "leishmaniasis"],
+    diseases: ["dengue", "chikungunya", "rabies", "leishmaniasis"],
     technologies: ["dengue-vaccination", "genomic-surveillance"],
   },
   {
@@ -226,7 +226,7 @@ export const institutions: RecordOf<"institutions">[] = [
     links: [
       { label: "Fiocruz", url: "https://portal.fiocruz.br/en" },
     ],
-    diseases: ["chagas", "leishmaniasis", "dengue-chikungunya"],
+    diseases: ["chagas", "leishmaniasis", "dengue", "chikungunya"],
     trials: ["benefit-chagas", "butantan-dv-dengue"],
     technologies: ["dengue-vaccination", "genomic-surveillance"],
   },
@@ -253,7 +253,7 @@ export const institutions: RecordOf<"institutions">[] = [
     name: "FIND",
     tldr: "A non-profit that develops and helps introduce diagnostics for neglected diseases, from rapid strips to molecular tests.",
     summary:
-      "FIND works across the diagnostic pipeline: it defines what a test must do, brokers development with manufacturers, runs field evaluations, and supports countries in adopting tests. In NTDs it has worked on tests for visceral leishmaniasis, schistosomiasis, filariasis and drug-resistant tuberculosis. Its role fills one of the least commercially attractive parts of the NTD toolbox, where a diagnostically empty field leaves programmes unable to know who is infected.",
+      "FIND works across the diagnostic pipeline: it defines what a test must do, brokers development with manufacturers, runs field evaluations, and supports countries in adopting tests. In NTDs it has worked on tests for visceral leishmaniasis, schistosomiasis, filariasis and drug-resistant tuberculosis, and it co-convened the WHO–FIND meetings on Buruli ulcer diagnostics in 2013 and 2018 that produced WHO's target product profile for a rapid test at primary-health-care level. Its role fills one of the least commercially attractive parts of the NTD toolbox, where a diagnostically empty field leaves programmes unable to know who is infected.",
     asOf: "2026-09",
     institutionType: "Product development partnership",
     country: "Switzerland",
@@ -261,9 +261,12 @@ export const institutions: RecordOf<"institutions">[] = [
     focus: "Diagnostic development, evaluation and introduction for neglected diseases.",
     links: [
       { label: "FIND — diagnostics for neglected diseases", url: "https://www.finddx.org/" },
+      { label: "FIND — Test Directory Explorer", url: "https://finddx.shinyapps.io/testdirexplorer_beta/" },
+      { label: "WHO — Target product profile for a rapid Buruli ulcer test (2022)", url: "https://iris.who.int/handle/10665/353982" },
     ],
+    diseases: ["leishmaniasis", "schistosomiasis", "lymphatic-filariasis", "tuberculosis", "buruli-ulcer"],
     technologies: ["crispr-diagnostics", "lateral-flow-assays", "molecular-pcr", "ai-microscopy"],
-    diagnostics: ["rk39-rapid-test", "gene-cartridge-test", "molecular-lamp"],
+    diagnostics: ["rk39-rapid-test", "gene-cartridge-test", "molecular-lamp", "mycolactone-detection"],
     bottlenecks: ["diagnostics-gap"],
   },
   {
@@ -333,7 +336,7 @@ export const institutions: RecordOf<"institutions">[] = [
     links: [
       { label: "icddr,b", url: "https://www.icddrb.org/" },
     ],
-    diseases: ["dengue-chikungunya"],
+    diseases: ["dengue", "chikungunya"],
     institutions: ["who", "tdr"],
   },
   {
@@ -350,7 +353,7 @@ export const institutions: RecordOf<"institutions">[] = [
     links: [
       { label: "Institut Pasteur", url: "https://www.pasteur.fr/en" },
     ],
-    diseases: ["leishmaniasis", "chagas", "dengue-chikungunya"],
+    diseases: ["leishmaniasis", "chagas", "dengue", "chikungunya"],
     technologies: ["genomic-surveillance", "ai-drug-discovery"],
   },
 ];

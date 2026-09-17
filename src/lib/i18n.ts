@@ -155,9 +155,13 @@ export const DISEASE_FR: Record<string, { name: string; tldr: string }> = {
     name: "Maladie de Chagas",
     tldr: "Une infection à trypanosome transmise par les réduves, par la transfusion et de la mère à l'enfant, qui endommage le cœur des décennies après le début.",
   },
-  "dengue-chikungunya": {
-    name: "Dengue et chikungunya",
-    tldr: "Deux maladies virales transmises par des moustiques Aedes qui piquent le jour, en forte expansion dans les villes tropicales.",
+  dengue: {
+    name: "Dengue",
+    tldr: "Une maladie virale transmise par des moustiques Aedes qui piquent le jour ; une seconde infection par un autre sérotype peut provoquer une dengue sévère, avec fuite plasmatique et choc.",
+  },
+  chikungunya: {
+    name: "Chikungunya",
+    tldr: "Une maladie virale transmise par les mêmes moustiques Aedes, qui provoque une fièvre brutale et des douleurs articulaires parfois persistantes des mois ou des années.",
   },
   dracunculiasis: {
     name: "Dracunculose (ver de Guinée)",

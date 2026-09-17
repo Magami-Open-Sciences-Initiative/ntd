@@ -6,8 +6,26 @@ export const taeniasisCysticercosisSpike: Spike = {
   summary:
     "A person gets the adult tapeworm, Taenia solium, by eating undercooked pork containing cysts. But if someone swallows the tapeworm's eggs — from contaminated food, water or their own hands — the larvae form cysts in the brain, causing neurocysticercosis, one of the most common preventable causes of epilepsy worldwide. Pigs are the intermediate host, and free-roaming pigs that eat human faeces keep the cycle going. What has changed is that the animal side of the cycle is now closable. TSOL18, a recombinant pig vaccine sold as Cysvax by Indian Immunologicals, prevents new cysts, and oxfendazole clears existing ones; a trial in Uganda found that three-monthly vaccination combined with oxfendazole eliminated transmission by pigs. Because people and pigs live in the same households, control is inherently a One Health problem: human treatment, pig vaccination, meat inspection and sanitation have to move together.",
   stats: [
-    { label: "People with neurocysticercosis", value: "2.5–8.3 million", note: "estimated" },
-    { label: "Epilepsy link", value: "A leading preventable cause", note: "especially in endemic rural areas" },
+    {
+      label: "DALYs a year (2015)",
+      value: "2.8 million",
+      number: 2.8,
+      unit: "million DALYs",
+      year: 2015,
+      geography: "global",
+      note: "T. solium identified as a leading cause of deaths from foodborne diseases (WHO FERG)",
+      source: { label: "WHO — taeniasis/cysticercosis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/taeniasis-cysticercosis" },
+    },
+    {
+      label: "Epilepsy link",
+      value: "30%",
+      number: 30,
+      unit: "%",
+      geography: "endemic countries",
+      note: "of epilepsy cases; up to 70% in some communities",
+      source: { label: "WHO — taeniasis/cysticercosis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/taeniasis-cysticercosis" },
+    },
+    { label: "People with neurocysticercosis", value: "2.5–8.3 million", unit: "people", note: "older global estimate", source: { label: "WHO — taeniasis/cysticercosis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/taeniasis-cysticercosis" } },
     { label: "Pig vaccine", value: "TSOL18 (Cysvax)", note: "prevents new cysts in vaccinated pigs" },
     { label: "Combination used", value: "Vaccine + oxfendazole", note: "prevents new cysts and clears existing ones" },
     {

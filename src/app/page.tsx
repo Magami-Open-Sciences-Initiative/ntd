@@ -9,7 +9,8 @@ const FEATURED_DISEASES = [
   "hat",
   "leishmaniasis",
   "lymphatic-filariasis",
-  "dengue-chikungunya",
+  "dengue",
+  "chikungunya",
   "trachoma",
 ];
 

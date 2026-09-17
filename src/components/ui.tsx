@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Kind } from "@/lib/schema";
+import type { Kind, Stat } from "@/lib/schema";
 import { KIND_META } from "@/lib/schema";
 import { kindStyle } from "@/lib/text";
 import { entityHref } from "@/lib/nav";
@@ -35,14 +35,36 @@ export function SectionHeading({ id, children }: { id?: string; children: React.
   );
 }
 
-export function StatGrid({ stats }: { stats: { label: string; value: string; note?: string }[] }) {
+export function StatGrid({ stats }: { stats: Stat[] }) {
   return (
     <dl className="grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
       {stats.map((s) => (
         <div key={s.label} className="bg-surface p-4">
           <dt className="font-mono text-[11px] uppercase tracking-wider text-ink-3">{s.label}</dt>
-          <dd className="mt-1 font-display text-2xl leading-tight text-ink">{s.value}</dd>
+          <dd className="mt-1 font-display text-2xl leading-tight text-ink">
+            {s.value}
+            {s.unit && !s.value.toLowerCase().includes(s.unit.toLowerCase()) ? (
+              <span className="ml-1 font-mono text-xs font-normal text-ink-3">{s.unit}</span>
+            ) : null}
+          </dd>
+          {s.year || s.geography ? (
+            <dd className="mt-1 font-mono text-[11px] uppercase tracking-wider text-ink-3">
+              {[s.geography, s.year ? String(s.year) : null].filter(Boolean).join(" · ")}
+            </dd>
+          ) : null}
           {s.note ? <dd className="mt-1 text-xs text-ink-3">{s.note}</dd> : null}
+          {s.source ? (
+            <dd className="mt-2">
+              <a
+                href={s.source.url}
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs text-ink-3 underline decoration-dotted underline-offset-2 hover:text-ink"
+              >
+                {s.source.label}
+              </a>
+            </dd>
+          ) : null}
         </div>
       ))}
     </dl>

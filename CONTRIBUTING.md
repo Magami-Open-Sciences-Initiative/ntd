@@ -3,6 +3,47 @@
 The most valuable contribution is a correction. If you work on one of these
 diseases, your fix is worth more than our effort.
 
+## Verify a page — no code required
+
+If you are a clinician or researcher, you should not have to touch the code to
+tell us whether a page is right. Every record page carries a verification
+control and a **Verify or correct this page** panel:
+
+- **Verify this page** opens a short expert-verification form (a GitHub Issue
+  Form) with the record id, the page URL and the current status already filled
+  in. You give your verdict, your expertise, any corrections, the sources you
+  rely on, and whether we may credit you by name. A maintainer turns it into the
+  record.
+- **Report a correction** opens a shorter form for a wrong fact or a bad source.
+- **Copy a verification note** copies a structured statement you can paste into
+  an email or a message — the route for anyone who would rather not create even a
+  free GitHub account.
+
+The verification status shown on a page has three values:
+
+| Status | Meaning |
+|---|---|
+| **Expert verified** | A named subject-matter expert reviewed the page and signed it off. |
+| **In review** | Cross-checked against primary sources by the project, but not yet signed off by a named expert. |
+| **Not yet verified** | The default. Not checked against primary sources or reviewed by an expert. |
+
+A page is never marked **expert verified** by the person who wrote it and never
+automatically. The status is data in one file — `src/data/verification.ts` — so
+it is auditable in a single diff, and `npm run validate` rejects a record marked
+`verified` that names no reviewer or date. If you do use git, the whole change is
+one line:
+
+```ts
+"buruli-ulcer": {
+  status: "verified",
+  by: "Dr A. Example, University of …",
+  date: "2026-09",
+  note: "reviewed epidemiology and treatment; corrected the case figure",
+},
+```
+
+The same explanation, written for a non-technical reader, is at `/contribute/`.
+
 ## What you can do
 
 - **Fix a fact** — a number, a date, a drug, a mechanism.

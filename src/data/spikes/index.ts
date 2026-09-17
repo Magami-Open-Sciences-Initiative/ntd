@@ -5,7 +5,8 @@ import { rabiesSpike } from "./rabies";
 import { lymphaticFilariasisSpike } from "./lymphatic-filariasis";
 import { buruliUlcerSpike } from "./buruli-ulcer";
 import { chagasSpike } from "./chagas";
-import { dengueChikungunyaSpike } from "./dengue-chikungunya";
+import { dengueSpike } from "./dengue";
+import { chikungunyaSpike } from "./chikungunya";
 import { dracunculiasisSpike } from "./dracunculiasis";
 import { echinococcosisSpike } from "./echinococcosis";
 import { foodborneTrematodiasesSpike } from "./foodborne-trematodiases";
@@ -30,7 +31,8 @@ export const DISEASE_SPIKES: Record<string, Spike> = {
   "lymphatic-filariasis": lymphaticFilariasisSpike,
   "buruli-ulcer": buruliUlcerSpike,
   chagas: chagasSpike,
-  "dengue-chikungunya": dengueChikungunyaSpike,
+  dengue: dengueSpike,
+  chikungunya: chikungunyaSpike,
   dracunculiasis: dracunculiasisSpike,
   echinococcosis: echinococcosisSpike,
   "foodborne-trematodiases": foodborneTrematodiasesSpike,

@@ -6,9 +6,25 @@ export const mycetomaSpike: Spike = {
   summary:
     "Mycetoma begins after a thorn prick or small injury and grows into a painless swelling that eventually discharges grains through sinuses, destroying skin, muscle and bone. It is caused either by fungi (eumycetoma, mainly Madurella mycetomatis) or bacteria (actinomycetoma) and the two need completely different treatment: bacterial disease responds to long antibiotic courses, while fungal disease responds poorly to the available drugs and often ends in amputation. It is concentrated in the 'mycetoma belt' around the Sahel, and it affects young adults in their productive years, which is why the disability is as much economic as medical. The last few years have produced both the first randomised clinical trial for a eumycetoma drug — fosravuconazole, run from Khartoum with DNDi and Eisai — and a catastrophe: the war in Sudan has disrupted the Mycetoma Research Centre, the world's leading centre for the disease.",
   stats: [
-    { label: "Reporting countries", value: "> 30" },
+    {
+      label: "Causative agents",
+      value: "> 70",
+      number: 70,
+      unit: "bacterial and fungal species",
+      geography: "global",
+      note: "fungal (eumycetoma) or bacterial (actinomycetoma), needing different treatment",
+      source: { label: "WHO — mycetoma (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/mycetoma" },
+    },
+    { label: "Reporting countries", value: "> 30", number: 30, unit: "countries" },
     { label: "Geography", value: "The Sahel 'mycetoma belt'", note: "Sudan carries the largest burden" },
-    { label: "Age affected", value: "Young adults", note: "20–40, in productive years" },
+    {
+      label: "Age affected",
+      value: "15–30 years",
+      unit: "years",
+      geography: "global",
+      note: "mostly males, in productive years",
+      source: { label: "WHO — mycetoma (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/mycetoma" },
+    },
     { label: "Standard fungal treatment", value: "Itraconazole 200 mg twice daily", note: "for months to years" },
     {
       label: "First randomised trial",

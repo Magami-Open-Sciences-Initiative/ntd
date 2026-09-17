@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: How contributing works
+    url: https://ntd.magamios.org/contribute/
+    about: What we need, how verification is recorded, and how you are credited.
+  - name: Magami Open Sciences Initiative
+    url: https://magamios.org
+    about: The project's parent organisation, for anything that is not a specific page.

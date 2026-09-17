@@ -359,7 +359,7 @@ export const targets: RecordOf<"targets">[] = [
       { label: "WHO — dengue", url: "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue" },
     ],
     pathogens: ["dengue-virus"],
-    diseases: ["dengue-chikungunya"],
+    diseases: ["dengue"],
     technologies: ["ai-drug-discovery", "alphafold-structure-prediction"],
     stats: [
       { label: "Approved antivirals", value: "None" },
@@ -382,7 +382,7 @@ export const targets: RecordOf<"targets">[] = [
       { label: "Literature search: dengue NS2B-NS3 protease inhibitors", url: "https://pubmed.ncbi.nlm.nih.gov/?term=dengue+NS2B-NS3+protease+inhibitor" },
     ],
     pathogens: ["dengue-virus"],
-    diseases: ["dengue-chikungunya"],
+    diseases: ["dengue"],
     technologies: ["ai-drug-discovery"],
     stats: [
       { label: "Precedent", value: "Hepatitis C protease inhibitors" },
@@ -429,7 +429,7 @@ export const targets: RecordOf<"targets">[] = [
       { label: "WHO — vector control and insecticide resistance", url: "https://www.who.int/publications/i/item/9789241512978" },
     ],
     vectors: ["aedes-aegypti", "culex-mosquito", "triatomine-bug"],
-    diseases: ["dengue-chikungunya", "lymphatic-filariasis", "chagas"],
+    diseases: ["dengue", "chikungunya", "lymphatic-filariasis", "chagas"],
     technologies: ["indoor-residual-spraying", "insecticide-treated-nets"],
     stats: [
       { label: "Insecticide classes", value: "Organophosphates, carbamates" },

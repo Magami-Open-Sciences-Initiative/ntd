@@ -7,8 +7,34 @@ export const chagasSpike: Spike = {
     "Chagas disease is caused by Trypanosoma cruzi and affects six to seven million people, mostly in Latin America, though migration has made it a concern in the United States, Europe and beyond. The acute phase is usually mild and unnoticed; up to a third of those infected develop chronic cardiac disease with arrhythmias, heart failure or sudden death, and some develop digestive complications. Two old drugs, benznidazole and nifurtimox, cure it well in the acute phase and in children but are far less effective once the heart is involved, and the sixty-day course with frequent side effects means many people never finish treatment. The defining fact of the disease is the care gap: the great majority of infected people do not know it, so they are neither treated nor monitored. PAHO's Elimination Initiative and the Unitaid-funded CUIDA Chagas project are now built around closing that gap, with congenital transmission — from mother to newborn — as the priority route. A better drug remains elusive: fexinidazole, which looked promising in an early Chagas trial, did not eliminate the parasite in follow-up, and the next candidate will not begin proof-of-concept testing until late 2026.",
 
   stats: [
-    { label: "People infected", value: "6–7 million" },
-    { label: "Deaths a year", value: "≈ 12,000" },
+    {
+      label: "People infected",
+      value: "8 million",
+      number: 8,
+      unit: "million people",
+      year: 2024,
+      geography: "global (mainly Latin America)",
+      note: "WHO estimate",
+      source: { label: "WHO — Chagas disease (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/chagas-disease-(american-trypanosomiasis)" },
+    },
+    {
+      label: "Deaths a year",
+      value: "> 10,000",
+      number: 10000,
+      unit: "deaths",
+      year: 2024,
+      geography: "global",
+      note: "WHO estimate",
+      source: { label: "WHO — Chagas disease (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/chagas-disease-(american-trypanosomiasis)" },
+    },
+    {
+      label: "At risk",
+      value: "> 100 million",
+      number: 100,
+      unit: "million people",
+      geography: "global",
+      source: { label: "WHO — Chagas disease (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/chagas-disease-(american-trypanosomiasis)" },
+    },
     {
       label: "Undiagnosed",
       value: "The great majority",
@@ -17,14 +43,34 @@ export const chagasSpike: Spike = {
     {
       label: "Vector transmission interrupted",
       value: "17 countries",
+      number: 17,
+      unit: "countries",
+      geography: "Americas",
       note: "in all or part of their territory (PAHO)",
+      source: { label: "PAHO — Chagas disease", url: "https://www.paho.org/en/topics/chagas-disease" },
     },
     {
       label: "Blood donors screened",
-      value: "21 endemic countries",
+      value: "21",
+      number: 21,
+      unit: "endemic countries",
+      geography: "Americas",
       note: "universal screening introduced",
+      source: { label: "WHO — Chagas disease (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/chagas-disease-(american-trypanosomiasis)" },
     },
-    { label: "Treatment course", value: "60 days", note: "benznidazole or nifurtimox" },
+    {
+      label: "Congenital transmission",
+      value: "Now the main route",
+      note: "over 10,000 new cases a year worldwide",
+      source: { label: "WHO — Chagas disease (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/chagas-disease-(american-trypanosomiasis)" },
+    },
+    {
+      label: "Treatment course",
+      value: "60 days",
+      number: 60,
+      unit: "days",
+      note: "benznidazole or nifurtimox; adverse reactions in up to 40% of adults",
+    },
   ],
 
   timeline: [

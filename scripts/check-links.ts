@@ -50,6 +50,11 @@ for (const n of allNodes()) {
   for (const l of n.record.links as { url: string }[]) {
     targets.push({ url: l.url, record: `${n.kind}/${n.id}` });
   }
+  // Per-figure citations are first-class, so they are checked like any source.
+  const stats = n.record.stats as { label?: string; source?: { url: string } }[] | undefined;
+  for (const s of stats ?? []) {
+    if (s.source?.url) targets.push({ url: s.source.url, record: `${n.kind}/${n.id} stat "${s.label ?? ""}"` });
+  }
 }
 
 async function main() {

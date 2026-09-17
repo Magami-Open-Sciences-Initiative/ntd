@@ -19,7 +19,7 @@ export const vectors: RecordOf<"vectors">[] = [
     links: [
       { label: "WHO — dengue and Aedes control", url: "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue" },
     ],
-    diseases: ["dengue-chikungunya"],
+    diseases: ["dengue", "chikungunya"],
     pathogens: ["dengue-virus", "chikungunya-virus"],
     technologies: ["vector-surveillance", "gene-drive-mosquitoes", "sterile-insect-technique", "ai-vector-identification"],
     stats: [
@@ -43,7 +43,7 @@ export const vectors: RecordOf<"vectors">[] = [
     links: [
       { label: "ECDC — Aedes albopictus", url: "https://www.ecdc.europa.eu/en/disease-vectors/facts/mosquito-factsheets/aedes-albopictus" },
     ],
-    diseases: ["dengue-chikungunya"],
+    diseases: ["dengue", "chikungunya"],
     pathogens: ["dengue-virus", "chikungunya-virus"],
     technologies: ["vector-surveillance", "sterile-insect-technique", "ai-vector-identification"],
     stats: [

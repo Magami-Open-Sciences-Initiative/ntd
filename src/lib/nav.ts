@@ -15,7 +15,9 @@ export const SITE = {
     "An open, cited map of neglected tropical diseases: pathogens, vectors, treatments, diagnostics, trials, and what is coming.",
   description:
     "Magami NTD is a public, cited knowledge graph of neglected tropical diseases — one page for every disease, pathogen, vector, treatment, diagnostic, target, technology, trial, institution, roadmap, bottleneck and idea, with a plain-English TL;DR on every page.",
-  repo: "https://github.com/magamios/magami-ntd",
+  repo: "https://github.com/Magami-Open-Sciences-Initiative/ntd",
+  /** Where contribution forms and issues live. */
+  contribute: "/contribute/",
   updated: "2026-09",
 };
 
@@ -37,6 +39,7 @@ export const NAV: NavGroup[] = [
       { label: "Overview", href: "/" },
       { label: "Search", href: "/search/" },
       { label: "About", href: "/about/" },
+      { label: "Contribute & verify", href: "/contribute/" },
     ],
   },
   {

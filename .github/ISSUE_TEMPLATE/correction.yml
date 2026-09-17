@@ -1,0 +1,38 @@
+name: Correction
+description: Report a wrong fact, a broken source, or a missing one. No coding required.
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you — a correction from someone who works on the disease is worth more than our effort.
+  - type: input
+    id: record
+    attributes:
+      label: Record id
+      placeholder: e.g. schistosomiasis
+  - type: input
+    id: kind
+    attributes:
+      label: Kind
+      placeholder: e.g. diseases
+  - type: input
+    id: page_url
+    attributes:
+      label: Page URL
+  - type: textarea
+    attributes:
+      label: What is wrong
+      description: Quote the sentence or name the section, and say what it should read.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: The source that settles it
+      description: DOI, URL or citation. A specific document beats a database homepage.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Your name and affiliation (optional)

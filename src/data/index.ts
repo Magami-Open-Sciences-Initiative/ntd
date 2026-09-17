@@ -24,11 +24,15 @@ import { extraCountries, moreCountries } from "./countries-extra";
 import { extraInstitutions } from "./institutions-extra";
 import { africanPeopleMore } from "./people-africa-2";
 import { EMERGING_ADDITIONS } from "./additions-emerging";
+import { registryTrials } from "./trials-registry";
+import { findDiagnostics } from "./diagnostics-find";
+import { VERIFICATION } from "./verification";
 import { emergingDiseases } from "./emerging-diseases";
 import { EXTRA_SOURCES } from "./extra-sources";
 import { PATHOGEN_COUNTRIES } from "./pathogen-countries";
 import { VECTOR_COUNTRIES } from "./vector-countries";
 import { DRUG_ENRICHMENT } from "./drug-enrichment";
+import { DIAGNOSTIC_ENRICHMENT } from "./diagnostic-enrichment";
 import { TARGETS_EXTRA } from "./targets-extra";
 import { STRUCTURES, type Structure } from "./structures";
 import {
@@ -50,9 +54,11 @@ const RAW_INPUTS: { kind: Kind; records: unknown[] }[] = [
   { kind: "vectors", records: vectors },
   { kind: "drugs", records: drugs },
   { kind: "diagnostics", records: diagnostics },
+  { kind: "diagnostics", records: findDiagnostics },
   { kind: "targets", records: targets },
   { kind: "technologies", records: technologies },
   { kind: "trials", records: trials },
+  { kind: "trials", records: registryTrials },
   { kind: "institutions", records: institutions },
   { kind: "countries", records: countries },
   { kind: "countries", records: extraCountries },
@@ -101,6 +107,7 @@ const DEEP_DIVES: Partial<Record<Kind, Record<string, Spike>>> = {
   pathogens: PATHOGEN_COUNTRIES,
   vectors: VECTOR_COUNTRIES,
   targets: mergeSpikes(SEQUENCE_PATCHES, PROTEIN_ABSENT_PATCHES),
+  diagnostics: DIAGNOSTIC_ENRICHMENT,
 };
 
 function mergeSpikes(...maps: Record<string, Spike>[]): Record<string, Spike> {
@@ -117,9 +124,21 @@ export const ALL_INPUTS: { kind: Kind; records: unknown[] }[] = RAW_INPUTS.map(
   ({ kind, records }) => {
     const spikes = DEEP_DIVES[kind];
     const deepened = spikes ? applySpikes(records as { id: string }[], spikes) : records;
-    return { kind, records: withExtraSources(deepened) };
+    return { kind, records: withVerification(withExtraSources(deepened)) };
   },
 );
+
+/**
+ * Attach the expert-verification status in `verification.ts` by record id.
+ * Absent means unverified, so no record is ever silently marked reviewed.
+ */
+function withVerification(records: unknown[]): unknown[] {
+  return records.map((r) => {
+    const rec = r as { id: string };
+    const v = VERIFICATION[rec.id];
+    return v ? { ...rec, verification: v } : r;
+  });
+}
 
 /**
  * Append the additional primary sources in `extra-sources.ts`, deduplicated by

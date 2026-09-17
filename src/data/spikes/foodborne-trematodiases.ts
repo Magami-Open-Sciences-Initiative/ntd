@@ -6,9 +6,24 @@ export const foodborneTrematodiasesSpike: Spike = {
   summary:
     "This group includes the liver flukes Clonorchis and Opisthorchis, the lung fluke Paragonimus and Fasciola, the large liver fluke of livestock. People are infected by eating raw or undercooked freshwater fish, crabs, or aquatic plants such as watercress. The two liver flukes are classified as Group 1 carcinogens: chronic infection inflames the bile ducts and causes cholangiocarcinoma, a cancer with a very poor prognosis, which makes these worms a cancer risk as well as a parasitic disease. Praziquantel treats clonorchiasis and opisthorchiasis; triclabendazole treats fascioliasis and paragonimiasis and is donated by Novartis through WHO. The serious warning is resistance: widespread triclabendazole use in livestock has driven treatment failures in humans, with cure rates falling in cohorts in Peru and Bolivia, and there is no established alternative. For a disease whose control depends on a single drug, that is the central problem of the next decade.",
   stats: [
-    { label: "People infected", value: "> 56 million", note: "all foodborne trematodes combined" },
-    { label: "People at risk", value: "≈ 750 million", note: "older estimate" },
-    { label: "Species that infect people", value: "≈ 100" },
+    {
+      label: "People infected",
+      value: "> 56 million",
+      number: 56,
+      unit: "million people",
+      geography: "global",
+      note: "all foodborne trematodes combined (WHO)",
+      source: { label: "WHO — foodborne trematodiases (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/foodborne-trematode-infections" },
+    },
+    {
+      label: "People at risk",
+      value: "> 750 million",
+      number: 750,
+      unit: "million people",
+      geography: "global",
+      source: { label: "WHO — foodborne trematodiases (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/foodborne-trematode-infections" },
+    },
+    { label: "Species that infect people", value: "> 100", number: 100, unit: "species" },
     { label: "Cancer link", value: "Group 1 carcinogen", note: "Clonorchis and Opisthorchis cause cholangiocarcinoma" },
     { label: "Triclabendazole donated", value: "1.15 million patients", note: "2006–2016, via WHO" },
     { label: "Treatment", value: "Praziquantel or triclabendazole", note: "single dose for most infections" },

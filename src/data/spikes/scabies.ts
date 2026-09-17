@@ -6,7 +6,32 @@ export const scabiesSpike: Spike = {
   summary:
     "Scabies is caused by a mite that burrows into the skin, causing an itch that is worst at night. It spreads easily in crowded households, schools and institutions, and in tropical communities it drives impetigo and, through that, post-streptococcal kidney disease and rheumatic heart disease. Ordinary scabies is treated with topical permethrin or oral ivermectin, but in high-burden settings whole-community mass treatment is what works, because reinfection from untreated contacts is relentless. Ivermectin is now on the WHO essential medicines list for scabies and several suppliers are prequalified; a cluster-randomised trial has suggested that a single round of mass treatment may be as effective as two; and moxidectin has shown high efficacy in trials, offering a longer-acting alternative. The wider group — scabies and other ectoparasitoses — also includes tungiasis, the jigger flea, which causes painful foot lesions in some of the same communities.",
   stats: [
-    { label: "People affected at any time", value: "≈ 200 million" },
+    {
+      label: "People affected",
+      value: "200 million",
+      number: 200,
+      unit: "million people",
+      geography: "global",
+      note: "at any one time",
+      source: { label: "WHO — scabies (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/scabies" },
+    },
+    {
+      label: "Cumulative cases a year",
+      value: "400 million",
+      number: 400,
+      unit: "million people",
+      year: 2024,
+      geography: "global",
+      note: "more than 400 million people cumulatively every year",
+      source: { label: "WHO — scabies (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/scabies" },
+    },
+    {
+      label: "Prevalence in children",
+      value: "5–50%",
+      unit: "%",
+      geography: "resource-poor settings",
+      source: { label: "WHO — scabies (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/scabies" },
+    },
     { label: "Standard oral treatment", value: "Two doses of ivermectin", note: "200 µg/kg, one week apart" },
     { label: "Topical alternative", value: "Permethrin 5% cream" },
     { label: "Contraindication", value: "Pregnancy and children under 15 kg", note: "for ivermectin" },

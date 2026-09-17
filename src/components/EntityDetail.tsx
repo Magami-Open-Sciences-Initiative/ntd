@@ -1,10 +1,12 @@
 import Link from "next/link";
-import { KIND_FIELDS, KIND_META } from "@/lib/schema";
+import { KIND_FIELDS, KIND_META, type Stat } from "@/lib/schema";
 import { backlinksByKind, resolve, type Node } from "@/lib/graph";
 import { entityHref } from "@/lib/nav";
 import { citeData } from "@/lib/cite";
 import { Chip, KindBadge, SectionHeading, StatGrid } from "./ui";
 import { CiteBlock } from "./CiteBlock";
+import { VerificationToggle } from "./VerificationToggle";
+import { ContributePanel } from "./ContributePanel";
 
 type Rec = Record<string, unknown>;
 
@@ -60,6 +62,7 @@ export function EntityDetail({ node }: { node: Node }) {
           <span className="font-mono text-[11px] uppercase tracking-wider text-ink-3">
             checked {String(rec.asOf)}
           </span>
+          <VerificationToggle verification={rec.verification as never} />
         </div>
         <h1 className="font-display text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
           {node.name}
@@ -99,10 +102,45 @@ export function EntityDetail({ node }: { node: Node }) {
           const anchor = slug(s.label);
 
           if (s.type === "prose") {
+            const text = Array.isArray(raw) ? raw.join(", ") : String(raw);
             return (
               <section key={s.key}>
                 <SectionHeading id={anchor}>{s.label}</SectionHeading>
-                <p className="prose-magami leading-relaxed text-ink-2">{String(raw)}</p>
+                <p className="prose-magami leading-relaxed text-ink-2">{text}</p>
+              </section>
+            );
+          }
+
+          if (s.type === "products") {
+            const items = raw as {
+              name: string;
+              manufacturer: string;
+              stage?: string;
+              format?: string;
+              note?: string;
+            }[];
+            return (
+              <section key={s.key}>
+                <SectionHeading id={anchor}>{s.label}</SectionHeading>
+                <ul className="divide-y divide-[var(--line)] overflow-hidden rounded-lg border border-line bg-surface text-sm">
+                  {items.map((it) => (
+                    <li key={`${it.name}-${it.manufacturer}`} className="px-4 py-3">
+                      <div className="flex flex-wrap items-baseline gap-x-2">
+                        <span className="font-medium text-ink">{it.name}</span>
+                        <span className="text-ink-2">{it.manufacturer}</span>
+                      </div>
+                      <div className="mt-0.5 flex flex-wrap gap-x-3 font-mono text-[11px] uppercase tracking-wider text-ink-3">
+                        {it.stage ? <span>{it.stage}</span> : null}
+                        {it.format ? <span>{it.format}</span> : null}
+                      </div>
+                      {it.note ? <p className="mt-1 text-xs leading-relaxed text-ink-2">{it.note}</p> : null}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-2 text-xs leading-relaxed text-ink-3">
+                  Products listed from the FIND Test Directory (finddx.org). Inclusion is not an
+                  endorsement, and a listing does not imply WHO prequalification or national approval.
+                </p>
               </section>
             );
           }
@@ -120,7 +158,7 @@ export function EntityDetail({ node }: { node: Node }) {
             return (
               <section key={s.key}>
                 <SectionHeading id={anchor}>{s.label}</SectionHeading>
-                <StatGrid stats={raw as { label: string; value: string; note?: string }[]} />
+                <StatGrid stats={raw as Stat[]} />
               </section>
             );
           }
@@ -457,6 +495,13 @@ export function EntityDetail({ node }: { node: Node }) {
         </p>
         <CiteBlock citation={citeData(node)} />
       </section>
+
+      <ContributePanel
+        kind={kind}
+        id={node.id}
+        name={node.name}
+        verification={(rec.verification as { status?: string } | undefined)?.status}
+      />
 
       <section id="sources" className="mt-12 scroll-mt-24">
         <SectionHeading>Sources</SectionHeading>

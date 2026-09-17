@@ -48,6 +48,8 @@ const SPECS: Spec[] = [
   { id: "rifampicin", query: "Rifampicin" },
   { id: "clofazimine", query: "Clofazimine" },
   { id: "azithromycin", query: "Azithromycin" },
+  { id: "clarithromycin", query: "Clarithromycin" },
+  { id: "moxifloxacin", query: "Moxifloxacin" },
   { id: "benzathine-penicillin", query: "Benzathine benzylpenicillin" },
   { id: "permethrin", query: "Permethrin" },
   { id: "nitazoxanide", query: "Nitazoxanide" },
@@ -78,6 +80,7 @@ const NO_STRUCTURE: Record<string, string> = {
   "snake-antivenom": "Not a single molecule: a polyclonal mixture of antibodies purified from the plasma of immunised animals.",
   "rabies-postexposure-prophylaxis": "Not a single molecule: an inactivated virus vaccine given with human rabies immunoglobulin.",
   ixchiq: "Not a single molecule: a live-attenuated chikungunya virus vaccine.",
+  vimkunya: "Not a single molecule: a virus-like-particle chikungunya vaccine.",
   ansuvimab: "Not a small molecule: a monoclonal antibody, a protein of about 1,400 amino acids.",
 };
 

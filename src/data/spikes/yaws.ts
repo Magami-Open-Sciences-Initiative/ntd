@@ -7,10 +7,29 @@ export const yawsSpike: Spike = {
     "Yaws affects children under 15 in warm, humid, poor rural communities and causes painless skin lesions that progress, if untreated, to destructive lesions of skin, bone and cartilage years later. A single oral dose of azithromycin cures it as effectively as injected penicillin, which is what makes mass treatment and eradication feasible — and in 2012 WHO launched the Morges strategy, aiming to eradicate yaws by treating entire endemic communities. Progress was real but the target has slipped repeatedly, and two problems stand in the way. The first is that the serological tests used to diagnose yaws cannot distinguish it from venereal syphilis, so programmes cannot easily tell whether they are seeing endemic transmission or a different disease. The second, and more dangerous, is azithromycin resistance: resistant strains have emerged in Papua New Guinea and caused local transmission, which threatens the strategy that depends on a single antibiotic.",
   stats: [
     { label: "Target", value: "Eradication", note: "the Morges strategy, launched 2012" },
-    { label: "Current goal", value: "Eradicate by 2030" },
-    { label: "Cure", value: "A single oral dose", note: "azithromycin, or benzathine penicillin" },
-    { label: "Endemic countries", value: "≈ 86", note: "2022 estimate" },
-    { label: "Main threat", value: "Azithromycin resistance", note: "reported in Papua New Guinea, 2018" },
+    { label: "Goal by 2030", value: "Eradication", note: "WHO's current target year" },
+    {
+      label: "Cure",
+      value: "A single oral dose",
+      note: "azithromycin 30 mg/kg (max 2 g); mass treatment needs ≥90% coverage",
+      source: { label: "WHO — yaws (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/yaws" },
+    },
+    {
+      label: "Countries still endemic",
+      value: "13",
+      number: 13,
+      unit: "countries",
+      year: 2021,
+      geography: "global",
+      note: "123,866 cases reported from 13 countries in 2021, of which 1,102 were confirmed in 9",
+      source: { label: "WHO — yaws (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/yaws" },
+    },
+    {
+      label: "Main threat",
+      value: "Azithromycin resistance",
+      note: "reported in Papua New Guinea, 2018",
+      source: { label: "WHO — yaws (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/yaws" },
+    },
     { label: "Countries certified free", value: "A handful", note: "India among them; eradication is not yet complete anywhere" },
   ],
 

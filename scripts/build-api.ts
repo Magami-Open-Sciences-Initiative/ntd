@@ -62,6 +62,9 @@ for (const kind of KINDS) {
       ...n.record,
       url: `/${kind}/${n.id}/`,
       citation: citeData(n),
+      // `links` below is the graph's edge list; keep the record's own primary
+      // sources (and any per-stat sources inside `stats`) reachable too.
+      sources: n.record.links,
       links: {
         outgoing: [...(g.forward.get(n.id) ?? [])],
         incoming: [...backlinks],

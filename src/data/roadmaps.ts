@@ -50,7 +50,7 @@ export const roadmaps: RecordOf<"roadmaps">[] = [
         refs: ["ai-vector-identification", "vector-surveillance", "xenomonitoring"],
       },
     ],
-    diseases: ["dengue-chikungunya", "lymphatic-filariasis", "chagas", "hat", "leishmaniasis", "onchocerciasis"],
+    diseases: ["dengue", "chikungunya", "lymphatic-filariasis", "chagas", "hat", "leishmaniasis", "onchocerciasis"],
     terms: ["vector-borne", "insecticide-resistance"],
     stats: [
       { label: "Dominant tool", value: "Insecticide-treated nets" },
@@ -332,7 +332,7 @@ export const roadmaps: RecordOf<"roadmaps">[] = [
         refs: ["funding-gap"],
       },
     ],
-    diseases: ["rabies", "dengue-chikungunya", "sth", "leishmaniasis", "schistosomiasis", "onchocerciasis", "chagas"],
+    diseases: ["rabies", "dengue", "chikungunya", "sth", "leishmaniasis", "schistosomiasis", "onchocerciasis", "chagas"],
     technologies: ["rabies-vaccination", "dengue-vaccination", "hookworm-vaccine-candidates", "leishmaniasis-vaccine-candidates"],
     institutions: ["who", "gates-foundation"],
     stats: [
@@ -385,7 +385,7 @@ export const roadmaps: RecordOf<"roadmaps">[] = [
         refs: ["funding-gap", "surveillance-data-gap"],
       },
     ],
-    diseases: ["schistosomiasis", "sth", "leishmaniasis", "dengue-chikungunya", "buruli-ulcer"],
+    diseases: ["schistosomiasis", "sth", "leishmaniasis", "dengue", "chikungunya", "buruli-ulcer"],
     technologies: ["ai-drug-discovery", "alphafold-structure-prediction", "ai-microscopy", "ai-vector-identification"],
     institutions: ["dndi", "tdr", "find-dx"],
     stats: [

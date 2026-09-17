@@ -1,33 +1,39 @@
 import type { Spike } from "../merge";
 
-export const dengueChikungunyaSpike: Spike = {
-  tldr: "Two mosquito-borne viral diseases spread by day-biting Aedes mosquitoes that are exploding in tropical cities — and the target of the fastest-moving vaccine and vector-control research in the field.",
+const WHO_DENGUE: { label: string; url: string } = {
+  label: "WHO — dengue and severe dengue (fact sheet)",
+  url: "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue",
+};
+
+export const dengueSpike: Spike = {
+  tldr: "A mosquito-borne virus with four serotypes that causes sudden fever and, on a second infection with a different serotype, can leak plasma and kill — and 2024 was its worst year on record.",
 
   summary:
-    "Dengue and chikungunya are both transmitted by Aedes mosquitoes and both cause sudden fever with severe joint and muscle pain. Dengue has four serotypes, and a second infection with a different serotype carries a higher risk of severe dengue with plasma leakage and shock — which is why case management is mostly careful fluid therapy. Chikungunya rarely kills but leaves a substantial minority with joint pain lasting months or years. Neither has an approved antiviral. The last two years have been the most consequential in decades, in both directions: 2024 brought a record outbreak of more than thirteen million dengue cases in the Americas; Brazil approved the world's first single-dose dengue vaccine in November 2025; large-scale Wolbachia deployments showed reductions in dengue of 60–90% across cities in Indonesia, Brazil and Colombia; and, against that, a promising dengue antiviral was discontinued, and the chikungunya vaccine was paused in people over 60 after serious adverse events.",
+    "Dengue is caused by four serotypes of dengue virus and transmitted by day-biting Aedes aegypti and Aedes albopictus mosquitoes. A first infection is usually mild or silent; a second infection with a different serotype is the dangerous one, because antibody-dependent enhancement raises the risk of severe dengue — plasma leakage and shock around the time the fever breaks. That biology is why case management is careful fluid therapy rather than a drug, and why vaccine development has been so hard. Reported cases rose from 505,430 in 2000 to a record 14.6 million in 2024, with more than 12,000 deaths and more than 100 countries affected on all continents. There is still no approved antiviral, but the last two years brought a wave of good news on prevention: 2024 was a record year for Wolbachia deployments, and Brazil approved the world's first single-dose dengue vaccine in November 2025.",
 
   stats: [
     {
-      label: "Dengue in the Americas, 2024",
-      value: "> 13 million cases",
-      note: "a record; 22,684 severe and 8,186 deaths (PAHO)",
-    },
-    { label: "Infections a year, globally", value: "≈ 100–400 million" },
-    { label: "At risk", value: "≈ half the world's population" },
-    {
-      label: "Qdenga (TAK-003)",
-      value: "2 doses, ages 6–16",
-      note: "high-transmission settings, per WHO's May 2024 position paper",
+      label: "Wolbachia, Yogyakarta",
+      value: "−77% dengue",
+      number: -77,
+      unit: "%",
+      geography: "Yogyakarta, Indonesia",
+      note: "cluster-randomised trial; 86% fewer hospitalisations",
+      source: { label: "AWED trial (NEJM, 2021)", url: "https://www.nejm.org/doi/full/10.1056/NEJMoa2030243" },
     },
     {
-      label: "Butantan-DV",
-      value: "Single dose",
-      note: "approved in Brazil, November 2025, ages 12–59",
+      label: "Wolbachia, Niterói",
+      value: "−89% dengue",
+      number: -89,
+      unit: "%",
+      geography: "Niterói, Brazil",
+      source: { label: "World Mosquito Program — global impact", url: "https://www.worldmosquitoprogram.org/" },
     },
     {
-      label: "Wolbachia",
-      value: "16.1 million people protected",
-      note: "15 countries; ~1.5 million dengue cases prevented (WMP 2025)",
+      label: "Secondary infection",
+      value: "Higher risk of severe dengue",
+      note: "a second infection with a different serotype drives antibody-dependent enhancement",
+      source: WHO_DENGUE,
     },
   ],
 
@@ -39,7 +45,7 @@ export const dengueChikungunyaSpike: Spike = {
     },
     {
       date: "2024",
-      text: "The Americas report a record dengue season — more than thirteen million cases — and the United States reports a 359% rise over its historical average.",
+      text: "The Americas report a record dengue season — more than thirteen million cases — and the global total reaches 14.6 million, the highest ever recorded.",
       refs: ["paho", "vector-borne"],
     },
     {
@@ -51,11 +57,6 @@ export const dengueChikungunyaSpike: Spike = {
       date: "2025",
       text: "PAHO warns of heightened outbreak risk from renewed circulation of the DENV-3 serotype.",
       refs: ["paho"],
-    },
-    {
-      date: "2025",
-      text: "FDA and CDC recommend pausing use of the chikungunya vaccine Ixchiq in people aged 60 and over after serious neurological and cardiac events.",
-      refs: ["ixchiq"],
     },
     {
       date: "2025",
@@ -74,7 +75,7 @@ export const dengueChikungunyaSpike: Spike = {
       id: "surge",
       title: "The 2024 surge and what is driving it",
       body:
-        "The 2024 dengue season in the Americas broke every record: more than thirteen million reported cases, over twenty-two thousand classified as severe, and more than eight thousand deaths. The United States, which usually sees dengue only in travellers, recorded a 359% increase over its 2010–2023 average, with sustained outbreaks in Puerto Rico and the U.S. Virgin Islands. In early 2025 PAHO warned that renewed circulation of the DENV-3 serotype — which many populations have not seen recently — could drive further outbreaks.\n\nThe drivers are well understood and hard to reverse: urbanisation that creates breeding sites in water storage and discarded containers, unreliable piped water that forces households to store water, international travel that moves serotypes between regions, and a warming climate that expands the range of Aedes albopictus into temperate zones. Because Aedes aegypti bites during the day and breeds in domestic containers, bed nets do not work and house spraying reaches only part of the population.",
+        "The 2024 dengue season broke every record: 14.6 million cases reported to WHO, more than 12,000 deaths, and more than 100 countries affected on all continents. The Americas carried the largest share, with over thirteen million cases, more than twenty-two thousand classified as severe and more than eight thousand deaths; the United States, which usually sees dengue only in travellers, recorded a 359% increase over its 2010–2023 average, with sustained outbreaks in Puerto Rico and the U.S. Virgin Islands. Europe recorded 308 locally relevant cases in France, Italy and Spain, plus 1,291 cases and four deaths in the French overseas territories of Mayotte and Réunion. In early 2025 PAHO warned that renewed circulation of the DENV-3 serotype — which many populations have not seen recently — could drive further outbreaks; the first seven months of 2025 still produced more than four million cases and more than three thousand deaths across 97 countries.\n\nThe drivers are well understood and hard to reverse: urbanisation that creates breeding sites in water storage and discarded containers, unreliable piped water that forces households to store water, international travel that moves serotypes between regions, and a warming climate that expands the range of Aedes albopictus into temperate zones. Because Aedes aegypti bites during the day and breeds in domestic containers, bed nets do not work and house spraying reaches only part of the population.",
       refs: ["aedes-aegypti", "aedes-albopictus", "climate-expansion", "paho", "vector-surveillance"],
     },
     {
@@ -83,13 +84,6 @@ export const dengueChikungunyaSpike: Spike = {
       body:
         "Dengue vaccination is unusually hard because there are four serotypes and a second infection with a different one is more dangerous. The first licensed vaccine required pre-screening for prior infection, which limited its usefulness. The second, Qdenga (TAK-003), works without screening and WHO's May 2024 position paper recommends it for children aged 6 to 16 in settings of high transmission intensity, as a two-dose schedule — but explicitly not for younger children, and not in low-to-moderate transmission settings until questions about protection against DENV-3 and DENV-4 in people who have never had dengue are resolved.\n\nBrazil has taken a different route. Butantan-DV, developed by the Butantan Institute with a Chinese manufacturing partner, is the world's first single-dose dengue vaccine; Brazil's regulator approved it in November 2025 for people aged 12 to 59, with incorporation into the national immunisation programme planned for 2026 and more than a million doses prepared. A single dose matters enormously for campaigns: it removes the second visit, and in a country that has had the largest dengue burden in the world, it puts a locally developed product at the centre of the response.",
       refs: ["dengue-vaccination", "tak-003-dengue", "butantan-dv-dengue", "butantan-institute", "vaccine-gap"],
-    },
-    {
-      id: "chikungunya-vaccine",
-      title: "Chikungunya's vaccine setback",
-      body:
-        "Chikungunya got its first licensed vaccine in 2023, which was a genuine advance for a disease with no specific treatment. Then in May 2025 the FDA and CDC recommended a pause in its use in people aged 60 and older while they investigated post-marketing reports of serious adverse events — seventeen in total, including two deaths, in people aged 62 to 89. In August 2025 the FDA issued a further safety update. The events were neurological and cardiac, and the label already carried a warning that the live vaccine can cause severe or prolonged chikungunya-like reactions.\n\nThe practical effect is a narrowing of who can receive it: fine for younger travellers and some at-risk groups, not usable in the older adults who are most vulnerable to severe chikungunya. It is a reminder that a licensed vaccine is not the end of the story, and that post-marketing surveillance does real work — but it leaves the field with a licensed product it cannot use in a large part of the population that needs protection.",
-      refs: ["ixchiq", "dengue-vaccination", "who"],
     },
     {
       id: "wolbachia",
@@ -109,12 +103,12 @@ export const dengueChikungunyaSpike: Spike = {
       id: "care",
       title: "Clinical care: still fluid management",
       body:
-        "For a patient with dengue, the treatment is careful fluid management and close watching for warning signs — abdominal pain, persistent vomiting, bleeding, restlessness — around the time the fever breaks, when plasma leakage can cause shock. Getting that right saves lives, and getting it wrong in either direction causes harm; too little fluid and the patient deteriorates, too much and they develop pulmonary oedema. This is why WHO's clinical guidance and national protocols emphasise monitoring rather than a drug.\n\nFor chikungunya there is even less to offer: analgesia for joint pain, and time. Neonates and older adults are at risk of severe disease, and a minority of patients have joint pain for months or years, which is a substantial economic burden in its own right. Neither disease has a specific treatment, which is exactly why the vaccine and vector-control results above matter so much.",
+        "For a patient with dengue, the treatment is careful fluid management and close watching for warning signs — abdominal pain, persistent vomiting, bleeding, restlessness — around the time the fever breaks, when plasma leakage can cause shock. Getting that right saves lives, and getting it wrong in either direction causes harm: too little fluid and the patient deteriorates, too much and they develop pulmonary oedema. This is why WHO's clinical guidance and national protocols emphasise monitoring and a clear case classification — dengue without warning signs, with warning signs, and severe dengue — rather than a drug.",
       refs: ["who", "community-health-workers", "surveillance-data-gap"],
     },
   ],
 
-  drugs: ["mosnodenvir", "ixchiq"],
+  drugs: ["mosnodenvir"],
   trials: ["awed-wolbachia", "mosnodenvir-dengue"],
   technologies: ["wolbachia-method"],
   institutions: ["world-mosquito-program", "butantan-institute", "paho"],

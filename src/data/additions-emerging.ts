@@ -888,6 +888,7 @@ export const EMERGING_ADDITIONS: { kind: Kind; records: unknown[] }[] = [
           "R21/Matrix-M is a circumsporozoite protein vaccine with a saponin adjuvant. Its phase 3 programme reported solid protection against clinical malaria in young children with a good safety profile, and — critically — it can be produced at large scale and low cost, using a manufacturing platform already established for another vaccine. R21 received WHO recommendation in 2023, and its availability is what makes wide malaria vaccination programmes realistic.",
         ...R,
         phase: "Phase 3",
+        registry: "ClinicalTrials.gov NCT04704830",
         status: "Reported positive; recommended 2023",
         intervention: "R21/Matrix-M, with a booster dose",
         result:
@@ -911,6 +912,7 @@ export const EMERGING_ADDITIONS: { kind: Kind; records: unknown[] }[] = [
           "TB-PRACTECAL tested short all-oral regimens for multidrug-resistant tuberculosis, and its BPaLM arm — bedaquiline, pretomanid, linezolid and moxifloxacin — produced high cure rates with far fewer deaths and better tolerability than the long regimens it replaced. WHO issued a rapid communication recommending the regimen in 2022, which changed the standard of care for a disease that had required up to two years of treatment including injectable drugs. It is one of the fastest translations of a trial result into global policy in tuberculosis.",
         ...R,
         phase: "Phase 2/3",
+        registry: "ClinicalTrials.gov NCT02589782",
         status: "Reported positive; recommended 2022",
         intervention: "Bedaquiline, pretomanid, linezolid and moxifloxacin, all oral",
         sponsor: "Médecins Sans Frontières and partners",
@@ -936,6 +938,7 @@ export const EMERGING_ADDITIONS: { kind: Kind; records: unknown[] }[] = [
           "M72/AS01E is a subunit vaccine against two mycobacterial antigens. Its phase 2b trial in people with latent tuberculosis infection reported around 50% protection against progression to active pulmonary disease — the first vaccine candidate in decades to show a signal of this kind. A confirmatory phase 3 trial is under way. If it holds up, it would be the first new tuberculosis vaccine since BCG a century ago, and it is designed to be used alongside preventive treatment rather than replacing it.",
         ...R,
         phase: "Phase 2b complete; phase 3 under way",
+        registry: "ClinicalTrials.gov NCT01755598",
         status: "Reported positive; confirmatory trial ongoing",
         intervention: "M72/AS01E subunit vaccine",
         result:
@@ -959,6 +962,7 @@ export const EMERGING_ADDITIONS: { kind: Kind; records: unknown[] }[] = [
           "Run in Guinea during the 2014–2016 West African outbreak, this trial used ring vaccination — vaccinating the contacts and contacts-of-contacts of each new case — and was designed so that efficacy could be estimated from cases occurring before vaccination took effect. It found the rVSV-ZEBOV vaccine highly protective, with no cases among vaccinated contacts after the ten-day window. The result licensed the vaccine and established ring vaccination as the standard response to Ebola, later used at scale in the Democratic Republic of the Congo.",
         ...R,
         phase: "Phase 3, cluster-randomised ring vaccination",
+        registry: "PACTR201503001057193",
         status: "Reported positive",
         intervention: "rVSV-ZEBOV vaccine given to contacts and their contacts",
         result: "High protection against Ebola in vaccinated rings, with no confirmed cases after the vaccine's onset of protection.",
@@ -980,6 +984,7 @@ export const EMERGING_ADDITIONS: { kind: Kind; records: unknown[] }[] = [
           "PALM was a randomised controlled trial of four investigational treatments for Ebola, run during the 2018–2020 outbreak in the Democratic Republic of the Congo. An interim analysis showed that two monoclonal antibody products — ansuvimab and the REGN-EB3 cocktail — reduced mortality substantially compared with the other arms, and the trial was stopped early so that all patients could receive them. It was the first time a trial demonstrated that any treatment changed the outcome of Ebola, and it was conducted in an active outbreak zone with armed conflict.",
         ...R,
         phase: "Phase 2/3 randomised controlled trial",
+        registry: "ClinicalTrials.gov NCT03719586",
         status: "Reported positive; stopped early for benefit",
         intervention: "Four investigational Ebola treatments including monoclonal antibody products",
         result:
@@ -1062,7 +1067,7 @@ export const EMERGING_ADDITIONS: { kind: Kind; records: unknown[] }[] = [
         links: [
           { label: "CEPI", url: "https://cepi.net/" },
         ],
-        diseases: ["ebola", "dengue-chikungunya", "hat"],
+        diseases: ["ebola", "dengue", "chikungunya", "hat"],
         technologies: ["ebola-vaccines"],
         institutions: ["who", "gavi"],
         terms: ["pdp"],
@@ -1438,7 +1443,7 @@ export const EMERGING_ADDITIONS: { kind: Kind; records: unknown[] }[] = [
         links: [
           { label: "WHO — Ebola disease (health topic)", url: "https://www.who.int/health-topics/ebola-disease" },
         ],
-        diseases: ["ebola", "zika", "dengue-chikungunya"],
+        diseases: ["ebola", "zika", "dengue", "chikungunya"],
         technologies: ["ring-vaccination", "mhealth-surveillance", "genomic-surveillance", "community-health-workers"],
         institutions: ["who", "cepi", "msf"],
         countries: ["dr-congo", "south-sudan", "guinea"],

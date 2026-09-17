@@ -359,24 +359,37 @@ export const pathogens: RecordOf<"pathogens">[] = [
   {
     id: "mycobacterium-ulcerans",
     name: "Mycobacterium ulcerans",
-    tldr: "A bacterium related to leprosy and tuberculosis that produces a toxin destroying skin and fat, causing the painless Buruli ulcer.",
+    tldr: "A slow-growing mycobacterium related to the agents of leprosy and tuberculosis that produces a tissue-destroying toxin, causing the painless Buruli ulcer.",
     summary:
-      "Mycobacterium ulcerans grows in warm, slow-moving water and releases mycolactone, a toxin that destroys fat and skin tissue and suppresses the local immune response — so the ulcer is painless and the surrounding area does not hurt. Without treatment the ulcer expands and leaves severe scarring and contractures, sometimes requiring amputation. It is concentrated in West and Central Africa and parts of Australia.",
+      "Mycobacterium ulcerans lives in warm, slow-moving water and releases mycolactone, a toxin that destroys fat and skin tissue and suppresses the local immune response — so the ulcer is painless. It grows best at 30–33 °C, below human core body temperature, which is one reason the lesions are on cooler surfaces such as the arms and legs. Its mycolactone genes sit on a plasmid, pMUM001, and the insertion sequence IS2404 is the target of the PCR test used for diagnosis. Buruli ulcer is the third most common mycobacterial disease in people who are not immunocompromised, after tuberculosis and leprosy. Without treatment the ulcer expands and leaves severe scarring and contractures.",
     asOf: "2026-09",
     organism: "Bacterium",
-    taxonomy: "Actinomycetota, Mycobacteriaceae",
+    taxonomy: "Actinomycetota, Mycobacteriaceae — Mycobacterium ulcerans, in the M. ulcerans–marinum clade",
     biology:
-      "The disease is entirely toxin-driven: mycolactone kills cells and blocks immune signalling, which is why the lesion is painless and why antibiotics alone can be slow.",
+      "The disease is entirely toxin-driven: mycolactone kills cells and blocks immune signalling, which is why the lesion is painless and why antibiotics alone can be slow. The toxin is encoded on the plasmid pMUM001, and the insertion sequence IS2404 — present in many copies — is what PCR targets.",
     lifecycle:
-      "The reservoir is environmental, likely linked to aquatic insects and water bodies; transmission is not from person to person and remains incompletely understood.",
+      "The reservoir is environmental, linked to slow-moving or stagnant water; in Africa aquatic insects and water contact are suspected, while in Victoria, Australia, possums are a major wildlife reservoir and mosquitoes the transmitting vector. Transmission is not from person to person and remains incompletely understood.",
     links: [
       { label: "WHO — Buruli ulcer", url: "https://www.who.int/news-room/fact-sheets/detail/buruli-ulcer" },
     ],
     diseases: ["buruli-ulcer"],
-    drugs: ["rifampicin", "clofazimine"],
+    drugs: ["rifampicin", "clarithromycin", "moxifloxacin", "telacebec"],
     technologies: ["genomic-surveillance", "ai-microscopy"],
     stats: [
-      { label: "Reporting countries", value: "> 30" },
+      {
+        label: "Countries that have ever reported cases",
+        value: "33",
+        number: 33,
+        unit: "countries",
+        geography: "global",
+        source: { label: "WHO AFRO — Buruli ulcer in Africa: 20 years of progress (2025)", url: "https://iris.who.int/handle/10665/383376" },
+      },
+      {
+        label: "Rank among mycobacterial diseases",
+        value: "Third",
+        note: "after tuberculosis and leprosy, in people who are not immunocompromised",
+        source: { label: "WHO — Routine health information system data: Buruli ulcer (2025)", url: "https://iris.who.int/handle/10665/382160" },
+      },
       { label: "Focus", value: "West and Central Africa, and coastal Australia" },
     ],
   },
@@ -497,7 +510,7 @@ export const pathogens: RecordOf<"pathogens">[] = [
     links: [
       { label: "WHO — Dengue and severe dengue", url: "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue" },
     ],
-    diseases: ["dengue-chikungunya"],
+    diseases: ["dengue"],
     vectors: ["aedes-aegypti", "aedes-albopictus"],
     targets: ["dengue-ns5", "dengue-protease"],
     technologies: ["dengue-vaccination", "vector-surveillance", "gene-drive-mosquitoes"],
@@ -523,7 +536,7 @@ export const pathogens: RecordOf<"pathogens">[] = [
     links: [
       { label: "WHO — Chikungunya", url: "https://www.who.int/news-room/fact-sheets/detail/chikungunya" },
     ],
-    diseases: ["dengue-chikungunya"],
+    diseases: ["chikungunya"],
     vectors: ["aedes-aegypti", "aedes-albopictus"],
     technologies: ["vector-surveillance", "dengue-vaccination"],
     stats: [

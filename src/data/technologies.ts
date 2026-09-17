@@ -92,7 +92,7 @@ export const technologies: RecordOf<"technologies">[] = [
     links: [
       { label: "WHO — guidance framework for gene drive", url: "https://www.who.int/publications/i/item/9789241511988" },
     ],
-    diseases: ["dengue-chikungunya"],
+    diseases: ["dengue", "chikungunya"],
     vectors: ["aedes-aegypti", "aedes-albopictus"],
     technologies: ["sterile-insect-technique"],
     bottlenecks: ["funding-gap"],
@@ -115,7 +115,7 @@ export const technologies: RecordOf<"technologies">[] = [
     links: [
       { label: "WHO — sterile insect technique", url: "https://www.who.int/publications/i/item/9789241512978" },
     ],
-    diseases: ["hat", "dengue-chikungunya"],
+    diseases: ["hat", "dengue", "chikungunya"],
     vectors: ["tsetse-fly", "aedes-aegypti", "aedes-albopictus"],
     stats: [
       { label: "Proven against", value: "Tsetse fly", note: "for sleeping sickness" },
@@ -173,7 +173,7 @@ export const technologies: RecordOf<"technologies">[] = [
     links: [
       { label: "WHO — Global vector control response", url: "https://www.who.int/publications/i/item/9789241512978" },
     ],
-    diseases: ["dengue-chikungunya", "lymphatic-filariasis", "chagas", "hat", "leishmaniasis"],
+    diseases: ["dengue", "chikungunya", "lymphatic-filariasis", "chagas", "hat", "leishmaniasis"],
     technologies: ["ai-vector-identification", "xenomonitoring", "mhealth-surveillance"],
     bottlenecks: ["surveillance-data-gap"],
   },
@@ -299,7 +299,7 @@ export const technologies: RecordOf<"technologies">[] = [
     links: [
       { label: "FIND — CRISPR diagnostics", url: "https://www.finddx.org/" },
     ],
-    diseases: ["schistosomiasis", "leishmaniasis", "sth", "dengue-chikungunya"],
+    diseases: ["schistosomiasis", "leishmaniasis", "sth", "dengue", "chikungunya"],
     technologies: ["molecular-lamp", "lateral-flow-assays"],
     roadmaps: ["ntd-diagnostics-roadmap"],
   },
@@ -326,22 +326,47 @@ export const technologies: RecordOf<"technologies">[] = [
     name: "Dengue vaccination",
     tldr: "Vaccines against the four dengue serotypes — powerful, but complicated by the fact that a second infection is more dangerous.",
     summary:
-      "Dengue vaccination is unusually difficult because there are four serotypes and a second infection with a different one raises the risk of severe disease. A first vaccine required pre-screening for prior infection; a later vaccine (TAK-003) protects without screening, and a single-dose Brazilian vaccine (Butantan-DV) has reported strong efficacy. Chikungunya, spread by the same mosquito, now has a licensed vaccine too. Vaccination complements, but cannot replace, mosquito control.",
+      "Dengue vaccination is unusually difficult because there are four serotypes and a second infection with a different one raises the risk of severe disease. A first vaccine required pre-screening for prior infection; a later vaccine (TAK-003) protects without screening, and a single-dose Brazilian vaccine (Butantan-DV) has reported strong efficacy. Vaccination complements, but cannot replace, mosquito control.",
     asOf: "2026-09",
     category: "Vaccines",
     maturity: "Approved (several products, country-dependent)",
-    whatItDoes: "Prevents dengue (and chikungunya) through immunisation, reducing severe disease and hospitalisation.",
+    whatItDoes: "Prevents dengue through immunisation, reducing severe disease and hospitalisation.",
     limitation: "Serotype complexity, prior-infection requirements for some products, cost and supply, and no protection against the mosquito itself.",
     links: [
-      { label: "WHO — dengue vaccines", url: "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue" },
+      { label: "WHO — dengue and severe dengue (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue" },
+      { label: "WHO — dengue vaccine position paper (2024)", url: "https://www.who.int/publications/i/item/9789240091078" },
     ],
-    diseases: ["dengue-chikungunya"],
-    pathogens: ["dengue-virus", "chikungunya-virus"],
+    diseases: ["dengue"],
+    pathogens: ["dengue-virus"],
     trials: ["tak-003-dengue", "butantan-dv-dengue"],
     roadmaps: ["ntd-vaccines-roadmap"],
     stats: [
-      { label: "Products", value: "Several licensed, country-dependent" },
+      { label: "Products licensed", value: "2", number: 2, unit: "vaccines", note: "Qdenga (ages 6–16, high-transmission) and Butantan-DV (Brazil, single dose)", source: { label: "WHO — dengue vaccine position paper (2024)", url: "https://www.who.int/publications/i/item/9789240091078" } },
       { label: "Complication", value: "Four serotypes and antibody-dependent enhancement" },
+    ],
+  },
+  {
+    id: "chikungunya-vaccination",
+    name: "Chikungunya vaccination",
+    tldr: "Two licensed vaccines against chikungunya — including one whose use in people aged 60 and over was paused in 2025 after serious adverse events.",
+    summary:
+      "Chikungunya vaccination became possible in 2023, when the live-attenuated vaccine Ixchiq was licensed as a single dose — the first product of any kind against the disease. In 2025 the FDA and CDC recommended pausing its use in people aged 60 and over after post-marketing reports of serious neurological and cardiac events, including two deaths, which removed it from the age group most vulnerable to severe chikungunya. A second, non-live virus-like-particle vaccine, Vimkunya, was licensed in 2025 and is not subject to that pause. Neither is yet widely available, and WHO is reviewing trial and post-marketing data before making recommendations for use. Because there is no specific antiviral, vaccination and mosquito control are the only preventive options.",
+    asOf: "2026-09",
+    category: "Vaccines",
+    maturity: "Licensed (2023 and 2025); availability limited",
+    whatItDoes: "Prevents chikungunya through immunisation; both products are given as a single dose.",
+    limitation: "Not widely available; the first vaccine's use is paused in people 60 and over; post-marketing safety is still being reviewed.",
+    links: [
+      { label: "WHO — chikungunya (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/chikungunya" },
+      { label: "FDA/CDC — pause in use of Ixchiq in people 60 and older", url: "https://www.fda.gov/vaccines-blood-biologics/safety-availability-biologics/fda-and-cdc-recommend-pause-use-ixchiq-chikungunya-vaccine-live-individuals-60-years-age-and-older" },
+    ],
+    diseases: ["chikungunya"],
+    pathogens: ["chikungunya-virus"],
+    drugs: ["ixchiq", "vimkunya"],
+    roadmaps: ["ntd-vaccines-roadmap"],
+    stats: [
+      { label: "Products licensed", value: "2", number: 2, unit: "vaccines", note: "Ixchiq (2023) and Vimkunya (2025)", source: { label: "WHO — chikungunya (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/chikungunya" } },
+      { label: "Pause", value: "Adults ≥ 60, May 2025", note: "Ixchiq; 17 serious events including 2 deaths, ages 62–89" },
     ],
   },
   {
@@ -523,7 +548,7 @@ export const technologies: RecordOf<"technologies">[] = [
     links: [
       { label: "WHO — NTD surveillance", url: "https://www.who.int/teams/control-of-neglected-tropical-diseases" },
     ],
-    diseases: ["dracunculiasis", "dengue-chikungunya", "lymphatic-filariasis"],
+    diseases: ["dracunculiasis", "dengue", "chikungunya", "lymphatic-filariasis"],
     technologies: ["vector-surveillance", "genomic-surveillance", "ai-vector-identification"],
     bottlenecks: ["surveillance-data-gap"],
   },

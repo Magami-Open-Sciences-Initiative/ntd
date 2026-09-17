@@ -14,7 +14,7 @@ export const terms: RecordOf<"terms">[] = [
       { label: "WHO — Neglected tropical diseases", url: "https://www.who.int/news-room/fact-sheets/detail/neglected-tropical-diseases" },
     ],
     diseases: [
-      "buruli-ulcer", "chagas", "dengue-chikungunya", "dracunculiasis", "echinococcosis",
+      "buruli-ulcer", "chagas", "dengue", "chikungunya", "dracunculiasis", "echinococcosis",
       "foodborne-trematodiases", "hat", "leishmaniasis", "leprosy", "lymphatic-filariasis",
       "mycetoma", "noma", "onchocerciasis", "rabies", "scabies", "schistosomiasis",
       "sth", "snakebite", "taeniasis-cysticercosis", "trachoma", "yaws",

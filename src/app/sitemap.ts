@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url.replace(/\/$/, "");
   const now = new Date();
 
-  const staticPages = ["/", "/about/", "/search/", ...KINDS.map((k) => `/${k}/`)];
+  const staticPages = ["/", "/about/", "/contribute/", "/cite/", "/search/", ...KINDS.map((k) => `/${k}/`)];
   const frPages = ["/fr/", "/fr/about/", "/fr/diseases/", ...listKind("diseases").map((d) => `/fr/diseases/${d.id}/`)];
 
   return [

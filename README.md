@@ -86,17 +86,68 @@ entry, a colour in `src/lib/text.ts`, a data file spread into `ALL_INPUTS`, and 
 
 ## The corpus so far
 
-**26 diseases** — the 21 on the WHO NTD list, plus five adjacent diseases included for context —
-25 pathogens, 9 vectors, 52 treatments, 26 diagnostics, 45 targets, 46 technologies, 39 trials,
-49 institutions, 27 countries, 34 people, 7 roadmaps, 22 guidelines, 17 bottlenecks, 12 ideas and
-40 glossary terms: **476 objects**, all interlinked. Counts are computed at build time.
+**27 diseases** — the WHO NTD list (dengue and chikungunya are given separate pages, so the 21 WHO
+entries become 22 pages), plus five adjacent diseases included for context — 25 pathogens, 9 vectors,
+55 treatments, 35 diagnostics, 46 targets, 47 technologies, 55 trials, 51 institutions, 27 countries,
+34 people, 7 roadmaps, 22 guidelines, 17 bottlenecks, 12 ideas and 40 glossary terms: **509 objects**,
+all interlinked. Counts are computed at build time.
 
-**Sourcing:** 381 of 476 records cite more than one primary source; 95 rest on a single one.
+**Sourcing:** 418 of 509 records cite more than one primary source; 91 rest on a single one.
 Those are mostly biographies, where one authoritative page is the honest answer — padding them
 with a generic second link would improve the number and not the sourcing. `npm run validate`
 reports the split, rejects placeholder sources (a link to a database homepage is not a citation)
 and checks that every `asOf` date is real and not in the future;
 `npm run check:links` verifies that all ~877 primary source URLs still resolve.
+
+### Figures are data, not decoration
+
+A `stat` is not a string in a tile: each carries optional `number`, `unit`, `year`,
+`geography` and its own `source`, so figures are filterable and comparable across pages and
+through the JSON API — every case count in 2023, every figure in mg/L, every estimate for the
+WHO African Region — and each can be checked without trusting the rest of the page. `npm run
+validate` enforces it: a numeric figure must state its unit, a year must be plausible, and a
+per-figure citation must be a real document. The Buruli ulcer page is the worked example
+(cases by year and region from WHO AFRO's 2025 review, laboratory-confirmation and category-III
+rates from WHO's 2025 routine-data guidance, the telacebec MIC from the 2025 repurposing study,
+and the possum-faeces lead time from *Emerging Infectious Diseases* 2025).
+
+### Trials cite their register
+
+Every trial carries a `registry` field and a direct link back to its registration record — the
+ClinicalTrials.gov study page, the PACTR record, or, where a registry blocks automated retrieval
+(ChiCTR), the registration number and the peer-reviewed report of the trial. The trial list was
+reconciled against ClinicalTrials.gov, the Pan African Clinical Trials Registry and ChiCTR, so a
+reader can check a trial's status, phase, enrolment and results at the source rather than trusting
+the summary. Registry cross-checking also surfaced trials that were absent from the list — the
+moxidectin mass-administration trial, the acoziborole transmission-interruption study, the TAKeOFF
+test-and-treat trial for lymphatic filariasis, the Tokomeza Sudan ebolavirus ring trial, and the
+Sm14 schistosomiasis vaccine trial, among others.
+
+### Diagnostics: what actually exists
+
+A diagnostic record used to describe a method; it now also carries the dimensions that decide
+whether the method is usable where the disease is — its **technology, use case, test format,
+setting (lab or point of care), instrument requirement, automation, operator, validated sample
+types, stage of development and regulatory status**, plus a short list of **named products** with
+their manufacturer. Those dimensions come from the [FIND Test Directory](https://finddx.org)
+(fetched from its explorer), which is the field's catalogue of what is actually manufactured and
+approved, and each diagnostic cites it. The pass also added the diagnostics the catalogue showed
+were missing: rapid HAT screening tests, the Ov16 onchocerciasis antibody test, multiplex fever
+panels, M. ulcerans LAMP, chikungunya serology, dengue molecular tests and fungal biomarkers for
+mycetoma. Product lists are illustrative, not exhaustive, and a listing is not an endorsement or a
+statement of WHO prequalification.
+
+### Expert verification, and contributing without code
+
+Every page carries a verification control with three states — **expert verified**, **in review**,
+**not yet verified** (the default) — and a **Verify or correct this page** panel. Status is data in
+`src/data/verification.ts`, one line per record, so it is auditable in a single diff; `validate`
+rejects a record marked `verified` that names no reviewer or date, and no page can mark itself
+verified. Clinicians and researchers who do not write code contribute through **GitHub Issue
+Forms** (the per-page buttons pre-fill the record id, page URL and status), through a **copyable
+verification note** for anyone without a GitHub account, or by writing to the editors. The
+maintainers transcribe a review into the corpus and credit the reviewer by name. `/contribute/`
+explains it for a non-technical reader, and `CONTRIBUTING.md` for a developer.
 
 ### Geographic cross-referencing
 
@@ -206,7 +257,7 @@ records merged onto a base disease at load time, and `src/data/deep-drugs.ts` do
 the treatments. The merge is generic: `stats` are unioned by label (a deep dive refreshes a
 figure), `timeline` is concatenated and sorted by year, `sections` are unioned by id, reference
 fields are unioned, and every other field is an override. All 21 diseases have a deep dive, and
-all 41 treatments now carry prose sections rather than being stubs.
+every treatment now carries prose sections rather than being a stub.
 
 Records added by later reviews live in `src/data/additions.ts`; the graph pools records from
 several files into one kind, so nothing in the base files needs editing.

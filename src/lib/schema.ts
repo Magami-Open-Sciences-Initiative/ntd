@@ -9,11 +9,29 @@ export const SourceSchema = z.object({
   url: z.url(),
 });
 
-/** A headline figure shown as a stat tile. */
+/**
+ * A headline figure shown as a stat tile — and, because it is data rather than
+ * prose, a queryable fact. `value` stays the human string ("1,573"); the
+ * optional `number`, `unit`, `year` and `geography` are what make a figure
+ * comparable and filterable (all cases in 2023; every figure in mg/L; every
+ * estimate for the WHO African Region). `source` is the citation for THIS
+ * figure, not the record's general reading list, so a stat can be checked
+ * without trusting the rest of the page.
+ */
 export const StatSchema = z.object({
   label: z.string().min(2),
   value: z.string().min(1),
   note: z.string().optional(),
+  /** The figure as a number, for sorting and arithmetic (optional but preferred). */
+  number: z.number().optional(),
+  /** What the number counts, e.g. "cases", "countries", "%", "mg/L", "months". */
+  unit: z.string().min(1).optional(),
+  /** The year, or the end of the period, the figure describes. */
+  year: z.number().int().min(1800).max(2100).optional(),
+  /** Where it applies: "global", "WHO African Region", "Victoria, Australia". */
+  geography: z.string().min(1).optional(),
+  /** The specific source for this figure. */
+  source: SourceSchema.optional(),
 });
 
 /** One entry in a timeline / roadmap step list. */
@@ -68,6 +86,22 @@ export const RefFields = {
 export const REL_FIELDS = Object.keys(RefFields) as RelField[];
 export type RelField = keyof typeof RefFields;
 
+/**
+ * Expert-verification status, shown on every page. Absent means "unverified"
+ * (the honest default for a work-in-progress corpus). "in-review" means the
+ * record has been cross-checked against primary sources by the project but has
+ * not had a named subject-matter expert sign it off.
+ */
+export const VerificationSchema = z.object({
+  status: z.enum(["verified", "in-review", "unverified"]),
+  /** Who verified it, when the status is "verified". */
+  by: z.string().optional(),
+  /** When, e.g. "2026-09" or "2026-09-17". */
+  date: z.string().optional(),
+  /** What was checked, or what sign-off is still required. */
+  note: z.string().optional(),
+});
+
 const Base = z.object({
   id: z.string().min(1),
   name: z.string().min(2),
@@ -79,6 +113,8 @@ const Base = z.object({
   asOf: z.string().min(4),
   /** At least one primary source. */
   links: z.array(SourceSchema).min(1),
+  /** Expert-verification status; absent is treated as unverified. */
+  verification: VerificationSchema.optional(),
   /** Optional shared extras every kind may carry. */
   stats: z.array(StatSchema).optional(),
   timeline: z.array(TimelineEntrySchema).optional(),
@@ -164,6 +200,39 @@ export const DiagnosticSchema = Base.extend({
   performance: z.string().optional(),
   availability: z.string().optional(),
   turnaround: z.string().optional(),
+  /* ---- FIND Test Directory dimensions (finddx.org) ---- */
+  /** FIND "Type of technology": Molecular, Immunoassay, Microscopy, ... */
+  technology: z.string().optional(),
+  /** FIND "Primary use case": screening, diagnostic/confirmatory, ... */
+  useCase: z.string().optional(),
+  /** FIND "Test format": rapid diagnostic test, NAT reagent kit, cartridge, ... */
+  format: z.string().optional(),
+  /** FIND "Laboratory / point of care". */
+  setting: z.string().optional(),
+  /** FIND "Instrument requirement". */
+  instrument: z.string().optional(),
+  /** FIND "Level of automation". */
+  automation: z.string().optional(),
+  /** FIND "Self-testing or professional use". */
+  operator: z.string().optional(),
+  /** FIND "Stage of development": RUO, late-stage development, regulatory achieved. */
+  stage: z.string().optional(),
+  /** FIND "Regulatory body": WHO EUL, CE-IVDD, US FDA 510(k), ... */
+  regulatory: z.string().optional(),
+  /** FIND "Validated sample types". */
+  samples: z.array(z.string()).optional(),
+  /** Named commercial or candidate products from the FIND Test Directory. */
+  products: z
+    .array(
+      z.object({
+        name: z.string(),
+        manufacturer: z.string(),
+        stage: z.string().optional(),
+        format: z.string().optional(),
+        note: z.string().optional(),
+      }),
+    )
+    .optional(),
 });
 
 export const TargetSchema = Base.extend({
@@ -320,6 +389,12 @@ export const KINDS = Object.keys(SCHEMAS) as Kind[];
 
 export type Entity = z.infer<typeof Base> & Record<string, unknown>;
 
+/** A figure with its unit, year, geography and per-figure citation. */
+export type Stat = z.infer<typeof StatSchema>;
+
+/** Expert-verification status. */
+export type Verification = z.infer<typeof VerificationSchema>;
+
 /** Narrow a stored record to a kind's parsed shape. */
 export type RecordOf<K extends Kind> = z.infer<(typeof SCHEMAS)[K]>;
 
@@ -338,7 +413,8 @@ export type FieldType =
   | "structure"
   | "siblings"
   | "protein"
-  | "targets";
+  | "targets"
+  | "products";
 
 export type FieldSpec = { key: string; label: string; type: FieldType };
 
@@ -530,9 +606,20 @@ export const KIND_FIELDS: Record<Kind, FieldSpec[]> = {
   ],
   diagnostics: [
     { key: "method", label: "Method", type: "prose" },
+    { key: "technology", label: "Technology", type: "prose" },
+    { key: "useCase", label: "Use case", type: "prose" },
+    { key: "format", label: "Test format", type: "prose" },
+    { key: "setting", label: "Setting", type: "prose" },
+    { key: "instrument", label: "Instrument", type: "prose" },
+    { key: "automation", label: "Automation", type: "prose" },
+    { key: "operator", label: "Operator", type: "prose" },
     { key: "sampleType", label: "Sample", type: "prose" },
+    { key: "samples", label: "Validated sample types", type: "prose" },
     { key: "turnaround", label: "Turnaround", type: "prose" },
     { key: "performance", label: "Performance", type: "prose" },
+    { key: "stage", label: "Stage of development", type: "prose" },
+    { key: "regulatory", label: "Regulatory status", type: "prose" },
+    { key: "products", label: "Representative products", type: "products" },
     { key: "diseases", label: "Diseases", type: "refs" },
     { key: "pathogens", label: "Pathogens", type: "refs" },
     { key: "availability", label: "Availability", type: "prose" },

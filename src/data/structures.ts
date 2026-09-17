@@ -262,6 +262,22 @@
     "image": "/structures/447043.png",
     "pubchem": "https://pubchem.ncbi.nlm.nih.gov/compound/447043"
   },
+  "clarithromycin": {
+    "cid": 84029,
+    "formula": "C38H69NO13",
+    "weight": "748.0",
+    "smiles": "CCC1C(C(C(C(=O)C(CC(C(C(C(C(C(=O)O1)C)OC2CC(C(C(O2)C)O)(C)OC)C)OC3C(C(CC(O3)C)N(C)C)O)(C)OC)C)C)O)(C)O",
+    "image": "/structures/84029.png",
+    "pubchem": "https://pubchem.ncbi.nlm.nih.gov/compound/84029"
+  },
+  "moxifloxacin": {
+    "cid": 152946,
+    "formula": "C21H24FN3O4",
+    "weight": "401.4",
+    "smiles": "COC1=C2C(=CC(=C1N3CC4CCCNC4C3)F)C(=O)C(=CN2C5CC5)C(=O)O",
+    "image": "/structures/152946.png",
+    "pubchem": "https://pubchem.ncbi.nlm.nih.gov/compound/152946"
+  },
   "benzathine-penicillin": {
     "cid": 25137901,
     "formula": "C48H56N6O8S2",
@@ -422,6 +438,7 @@
   "snake-antivenom": "Not a single molecule: a polyclonal mixture of antibodies purified from the plasma of immunised animals.",
   "rabies-postexposure-prophylaxis": "Not a single molecule: an inactivated virus vaccine given with human rabies immunoglobulin.",
   "ixchiq": "Not a single molecule: a live-attenuated chikungunya virus vaccine.",
+  "vimkunya": "Not a single molecule: a virus-like-particle chikungunya vaccine.",
   "ansuvimab": "Not a small molecule: a monoclonal antibody, a protein of about 1,400 amino acids."
 };
   

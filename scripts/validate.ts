@@ -46,6 +46,58 @@ if (mismatches.length) {
   process.exit(1);
 }
 
+// Figures should be queryable: a numeric `number` wants a `unit`, a per-figure
+// `source` must be a real document (not a database homepage), and a `year` must
+// be a plausible year. This is what stops a stat being a decorative string.
+const statIssues: string[] = [];
+for (const node of g.byId.values()) {
+  const stats = node.record.stats as
+    | { label: string; number?: number; unit?: string; year?: number; source?: { label: string; url: string } }[]
+    | undefined;
+  if (!stats) continue;
+  for (const s of stats) {
+    if (s.number !== undefined && !s.unit) {
+      statIssues.push(`[${node.kind}/${node.id}] stat "${s.label}" has a number but no unit`);
+    }
+    if (s.year !== undefined && (s.year < 1800 || s.year > 2100)) {
+      statIssues.push(`[${node.kind}/${node.id}] stat "${s.label}" year ${s.year} is implausible`);
+    }
+    if (s.source && PLACEHOLDER.test(s.source.url)) {
+      statIssues.push(`[${node.kind}/${node.id}] stat "${s.label}" cites a placeholder (${s.source.url})`);
+    }
+  }
+}
+if (statIssues.length) {
+  console.error(`\n✗ ${statIssues.length} stat problem${statIssues.length === 1 ? "" : "s"}:\n`);
+  for (const p of statIssues) console.error(`  • ${p}`);
+  console.error("\nGive a numeric figure a unit, a year a plausible value, and a figure a real citation.\n");
+  process.exit(1);
+}
+
+// Expert verification must be attributable. A record marked "verified" without a
+// named reviewer and a date is a claim nobody is accountable for, so it fails
+// the build rather than shipping.
+const verificationIssues: string[] = [];
+for (const node of g.byId.values()) {
+  const v = node.record.verification as
+    | { status?: string; by?: string; date?: string }
+    | undefined;
+  if (!v) continue;
+  if (v.status === "verified") {
+    if (!v.by) verificationIssues.push(`[${node.kind}/${node.id}] is "verified" but names no reviewer (verification.by)`);
+    if (!v.date) verificationIssues.push(`[${node.kind}/${node.id}] is "verified" but has no verification.date`);
+  }
+  if (v.date && !/^\d{4}-\d{2}(-\d{2})?$/.test(v.date)) {
+    verificationIssues.push(`[${node.kind}/${node.id}] verification.date "${v.date}" is not YYYY-MM or YYYY-MM-DD`);
+  }
+}
+if (verificationIssues.length) {
+  console.error(`\n✗ ${verificationIssues.length} verification problem${verificationIssues.length === 1 ? "" : "s"}:\n`);
+  for (const p of verificationIssues) console.error(`  • ${p}`);
+  console.error("\nA verified record must name the expert and the date.\n");
+  process.exit(1);
+}
+
 const singleSource = [...g.byId.values()].filter((n) => n.record.links.length === 1).length;
 
 // Dates must be real, must not be in the future, and should not have gone stale

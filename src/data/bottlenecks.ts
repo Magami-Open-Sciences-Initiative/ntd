@@ -69,7 +69,7 @@ export const bottlenecks: RecordOf<"bottlenecks">[] = [
     links: [
       { label: "WHO — Global vector control response", url: "https://www.who.int/publications/i/item/9789241512978" },
     ],
-    diseases: ["dengue-chikungunya", "lymphatic-filariasis", "chagas", "leishmaniasis"],
+    diseases: ["dengue", "chikungunya", "lymphatic-filariasis", "chagas", "leishmaniasis"],
     technologies: ["insecticide-treated-nets", "indoor-residual-spraying", "gene-drive-mosquitoes", "sterile-insect-technique"],
     institutions: ["ivcc", "who", "ifakara"],
     vectors: ["aedes-aegypti", "culex-mosquito", "triatomine-bug"],
@@ -168,7 +168,7 @@ export const bottlenecks: RecordOf<"bottlenecks">[] = [
     links: [
       { label: "WHO — climate change and health", url: "https://www.who.int/health-topics/climate-change" },
     ],
-    diseases: ["dengue-chikungunya", "schistosomiasis", "leishmaniasis", "onchocerciasis", "dracunculiasis"],
+    diseases: ["dengue", "chikungunya", "schistosomiasis", "leishmaniasis", "onchocerciasis", "dracunculiasis"],
     technologies: ["vector-surveillance", "mhealth-surveillance", "ai-vector-identification"],
     vectors: ["aedes-aegypti", "aedes-albopictus"],
     terms: ["vector-borne", "one-health"],

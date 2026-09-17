@@ -6,9 +6,24 @@ export const nomaSpike: Spike = {
   summary:
     "Noma begins as a small sore inside the mouth in a child weakened by malnutrition, poor oral hygiene and disease, and can destroy the cheek, lips, nose and jaw within days. It is not caused by a single pathogen but by the mouth's own bacteria in a child whose defences have collapsed, and it is a marker of extreme deprivation rather than a disease that spreads. Most children who develop it die without treatment; survivors are left with severe facial disfigurement, difficulty eating and speaking, and deep social exclusion. The picture has changed in three ways recently: WHO recognised noma as a neglected tropical disease in December 2023, the twenty-first on its list, which brought the first global framework for surveillance and care; researchers identified a previously unknown bacterium strongly associated with the disease, opening a path to earlier diagnosis; and the world's largest surgical programme, in Sokoto, Nigeria, has continued to rebuild faces while calling for the early detection that would make surgery unnecessary.",
   stats: [
-    { label: "New cases a year", value: "≈ 140,000", note: "global estimate" },
+    {
+      label: "New cases a year",
+      value: "140,000",
+      number: 140000,
+      unit: "cases",
+      year: 1998,
+      geography: "global",
+      note: "WHO estimate, with prevalence estimated at 770,000; these are the latest WHO burden estimates",
+      source: { label: "WHO — noma (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/noma" },
+    },
     { label: "Age affected", value: "Children aged 2–6" },
-    { label: "Fatality without treatment", value: "≈ 90%" },
+    {
+      label: "Fatality",
+      value: "≈ 90%",
+      unit: "%",
+      note: "without treatment; recent evidence suggests it can be lower and is greatly reduced by early treatment",
+      source: { label: "WHO — noma (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/noma" },
+    },
     { label: "Added to the WHO NTD list", value: "15 December 2023", note: "the twenty-first NTD" },
     {
       label: "Surgery in Sokoto, Nigeria",

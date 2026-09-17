@@ -1,0 +1,87 @@
+name: Expert verification
+description: Confirm that a page is accurate, or say what is wrong, as someone who works on this topic. No coding required.
+title: "[Verify] "
+labels: ["expert-verification"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for checking a page. Your judgement is the thing this project most needs.
+
+        You do not need to use the site's code. Fill in what you can, and a maintainer will turn it
+        into the record and credit you by name (unless you prefer not to be named). Nothing is marked
+        **expert verified** until a named person has signed it off.
+  - type: input
+    id: record
+    attributes:
+      label: Record id
+      description: Filled in automatically if you used "Verify this page" on the site.
+      placeholder: e.g. buruli-ulcer
+  - type: input
+    id: kind
+    attributes:
+      label: Kind
+      placeholder: e.g. diseases
+  - type: input
+    id: page_url
+    attributes:
+      label: Page URL
+      placeholder: https://ntd.magamios.org/…
+  - type: input
+    id: current_status
+    attributes:
+      label: Current status shown
+      placeholder: unverified / in-review / verified
+  - type: dropdown
+    id: verdict
+    attributes:
+      label: Your verdict
+      options:
+        - I have reviewed the page and it is accurate
+        - It needs corrections (see below)
+        - I reviewed only part of the page
+        - I am not sure / I have a question
+    validations:
+      required: true
+  - type: textarea
+    id: expertise
+    attributes:
+      label: Your expertise, and how you work on this topic
+      description: One or two lines so a reader knows who is vouching for the page.
+      placeholder: e.g. Clinical researcher, Buruli ulcer, 12 years; I run a treatment programme in…
+    validations:
+      required: true
+  - type: textarea
+    id: corrections
+    attributes:
+      label: Corrections or comments
+      description: Quote the sentence you are correcting and say what it should read. Add the source.
+      placeholder: |
+        Sentence: "…"
+        Should read: "…"
+        Source: DOI or URL
+    validations:
+      required: false
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources you rely on
+      description: Free text, DOIs, URLs or citations. A specific document beats a database homepage.
+    validations:
+      required: false
+  - type: input
+    id: reviewer
+    attributes:
+      label: Name and affiliation (for credit)
+      placeholder: Dr A. Example, University of…
+    validations:
+      required: false
+  - type: dropdown
+    id: credit
+    attributes:
+      label: May we credit you by name as the reviewer?
+      options:
+        - "Yes — credit me by name"
+        - "No — keep me anonymous"
+    validations:
+      required: true

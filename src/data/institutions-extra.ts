@@ -18,7 +18,7 @@ export const extraInstitutions: RecordOf<"institutions">[] = [
       { label: "Africa CDC", url: "https://www.africacdc.org/" },
       { label: "Wikipedia — Africa Centres for Disease Control and Prevention", url: "https://en.wikipedia.org/wiki/Africa_Centres_for_Disease_Control_and_Prevention" },
     ],
-    diseases: ["ebola", "dengue-chikungunya", "hat"],
+    diseases: ["ebola", "dengue", "chikungunya", "hat"],
     people: ["john-nkengasong", "jean-kaseya", "chikwe-ihekweazu"],
     institutions: ["who", "cepi", "the-global-fund"],
     technologies: ["genomic-surveillance", "mhealth-surveillance", "ebola-vaccines"],

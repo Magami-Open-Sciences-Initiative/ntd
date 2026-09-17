@@ -6,12 +6,42 @@ export const leishmaniasisSpike: Spike = {
   summary:
     "Leishmaniasis has three faces. Cutaneous leishmaniasis leaves lifelong scars and is a major social burden across the Americas, the Middle East, Central Asia and North Africa. Mucosal leishmaniasis destroys the tissues of the nose and mouth. Visceral leishmaniasis, or kala-azar, attacks the spleen, liver and bone marrow and is fatal without treatment; it is concentrated in South Asia and East Africa. For seventy years the backbone of treatment was pentavalent antimony — painful injections with cardiac and pancreatic toxicity — and the drug was failing in the places that used it most. July 2026 marked a turning point: WHO issued major updates to its treatment guidelines recommending, for the first time, regimens free of sodium stibogluconate, replacing injections with oral miltefosine in eastern Africa and adding shorter options for post-kala-azar dermal leishmaniasis in both regions. South Asia has meanwhile gone furthest of any region toward eliminating visceral leishmaniasis, with Bangladesh becoming the first country validated as having done so and a regional initiative that has cut cases by 95%.",
   stats: [
-    { label: "New cases a year", value: "≈ 1 million", note: "cutaneous and visceral combined" },
-    { label: "People at risk", value: "> 1 billion" },
-    { label: "Visceral disease untreated", value: "Almost always fatal" },
-    { label: "First antimony-free regimens", value: "2026", note: "per WHO's July 2026 guideline update" },
-    { label: "South Asia case reduction", value: "−95%", note: "over two decades of the regional initiative" },
-    { label: "Endemic areas at elimination target", value: "98%", note: "in South Asia" },
+    {
+      label: "New cases a year",
+      value: "700,000–1 million",
+      unit: "cases/year",
+      geography: "global",
+      note: "all forms; only a fraction are reported to WHO",
+      source: { label: "WHO — leishmaniasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/leishmaniasis" },
+    },
+    {
+      label: "Visceral cases a year",
+      value: "50,000–90,000",
+      unit: "cases",
+      geography: "global",
+      note: "only 25–45% are reported to WHO",
+      source: { label: "WHO — leishmaniasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/leishmaniasis" },
+    },
+    {
+      label: "Cutaneous cases a year",
+      value: "600,000–1 million",
+      unit: "cases",
+      geography: "global",
+      note: "about 95% occur in the Americas, the Mediterranean basin, the Middle East and central Asia",
+      source: { label: "WHO — leishmaniasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/leishmaniasis" },
+    },
+    { label: "At risk", value: "> 1 billion", unit: "people", geography: "global", source: { label: "WHO — leishmaniasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/leishmaniasis" } },
+    {
+      label: "Visceral deaths untreated",
+      value: "> 95%",
+      number: 95,
+      unit: "%",
+      note: "fatal if left untreated",
+      source: { label: "WHO — leishmaniasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/leishmaniasis" },
+    },
+    { label: "First antimony-free regimens", value: "2026", year: 2026, note: "per WHO's July 2026 guideline update" },
+    { label: "South Asia case reduction", value: "−95%", unit: "%", note: "over two decades of the regional initiative" },
+    { label: "Endemic areas at elimination target", value: "98%", unit: "%", note: "in South Asia" },
   ],
 
   timeline: [
