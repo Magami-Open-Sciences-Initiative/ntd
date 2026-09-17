@@ -1,0 +1,40 @@
+Magami NTD — data licence
+=========================
+
+The data in this repository (the contents of `src/data/`, and everything derived
+from it: the rendered site, the JSON API, `llms.txt` and `llms-full.txt`) is
+licensed under the Creative Commons Attribution-NonCommercial 4.0 International
+licence (CC BY-NC 4.0).
+
+  https://creativecommons.org/licenses/by-nc/4.0/
+
+You are free to:
+
+  Share — copy and redistribute the material in any medium or format.
+  Adapt — remix, transform, and build upon the material.
+
+Under the following terms:
+
+  Attribution — You must give appropriate credit, and indicate if changes were
+  made. Please credit it as:
+
+      Data from Magami NTD (ntd.magamios.org), a project of the Magami Open
+      Sciences Initiative.
+
+  NonCommercial — You may not use the material for commercial purposes.
+  Commercial use, including incorporation into a paid product or a commercial
+  dataset, requires a licence: contact the Magami Open Sciences Initiative.
+
+No additional restrictions — you may not apply legal terms or technological
+measures that legally restrict others from doing anything the licence permits.
+
+Notes
+-----
+
+- This licence covers the data. The software (everything outside `src/data/`) is
+  licensed under the MIT licence in `LICENSE`.
+- Third-party material remains the property of its owners. Logos, trademarks and
+  quoted material are not covered by this licence, and every record links to its
+  primary source rather than reproducing it.
+- The content is a work in progress and may be incomplete, out of date or wrong.
+  It is not medical advice. Verify anything that matters at its primary source.

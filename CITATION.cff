@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this corpus or site, please cite it as below."
+title: "Magami NTD: an open, cited map of neglected tropical diseases"
+abstract: >-
+  A public, cited knowledge graph of neglected tropical diseases: one page for
+  every disease, pathogen, vector, treatment, diagnostic, target, technology,
+  trial, institution, country, roadmap, guideline, bottleneck and idea, with a
+  plain-English TL;DR and at least one primary source on every page. The corpus
+  ships as a website, a static JSON API, and language-model context files.
+type: dataset
+version: 0.1.0
+date-released: "2026-09-17"
+license:
+  - MIT
+  - CC-BY-NC-4.0
+url: "https://ntd.magamios.org"
+repository-code: "https://github.com/magamios/magami-ntd"
+keywords:
+  - neglected tropical diseases
+  - NTDs
+  - global health
+  - parasitology
+  - open data
+  - knowledge graph
+  - drug discovery
+authors:
+  - name: "Magami Open Sciences Initiative"
+    website: "https://magamios.org"
+message-note: >-
+  Software is MIT licensed; the data is CC BY-NC 4.0, free for individual and
+  educational use with attribution. Commercial use requires a licence.
