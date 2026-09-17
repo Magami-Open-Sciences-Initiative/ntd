@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { KINDS, KIND_META } from "@/lib/schema";
 import { counts, getNode, total } from "@/lib/graph";
-import { entityHref, kindHref, SITE } from "@/lib/nav";
+import { entityHref, kindHref, SITE, withBase } from "@/lib/nav";
 import { KindBadge } from "@/components/ui";
 
 const FEATURED_DISEASES = [
@@ -29,12 +29,12 @@ export default function Home() {
           {SITE.parent} · open science
         </p>
         <h1 className="max-w-4xl font-display text-4xl leading-[1.08] tracking-tight text-ink sm:text-6xl">
-          Total information dominance on neglected tropical diseases.
+          An open, cited map of neglected tropical diseases.
         </h1>
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink-2">
-          Every pathogen, vector, treatment, diagnostic, target, trial, institution, roadmap, bottleneck
-          and idea in the field — linked together, one page each, plain English first. The state of the
-          art, the history, and what is coming.
+          Covering pathogens, vectors, treatments, diagnostics, targets, trials, institutions,
+          roadmaps, bottlenecks and ideas — linked together, one page each, plain English first. The
+          state of the art, the history, and what is coming.
         </p>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink-3">
           {n.toLocaleString()} linked objects. Every count is a link.
@@ -156,7 +156,7 @@ export default function Home() {
             About &amp; methodology
           </Link>
           <a
-            href="/api/v1/index.json"
+            href={withBase("/api/v1/index.json")}
             className="rounded-full border border-line bg-surface px-5 py-2.5 text-sm text-ink-2 transition-colors hover:border-rule hover:text-ink"
           >
             Open data API

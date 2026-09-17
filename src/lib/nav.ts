@@ -1,20 +1,33 @@
 import type { Kind } from "./schema";
 import { KIND_META } from "./schema";
 
+/**
+ * The path the site is served under. Empty at a domain root (local dev, or a
+ * custom domain); "/<repo>" on a GitHub Pages project URL. Set by the deploy
+ * workflow from `actions/configure-pages`.
+ */
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+/** Prefix an internal, root-relative path (a public asset or a plain <a>) with the base path. */
+export function withBase(path: string): string {
+  if (!BASE_PATH || /^https?:\/\//.test(path)) return path;
+  return `${BASE_PATH}${path.startsWith("/") ? "" : "/"}${path}`;
+}
+
 export const SITE = {
   name: "Magami NTD",
   short: "Magami NTD",
   long: "Magami Neglected Tropical Diseases",
   parent: "Magami Open Sciences Initiative",
   parentUrl: "https://magamios.org",
-  /** Set this to the real deployment origin before publishing. */
-  url: "https://magami-open-sciences-initiative.github.io/ntd/",
-  licenceCode: "MIT",
-  licenceData: "CC BY-NC 4.0",
+  /** The public origin. Set by the deploy workflow; the custom domain by default. */
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://ntd.magamios.org",
+  licenceCode: "AGPL-3.0-only",
+  licenceData: "CC BY-SA 4.0",
   tagline:
     "An open, cited map of neglected tropical diseases: pathogens, vectors, treatments, diagnostics, trials, and what is coming.",
   description:
-    "Magami NTD is a public, cited knowledge graph of neglected tropical diseases — one page for every disease, pathogen, vector, treatment, diagnostic, target, technology, trial, institution, roadmap, bottleneck and idea, with a plain-English TL;DR on every page.",
+    "Magami NTD is a public, cited knowledge graph of neglected tropical diseases — one cited, linked page for each object it covers, with a plain-English TL;DR on every page.",
   repo: "https://github.com/Magami-Open-Sciences-Initiative/ntd",
   /** Where verification notes and corrections can be emailed. */
   contactEmail: "hello@magamios.org",

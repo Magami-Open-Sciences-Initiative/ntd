@@ -5,9 +5,6 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# GitHub's recommended Pages pipeline: build the static export, upload it as the
-# Pages artifact, and deploy it. No branch is used, so `out/` never has to be
-# committed.
 permissions:
   contents: read
   pages: write
@@ -32,20 +29,32 @@ jobs:
 
       - run: npm ci
 
-      # `build` runs validate → build:api → build:llms → next build, which
-      # writes the export to `out/`.
+      # Ask GitHub where the site will live. For a project URL this yields
+      # base_path "/ntd" and base_url "https://<owner>.github.io/ntd"; for a
+      # custom domain it yields base_path "" and the domain. The build uses both,
+      # so the same workflow serves either without a code change.
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      # `build` runs validate → build:api → build:llms → next build → out/.
       - name: Build
         run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
 
-      # A custom domain and Jekyll opt-out must exist in the artifact. They ship
-      # in public/ as well; these lines make the deploy robust if that changes.
-      - name: Ensure Pages files are present
+      - name: Prepare Pages files
         run: |
-          test -f out/CNAME || echo "ntd.magamios.org" > out/CNAME
           touch out/.nojekyll
+          # Claim the custom domain only when one is actually configured, so a
+          # project-URL deployment is never hijacked by an unverified domain.
+          case "${{ steps.pages.outputs.base_url }}" in
+            *github.io*) rm -f out/CNAME ;;
+            *) echo "${{ steps.pages.outputs.base_url }}" | sed 's#https\?://##; s#/$##' > out/CNAME ;;
+          esac
+          echo "base_url=${{ steps.pages.outputs.base_url }} base_path=${{ steps.pages.outputs.base_path }}"
           ls -la out | head
-
-      - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:

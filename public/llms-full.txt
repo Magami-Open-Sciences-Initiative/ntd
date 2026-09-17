@@ -1,6 +1,6 @@
 # Magami NTD — full corpus
 
-Generated from the corpus. 509 objects. Licence: data CC BY-NC 4.0; code MIT.
+Generated from the corpus. 509 objects. Licence: data CC BY-SA 4.0; code AGPL-3.0-only.
 Attribution: "Magami NTD (https://ntd.magamios.org)". Verify at source. Not medical advice.
 
 

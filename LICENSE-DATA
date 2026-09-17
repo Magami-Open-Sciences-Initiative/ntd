@@ -3,27 +3,29 @@ Magami NTD — data licence
 
 The data in this repository (the contents of `src/data/`, and everything derived
 from it: the rendered site, the JSON API, `llms.txt` and `llms-full.txt`) is
-licensed under the Creative Commons Attribution-NonCommercial 4.0 International
-licence (CC BY-NC 4.0).
+licensed under the Creative Commons Attribution-ShareAlike 4.0 International
+licence (CC BY-SA 4.0).
 
-  https://creativecommons.org/licenses/by-nc/4.0/
+  https://creativecommons.org/licenses/by-sa/4.0/
 
 You are free to:
 
-  Share — copy and redistribute the material in any medium or format.
-  Adapt — remix, transform, and build upon the material.
+  Share — copy and redistribute the material in any medium or format, for any
+  purpose, including commercially.
+  Adapt — remix, transform, and build upon the material for any purpose,
+  including commercially.
 
 Under the following terms:
 
-  Attribution — You must give appropriate credit, and indicate if changes were
-  made. Please credit it as:
+  Attribution — You must give appropriate credit, provide a link to the licence,
+  and indicate if changes were made. Please credit it as:
 
       Data from Magami NTD (ntd.magamios.org), a project of the Magami Open
-      Sciences Initiative.
+      Sciences Initiative, licensed CC BY-SA 4.0.
 
-  NonCommercial — You may not use the material for commercial purposes.
-  Commercial use, including incorporation into a paid product or a commercial
-  dataset, requires a licence: contact the Magami Open Sciences Initiative.
+  ShareAlike — If you remix, transform, or build upon the material, you must
+  distribute your contributions under the same licence as the original. You may
+  not relicense a derivative under more restrictive terms.
 
 No additional restrictions — you may not apply legal terms or technological
 measures that legally restrict others from doing anything the licence permits.
@@ -32,7 +34,11 @@ Notes
 -----
 
 - This licence covers the data. The software (everything outside `src/data/`) is
-  licensed under the MIT licence in `LICENSE`.
+  licensed under the GNU Affero General Public License v3.0 in `LICENSE`. If you
+  run a modified version of this site as a network service, section 13 of that
+  licence requires you to offer its users the corresponding source.
+- Attribution and ShareAlike are the point: the corpus may be reused and
+  improved freely, including commercially, but it must stay open and credited.
 - Third-party material remains the property of its owners. Logos, trademarks and
   quoted material are not covered by this licence, and every record links to its
   primary source rather than reproducing it.

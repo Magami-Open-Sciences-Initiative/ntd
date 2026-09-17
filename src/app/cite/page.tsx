@@ -116,12 +116,15 @@ ER  - `}</Example>
         <div className="prose-magami">
           <p>
             <strong className="text-ink">Data:</strong> {SITE.licenceData}. Free to share and adapt
-            for non-commercial use, with attribution. Anywhere you reuse it, include the line{" "}
-            <em>&ldquo;Data from {SITE.name} ({SITE.url.replace(/^https?:\/\//, "")})&rdquo;</em> and
-            a link. Commercial use needs a licence — please get in touch.
+            for any purpose, including commercial, provided you give attribution and keep
+            derivatives under the same licence. Anywhere you reuse it, include the line{" "}
+            <em>&ldquo;Data from {SITE.name} ({SITE.url.replace(/^https?:\/\//, "")})&rdquo;</em>, a
+            link to the licence, and a note of any changes you made.
           </p>
           <p>
-            <strong className="text-ink">Code:</strong> {SITE.licenceCode}. See{" "}
+            <strong className="text-ink">Code:</strong> {SITE.licenceCode}. You may use and modify
+            it freely, but if you run a modified version as a network service, section 13 of the
+            licence requires you to offer its users the corresponding source. See{" "}
             <span className="font-mono text-xs">LICENSE</span> and{" "}
             <span className="font-mono text-xs">LICENSE-DATA</span> in the repository.
           </p>

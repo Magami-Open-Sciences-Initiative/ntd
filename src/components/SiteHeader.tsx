@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NAV, SITE } from "@/lib/nav";
+import { NAV, SITE, withBase } from "@/lib/nav";
 import { ThemeToggle } from "./ThemeToggle";
 import { LangSwitch } from "./LangSwitch";
 
@@ -90,8 +90,11 @@ export function SiteFooter() {
           <Link className="link-underline" href="/status/">
             Data currency
           </Link>
-          <a className="link-underline" href="/api/v1/index.json">
+          <a className="link-underline" href={withBase("/api/v1/index.json")}>
             Open data API
+          </a>
+          <a className="link-underline" href={SITE.repo} target="_blank" rel="noreferrer">
+            Source code
           </a>
           <span>
             Last corpus update {SITE.updated}

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { KINDS, KIND_META } from "@/lib/schema";
 import { counts, total } from "@/lib/graph";
-import { kindHref, SITE } from "@/lib/nav";
+import { kindHref, SITE, withBase } from "@/lib/nav";
 
 export const metadata: Metadata = { title: "About & methodology" };
 
@@ -34,7 +34,7 @@ export default function AboutPage() {
         <p>
           Counts and dates are computed at build time from the corpus, never written into the copy, so
           they cannot go stale. The same corpus is published as a static JSON API under{" "}
-          <a className="link-underline" href="/api/v1/index.json">
+          <a className="link-underline" href={withBase("/api/v1/index.json")}>
             /api/v1/
           </a>
           , and it is designed so that a machine can read it as easily as a person.

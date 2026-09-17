@@ -2,7 +2,7 @@
   "name": "magami-ntd",
   "version": "0.1.0",
   "private": true,
-  "description": "Magami NTD — an open, cited map of neglected tropical diseases: pathogens, vectors, treatments, diagnostics, trials, and what is coming.",
+  "description": "Magami NTD \u2014 an open, cited map of neglected tropical diseases: pathogens, vectors, treatments, diagnostics, trials, and what is coming.",
   "scripts": {
     "dev": "next dev",
     "build": "npm run validate && npm run build:api && npm run build:llms && next build",
@@ -36,5 +36,6 @@
     "tsx": "4.20.5",
     "typescript": "5.9.3",
     "vitest": "3.2.4"
-  }
+  },
+  "license": "AGPL-3.0-only"
 }

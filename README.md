@@ -276,8 +276,9 @@ several files into one kind, so nothing in the base files needs editing.
 
 ## Licence, citation and machine access
 
-- Code: MIT (`LICENSE`). Data: CC BY-NC 4.0 (`LICENSE-DATA`), free for individual and
-  educational use credited as "Data from Magami NTD (ntd.magamios.org)".
+- Code: AGPL-3.0-only (`LICENSE`). Data: CC BY-SA 4.0 (`LICENSE-DATA`) — free to reuse,
+  including commercially, with attribution and share-alike, so derivatives stay open.
+  Credit it as "Data from Magami NTD (ntd.magamios.org)".
 - Citation metadata: `CITATION.cff`.
 - Machine access: `/api/v1/index.json` (JSON API), `/llms.txt` and `/llms-full.txt`
   (language-model context files), `/sitemap.xml`, `/robots.txt`.
@@ -308,23 +309,28 @@ with GitHub's Pages Actions pipeline on every push to `main` (or manually via
 CNAME   ntd   magami-open-sciences-initiative.github.io.
 ```
 
-A `public/CNAME` file and a `public/.nojekyll` file ship in the export, so the custom domain and
-the `_next/` directory survive even if the project is deployed from a branch instead
-(`gh-pages` or `/docs`).
+**It works at both URLs automatically.** The workflow runs `actions/configure-pages` before the
+build and passes its outputs in as environment variables, so the export adapts to wherever GitHub
+serves it:
 
-**Custom domain vs. project URL.** `SITE.url` in `src/lib/nav.ts` is `https://ntd.magamios.org`,
-which is what canonical URLs, OpenGraph tags, JSON-LD, the sitemap and every contribution link
-use. If you instead serve the site from the default project URL
-(`https://<org>.github.io/ntd/`) with no custom domain, set `SITE.url` to that URL **and** add to
-`next.config.ts`:
+| Where the site is served | `base_path` | Assets resolve as |
+|---|---|---|
+| Project URL `https://<org>.github.io/ntd/` | `/ntd` | `/ntd/_next/…`, `/ntd/diseases/…` |
+| Custom domain `https://ntd.magamios.org/` | *(empty)* | `/_next/…`, `/diseases/…` |
 
-```ts
-basePath: "/ntd",
-assetPrefix: "/ntd",
-```
+`next.config.ts` sets `basePath`/`assetPrefix` from `NEXT_PUBLIC_BASE_PATH`, and `SITE.url` (used
+for canonical URLs, OpenGraph, JSON-LD, the sitemap and the contribution links) comes from
+`NEXT_PUBLIC_SITE_URL`, defaulting to `https://ntd.magamios.org`. A plain `npm run build` with no
+environment variables produces the root/custom-domain build.
 
-Without the `basePath` the pages load but their CSS, JS and images 404, because the export assumes
-it is served from the root of `ntd.magamios.org`.
+Until the DNS record and the custom domain are set, the site is served at the project URL and the
+build uses `basePath: "/ntd"`. **If you deploy and see unstyled, bare-text pages, the cause is
+always this mismatch** — assets without the `/ntd` prefix 404 under the project URL — and re-running
+the deploy (or adding the custom domain) fixes it.
+
+A `.nojekyll` file is written into the artifact so the `_next/` directory is served. The workflow
+writes a `CNAME` file only when a custom domain is actually configured, so a project-URL deployment
+is never hijacked by an unverified domain.
 
 CI (`.github/workflows/ci.yml`) still runs `validate`, `typecheck`, `lint`, `test` and the build on
 every push and pull request, and reports source-link health; the deploy workflow only runs on

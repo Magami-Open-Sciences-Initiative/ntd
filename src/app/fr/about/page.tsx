@@ -100,8 +100,8 @@ export default function FrAbout() {
 
       <div className="mt-10 rounded-xl border border-line bg-bg-alt p-5 text-sm text-ink-2">
         <p>
-          Code sous licence MIT ; données sous licence CC BY-NC 4.0, libres pour un usage individuel
-          et éducatif avec attribution à {SITE.name}.
+          Code sous licence AGPL-3.0 ; données sous licence CC BY-SA 4.0 — réutilisation libre, y
+          compris commerciale, avec attribution et partage à l’identique.
         </p>
         <p className="mt-2">
           <Link href="/about/" className="link-underline text-ink">

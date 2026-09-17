@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { KIND_FIELDS, KIND_META, type Stat } from "@/lib/schema";
 import { backlinksByKind, resolve, type Node } from "@/lib/graph";
-import { entityHref } from "@/lib/nav";
+import { entityHref, withBase } from "@/lib/nav";
 import { citeData } from "@/lib/cite";
 import { Chip, KindBadge, SectionHeading, StatGrid } from "./ui";
 import { CiteBlock } from "./CiteBlock";
@@ -255,7 +255,7 @@ export function EntityDetail({ node }: { node: Node }) {
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={st.image}
+                      src={withBase(String(st.image))}
                       alt={`Chemical structure of ${node.name}`}
                       width={400}
                       height={400}

@@ -109,5 +109,6 @@ into `ALL_INPUTS` in `src/data/index.ts`, a group field in
 
 ## Licence
 
-By contributing you agree that code is licensed under MIT and data under
-CC BY-NC 4.0. See `LICENSE` and `LICENSE-DATA`.
+By contributing you agree that code is licensed under AGPL-3.0-only and data
+under CC BY-SA 4.0 — both require attribution and keep derivatives open. See
+`LICENSE` and `LICENSE-DATA`.

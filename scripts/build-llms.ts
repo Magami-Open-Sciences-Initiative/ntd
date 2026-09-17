@@ -34,8 +34,7 @@ or wrong. Verify anything that matters at its primary source. Nothing here is me
 ${KINDS.map((k) => `- ${KIND_META[k].plural} (${counts[k]}): ${base}/${k}/ — ${KIND_META[k].blurb}`).join("\n")}
 
 ## Licence
-Code: ${SITE.licenceCode}. Data: ${SITE.licenceData}, free for individual and educational use with
-attribution to "${SITE.name} (${base})". Commercial use must contact us.
+Code: ${SITE.licenceCode}. Data: ${SITE.licenceData}, free to reuse (including commercially) with attribution and share-alike, so derivatives stay open. Credit it as "${SITE.name} (${base})".
 `;
 writeFileSync(join(OUT, "llms.txt"), llms);
 

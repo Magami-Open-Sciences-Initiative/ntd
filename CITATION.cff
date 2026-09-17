@@ -11,10 +11,10 @@ type: dataset
 version: 0.1.0
 date-released: "2026-09-17"
 license:
-  - MIT
-  - CC-BY-NC-4.0
+  - AGPL-3.0-only
+  - CC-BY-SA-4.0
 url: "https://ntd.magamios.org"
-repository-code: "https://github.com/magamios/magami-ntd"
+repository-code: "https://github.com/Magami-Open-Sciences-Initiative/ntd"
 keywords:
   - neglected tropical diseases
   - NTDs
@@ -27,5 +27,5 @@ authors:
   - name: "Magami Open Sciences Initiative"
     website: "https://magamios.org"
 message-note: >-
-  Software is MIT licensed; the data is CC BY-NC 4.0, free for individual and
-  educational use with attribution. Commercial use requires a licence.
+  Software is AGPL-3.0-only; the data is CC BY-SA 4.0, free to reuse (including
+  commercially) with attribution and share-alike, so derivatives stay open.

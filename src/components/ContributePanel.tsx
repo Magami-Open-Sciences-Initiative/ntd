@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { correctionMailtoUrl, issueUrl, mailtoUrl, pageUrl, verificationStatement } from "@/lib/contribute";
-import { SITE } from "@/lib/nav";
+import { SITE, withBase } from "@/lib/nav";
 
 export function ContributePanel({
   kind,
@@ -117,7 +117,7 @@ export function ContributePanel({
         >
           Correction form →
         </a>
-        <a href={SITE.contribute} className="link-underline text-sm text-ink-2 hover:text-ink">
+        <a href={withBase(SITE.contribute)} className="link-underline text-sm text-ink-2 hover:text-ink">
           How contributing works →
         </a>
       </div>

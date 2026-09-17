@@ -1,6 +1,6 @@
 # Magami NTD
 
-> Magami NTD is a public, cited knowledge graph of neglected tropical diseases — one page for every disease, pathogen, vector, treatment, diagnostic, target, technology, trial, institution, roadmap, bottleneck and idea, with a plain-English TL;DR on every page.
+> Magami NTD is a public, cited knowledge graph of neglected tropical diseases — one cited, linked page for each object it covers, with a plain-English TL;DR on every page.
 
 Magami NTD is a project of Magami Open Sciences Initiative (https://magamios.org). It is 509 linked
 objects across 16 kinds, generated from an open corpus. Every object has a plain-English
@@ -34,5 +34,4 @@ or wrong. Verify anything that matters at its primary source. Nothing here is me
 - Glossary (40): https://ntd.magamios.org/terms/ — Plain-English definitions of the words this field uses.
 
 ## Licence
-Code: MIT. Data: CC BY-NC 4.0, free for individual and educational use with
-attribution to "Magami NTD (https://ntd.magamios.org)". Commercial use must contact us.
+Code: AGPL-3.0-only. Data: CC BY-SA 4.0, free to reuse (including commercially) with attribution and share-alike, so derivatives stay open. Credit it as "Magami NTD (https://ntd.magamios.org)".

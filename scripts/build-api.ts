@@ -25,7 +25,7 @@ const index = {
   name: SITE.name,
   description:
     "An open, cited map of neglected tropical diseases. One page per object; every count is a link.",
-  licence: `Code ${SITE.licenceCode}; data ${SITE.licenceData}, free for individual and educational use with attribution.`,
+  licence: `Code ${SITE.licenceCode}; data ${SITE.licenceData}, free to reuse (including commercially) with attribution and share-alike, so derivatives stay open.`,
   citation: {
     plain: `${SITE.parent}. ${SITE.name}. ${SITE.url}`,
     attribution: `Data from ${SITE.name} (${SITE.url.replace(/^https?:\/\//, "")})`,

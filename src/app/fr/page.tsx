@@ -3,7 +3,7 @@ import Link from "next/link";
 import { listKind, counts, total } from "@/lib/graph";
 import { KINDS } from "@/lib/schema";
 import { KIND_FR, UI, frFor } from "@/lib/i18n";
-import { SITE } from "@/lib/nav";
+import { SITE, withBase } from "@/lib/nav";
 
 const t = UI.fr;
 
@@ -139,7 +139,7 @@ export default function FrHome() {
             {t.aboutLink}
           </Link>
           <a
-            href="/api/v1/index.json"
+            href={withBase("/api/v1/index.json")}
             className="rounded-full border border-line bg-surface px-5 py-2.5 text-sm text-ink-2 transition-colors hover:border-rule hover:text-ink"
           >
             {t.apiLink}
