@@ -4,7 +4,7 @@ export const chagasSpike: Spike = {
   tldr: "An American trypanosome infection spread by kissing bugs, blood transfusion and from mother to child that damages the heart decades after it begins — and that most of the people carrying it have never been diagnosed.",
 
   summary:
-    "Chagas disease is caused by Trypanosoma cruzi and affects six to seven million people, mostly in Latin America, though migration has made it a concern in the United States, Europe and beyond. The acute phase is usually mild and unnoticed; up to a third of those infected develop chronic cardiac disease with arrhythmias, heart failure or sudden death, and some develop digestive complications. Two old drugs, benznidazole and nifurtimox, cure it well in the acute phase and in children but are far less effective once the heart is involved, and the sixty-day course with frequent side effects means many people never finish treatment. The defining fact of the disease is the care gap: the great majority of infected people do not know it, so they are neither treated nor monitored. PAHO's Elimination Initiative and the Unitaid-funded CUIDA Chagas project are now built around closing that gap, with congenital transmission — from mother to newborn — as the priority route. A better drug remains elusive: fexinidazole, which looked promising in an early Chagas trial, did not eliminate the parasite in follow-up, and the next candidate will not begin proof-of-concept testing until late 2026.",
+    "Chagas disease is caused by Trypanosoma cruzi and affects about 8 million people, mostly in Latin America, though migration has made it a concern in the United States, Europe and beyond. The acute phase is usually mild and unnoticed; up to a third of those infected develop chronic cardiac disease with arrhythmias, heart failure or sudden death, and some develop digestive complications. Two old drugs, benznidazole and nifurtimox, cure it well in the acute phase and in children but are far less effective once the heart is involved, and the sixty-day course with frequent side effects means many people never finish treatment. The defining fact of the disease is the care gap: the great majority of infected people do not know it, so they are neither treated nor monitored. PAHO's Elimination Initiative and the Unitaid-funded CUIDA Chagas project are now built around closing that gap, with congenital transmission — from mother to newborn — as the priority route. A better drug remains elusive: fexinidazole, which looked promising in an early Chagas trial, did not eliminate the parasite in follow-up (FEXI-12), and the next candidate, the oral CPSF3 inhibitor AN2-502998, is expected to begin Phase II proof-of-concept testing in late 2026.",
 
   stats: [
     {
@@ -12,9 +12,9 @@ export const chagasSpike: Spike = {
       value: "8 million",
       number: 8,
       unit: "million people",
-      year: 2024,
+      year: 2026,
       geography: "global (mainly Latin America)",
-      note: "WHO estimate",
+      note: "WHO estimate, April 2026",
       source: { label: "WHO — Chagas disease (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/chagas-disease-(american-trypanosomiasis)" },
     },
     {
@@ -22,9 +22,9 @@ export const chagasSpike: Spike = {
       value: "> 10,000",
       number: 10000,
       unit: "deaths",
-      year: 2024,
+      year: 2026,
       geography: "global",
-      note: "WHO estimate",
+      note: "WHO estimate; PAHO estimates about 12,000",
       source: { label: "WHO — Chagas disease (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/chagas-disease-(american-trypanosomiasis)" },
     },
     {
@@ -38,16 +38,17 @@ export const chagasSpike: Spike = {
     {
       label: "Undiagnosed",
       value: "The great majority",
-      note: "most infected people have never been tested, let alone treated",
+      note: "most infected people have never been tested, let alone treated; DNDi estimates fewer than 10% know their status",
+      source: { label: "DNDi — Chagas disease", url: "https://dndi.org/diseases/chagas/" },
     },
     {
-      label: "Vector transmission interrupted",
-      value: "17 countries",
-      number: 17,
+      label: "Vector transmission verified interrupted",
+      value: "8 countries",
+      number: 8,
       unit: "countries",
       geography: "Americas",
-      note: "in all or part of their territory (PAHO)",
-      source: { label: "PAHO — Chagas disease", url: "https://www.paho.org/en/topics/chagas-disease" },
+      note: "verified interruption of domiciliary vectorial transmission: full territory in Chile, Paraguay and Uruguay, plus part of the territory in Argentina, Brazil, Colombia, Peru and Bolivia (WHO 2026); 17 countries claimed interruption under the sub-regional initiatives (PAHO)",
+      source: { label: "WHO — Chagas disease (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/chagas-disease-(american-trypanosomiasis)" },
     },
     {
       label: "Blood donors screened",
@@ -55,7 +56,7 @@ export const chagasSpike: Spike = {
       number: 21,
       unit: "endemic countries",
       geography: "Americas",
-      note: "universal screening introduced",
+      note: "universal screening in all blood banks of the 21 continental Latin American countries",
       source: { label: "WHO — Chagas disease (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/chagas-disease-(american-trypanosomiasis)" },
     },
     {
@@ -66,10 +67,11 @@ export const chagasSpike: Spike = {
     },
     {
       label: "Treatment course",
-      value: "60 days",
+      value: "60 days (benznidazole); 60–90 days (nifurtimox)",
       number: 60,
       unit: "days",
       note: "benznidazole or nifurtimox; adverse reactions in up to 40% of adults",
+      source: { label: "WHO — Chagas disease (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/chagas-disease-(american-trypanosomiasis)" },
     },
   ],
 
@@ -84,14 +86,14 @@ export const chagasSpike: Spike = {
       refs: ["indoor-residual-spraying", "triatomine-bug"],
     },
     {
-      date: "2017",
-      text: "Benznidazole is approved in the United States for children aged 2 to 12, widening access outside Latin America.",
-      refs: ["benznidazole"],
-    },
-    {
       date: "2015",
       text: "The BENEFIT trial reports that benznidazole reduced parasite detection but did not improve cardiac outcomes in established disease.",
       refs: ["benefit-chagas"],
+    },
+    {
+      date: "2017",
+      text: "Benznidazole is approved in the United States for children aged 2 to 12, widening access outside Latin America.",
+      refs: ["benznidazole"],
     },
     {
       date: "2022",
@@ -100,13 +102,13 @@ export const chagasSpike: Spike = {
     },
     {
       date: "2024",
-      text: "A follow-up trial confirms fexinidazole's tolerability but not its ability to eliminate the parasite, ending its Chagas candidacy.",
+      text: "The FEXI-12 follow-up trial confirms fexinidazole's tolerability but not its ability to eliminate the parasite, ending its Chagas monotherapy candidacy.",
       refs: ["fexinidazole-chagas", "fexinidazole"],
     },
     {
       date: "2026",
-      text: "DNDi and AN2 prepare a Phase II proof-of-concept study of a new Chagas candidate, to begin in Latin America.",
-      refs: ["dndi", "open-science-drug-discovery"],
+      text: "DNDi and AN2 report 100% parasite elimination in naturally infected primates and a clean Phase 1 profile for the oral CPSF3 inhibitor AN2-502998, with a Phase II proof-of-concept study to begin in Latin America late in the year.",
+      refs: ["dndi", "an2-502998", "an2-502998-phase2"],
     },
   ],
 
@@ -123,7 +125,7 @@ export const chagasSpike: Spike = {
       title: "What failed: fexinidazole and the hunt for a better drug",
       body:
         "Fexinidazole is one of the great NTD success stories for sleeping sickness — the first all-oral cure. It was therefore reasonable to hope it would work for Chagas disease, which is caused by a related trypanosome. An early Phase 2 trial in chronic Chagas was encouraging enough to raise hopes, showing high efficacy at treatment durations of less than three days, but the study was interrupted for tolerability reasons.\n\nThe fuller answer came later and was negative. A follow-up trial confirmed that fexinidazole was well tolerated but found that it did not eliminate the parasite — the drug was not effective for Chagas. This is the ordinary, unglamorous reality of antiparasitic drug development, and it is why DNDi's pipeline has moved on. A new Phase II proof-of-concept study with AN2 is planned to begin in Latin America in late 2026, drawing on trial sites and infrastructure built over years. Until something works, the field is stuck with two drugs from the 1960s and 1970s.",
-      refs: ["fexinidazole-chagas", "dndi", "cruzain", "cyp51", "ntd-drug-discovery-roadmap", "funding-gap"],
+      refs: ["fexinidazole-chagas", "dndi", "cruzain", "cyp51", "trypanosome-nitroreductase", "ntd-drug-discovery-roadmap", "funding-gap"],
     },
     {
       id: "elimination-push",
@@ -155,7 +157,7 @@ export const chagasSpike: Spike = {
     },
   ],
 
-  trials: ["fexinidazole-chagas"],
-  institutions: ["paho", "cuida-chagas", "dndi", "fiocruz", "cideim", "who"],
+  trials: ["benefit-chagas", "fexinidazole-chagas", "multibenz-2024", "nuestroben-short-bzn"],
+  institutions: ["paho", "cuida-chagas", "dndi", "fiocruz", "cideim", "who", "unitaid"],
   terms: ["congenital-chagas"],
 };

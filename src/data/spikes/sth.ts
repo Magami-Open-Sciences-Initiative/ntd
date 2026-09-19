@@ -47,7 +47,30 @@ export const sthSpike: Spike = {
     { label: "Hookworm share of burden", value: "> 50%", unit: "%", note: "of STH-related DALYs" },
     { label: "WHO 2030 target", value: "Elimination as a public health problem", note: "moderate-to-heavy infections below 2%" },
     { label: "Single-dose albendazole vs Trichuris", value: "Poor", note: "the weak point of mass treatment" },
-    { label: "Moxidectin + albendazole", value: "69% cure", number: 69, unit: "%", note: "for trichuriasis, in a 2025 trial" },
+    {
+      label: "Moxidectin + albendazole",
+      value: "69% cure",
+      number: 69,
+      unit: "%",
+      note: "for trichuriasis in a 2025 Phase 3 trial — against 16% for albendazole alone",
+      source: { label: "Schnoz et al., Lancet Infect Dis 2025", url: "https://pubmed.ncbi.nlm.nih.gov/40675166/" },
+    },
+    {
+      label: "DALYs lost (2010–2019)",
+      value: "−50% or more",
+      unit: "%",
+      geography: "global",
+      note: "the decade of scaled-up preventive chemotherapy",
+      source: { label: "WHO — soil-transmitted helminth infections (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/soil-transmitted-helminth-infections" },
+    },
+    {
+      label: "Women treated via LF programmes",
+      value: "> 99 million",
+      number: 99,
+      unit: "million women",
+      note: "women of reproductive age given albendazole through lymphatic filariasis elimination, 2021",
+      source: { label: "WHO — soil-transmitted helminth infections (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/soil-transmitted-helminth-infections" },
+    },
   ],
 
   timeline: [
@@ -68,7 +91,7 @@ export const sthSpike: Spike = {
     },
     {
       date: "2025",
-      text: "A trial reports that moxidectin combined with albendazole cures 69% of trichuriasis, far better than albendazole alone.",
+      text: "A Phase 3 trial reports that moxidectin combined with albendazole cures 69% of trichuriasis, against only 16% for albendazole alone.",
       refs: ["moxidectin", "albendazole"],
     },
     {
@@ -90,14 +113,14 @@ export const sthSpike: Spike = {
       id: "combinations",
       title: "Combinations and the newer drugs",
       body:
-        "The answer to uneven efficacy is combinations. Moxidectin with albendazole cured 69% of trichuriasis in a 2025 trial, substantially better than albendazole alone, and moxidectin is already approved for onchocerciasis, which means its safety profile in humans is established. Triple-dose albendazole improves results against Ascaris and hookworm but only moderately against Trichuris. Tribendimidine, developed and used in China, acts on a different receptor and is active against worms that respond poorly to benzimidazoles, making it a candidate for rotation.\n\nEmodepside, discussed elsewhere for filarial disease, is also in development for STH and works through a different channel from ivermectin. The strategic point is that a mass-treatment programme should not depend on one drug class, and for Trichuris that dependence has been the weak link for twenty years.",
+        "The answer to uneven efficacy is combinations. Moxidectin with albendazole cured 69% of trichuriasis in a 2025 Phase 3 trial, against just 16% for albendazole alone — a 53-point gap — and moxidectin is already approved for onchocerciasis, which means its safety profile in humans is established. Triple-dose albendazole improves results against Ascaris and hookworm but only moderately against Trichuris. Tribendimidine, developed and used in China, acts on a different receptor and is active against worms that respond poorly to benzimidazoles, making it a candidate for rotation.\n\nEmodepside, discussed elsewhere for filarial disease, is also in development for STH and works through a different channel from ivermectin. The strategic point is that a mass-treatment programme should not depend on one drug class, and for Trichuris that dependence has been the weak link for twenty years.",
       refs: ["moxidectin", "albendazole", "tribendimidine", "emodepside", "slo-1", "drug-repurposing"],
     },
     {
       id: "guidance",
       title: "New WHO guidance and the shift to elimination",
       body:
-        "WHO's 2024 guidance on accelerating elimination of schistosomiasis and intestinal helminthiasis revised the programme parameters, and a separate 2024 guideline addressed the public health control of strongyloidiasis — a worm transmitted through skin contact with contaminated soil in the same communities, and one that can cause fatal hyperinfection in people given steroids. Adding Strongyloides to the STH agenda matters because it is invisible to the standard stool tests and does not respond well to albendazole.\n\nThe 2030 goal is elimination as a public health problem rather than interruption of transmission, defined by reducing the prevalence of moderate-to-heavy intensity infections below 2%. That threshold is deliberately different from zero: STH cannot easily be eradicated while sanitation and soil remain contaminated, but the morbidity — the anaemia, stunting and poor school performance — can be driven down and kept down.",
+        "WHO's 2024 guidance on accelerating elimination of schistosomiasis and intestinal helminthiasis revised the programme parameters, and a separate 2024 guideline addressed the public health control of strongyloidiasis — a worm transmitted through skin contact with contaminated soil in the same communities, and one that can cause fatal hyperinfection in people given steroids. Adding Strongyloides to the STH agenda matters because it is invisible to the standard stool tests and does not respond well to albendazole.\n\nThe 2030 goal is elimination as a public health problem rather than interruption of transmission, defined by reducing the prevalence of moderate-to-heavy intensity infections below 2%. That threshold is deliberately different from zero: STH cannot easily be eradicated while sanitation and soil remain contaminated, but the morbidity — the anaemia, stunting and poor school performance — can be driven down and kept down. WHO has set six 2030 targets, of which the last is the honest one: universal access to at least basic sanitation and hygiene in STH-endemic areas, without which the drug has to be given forever.",
       refs: ["who", "strongyloidiasis", "elimination", "eot", "wash-interventions"],
     },
     {
@@ -117,6 +140,9 @@ export const sthSpike: Spike = {
   ],
 
   diagnostics: ["mini-flotac"],
-  institutions: ["sabin-vaccine-institute", "who"],
+  trials: ["mox-alb-trichuris-phase3", "emodepside-strongyloides"],
+  guidelines: ["who-strongyloidiasis-guideline-2024"],
+  people: ["stella-kepha", "moudachirou-ibikounle"],
+  institutions: ["sabin-vaccine-institute", "who", "ivo-de-carneri"],
   terms: ["strongyloidiasis"],
 };

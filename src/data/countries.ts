@@ -1,4 +1,5 @@
 import type { RecordOf } from "@/lib/schema";
+import { iso2, iso3, geonames } from "./codes";
 
 const who = (iso3: string, label: string) => ({
   label: `WHO — ${label}`,
@@ -9,6 +10,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "nigeria",
     name: "Nigeria",
+    codes: [iso2("NG"), iso3("NGA"), geonames("2328926")],
     tldr: "The country with the largest NTD burden in Africa, and the one whose programmes shape the continent's elimination prospects.",
     summary:
       "Nigeria carries the heaviest concentration of neglected tropical diseases in Africa: lymphatic filariasis, onchocerciasis, schistosomiasis, soil-transmitted helminths and trachoma are all endemic at scale, and it has the world's highest burden of noma and one of the highest of snakebite. With roughly a fifth of Africa's population, its programme performance determines whether continental elimination targets are met. It also has genuine strengths: a national NTD programme that runs mass administration at very large scale, a specialist noma hospital in Sokoto, and research institutions that lead on Buruli ulcer and yaws.",
@@ -34,6 +36,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "dr-congo",
     name: "Democratic Republic of the Congo",
+    codes: [iso2("CD"), iso3("COD"), geonames("203312")],
     tldr: "The last great stronghold of sleeping sickness and a centre of onchocerciasis, lymphatic filariasis and schistosomiasis.",
     summary:
       "The Democratic Republic of the Congo reports more than half of all human African trypanosomiasis cases in Africa — 330 of roughly 600 in 2024 — which makes its national programme the decisive one for eliminating the disease. It also carries a heavy burden of onchocerciasis, lymphatic filariasis, schistosomiasis, soil-transmitted helminths, leprosy and rabies. Its size, weak road network and areas of conflict make delivery and surveillance exceptionally difficult, and it was the first country to register acoziborole after its European approval, a signal of how central it is to the endgame.",
@@ -58,6 +61,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "india",
     name: "India",
+    codes: [iso2("IN"), iso3("IND"), geonames("1269750")],
     tldr: "The world's largest leprosy and lymphatic filariasis burden, and the country that has driven kala-azar and trachoma to elimination.",
     summary:
       "India accounts for the largest single share of global leprosy and lymphatic filariasis, and it has been the site of some of the field's biggest successes: visceral leishmaniasis has been driven to the elimination threshold across the endemic districts of Bihar and neighbouring states, and trachoma has been eliminated and validated. It also carries substantial soil-transmitted helminth, schistosomiasis-adjacent and dengue burden, and a very large snakebite burden concentrated in rural agricultural communities.",
@@ -83,6 +87,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "ethiopia",
     name: "Ethiopia",
+    codes: [iso2("ET"), iso3("ETH"), geonames("337996")],
     tldr: "A high-burden country across almost the whole NTD list, and the site of the world's first large-scale snakebite and podoconiosis work.",
     summary:
       "Ethiopia has one of the broadest NTD portfolios in Africa: soil-transmitted helminths and schistosomiasis at huge scale, trachoma and lymphatic filariasis, onchocerciasis, visceral leishmaniasis in the lowlands, and rabies and snakebite. It is also one of the countries where guinea worm still appears, with dog, cat and baboon infections complicating the final push. Its research institutions and field programmes are among the strongest on the continent, which is why it is a trial site for several new treatments.",
@@ -107,6 +112,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "brazil",
     name: "Brazil",
+    codes: [iso2("BR"), iso3("BRA"), geonames("3469034")],
     tldr: "The country that eliminated lymphatic filariasis, developed a single-dose dengue vaccine, and carries most of the Americas' Chagas and leishmaniasis burden.",
     summary:
       "Brazil is the most consequential NTD country in the Americas. It was validated as having eliminated lymphatic filariasis as a public health problem in 2024, it has the region's largest Chagas disease burden alongside leishmaniasis in its many forms, and it developed and approved Butantan-DV, the world's first single-dose dengue vaccine. Leprosy remains a large burden, and schistosomiasis is endemic in the northeast. Its public research and manufacturing institutions — Fiocruz and Butantan — are among the few in the world that combine research, development and production for neglected diseases.",
@@ -132,6 +138,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "sudan",
     name: "Sudan",
+    codes: [iso2("SD"), iso3("SDN"), geonames("366755")],
     tldr: "The world centre of mycetoma and a major visceral leishmaniasis burden, whose health system has been devastated by war.",
     summary:
       "Sudan is the country with the greatest burden of mycetoma, home to the Mycetoma Research Centre at the University of Khartoum that was for decades the global hub for the disease. It also carries a large visceral leishmaniasis burden, schistosomiasis and soil-transmitted helminths, trachoma and snakebite. Since war began in 2023, clinics, research and surveillance have been disrupted, patients displaced, and the first randomised mycetoma trial reported into a country whose health system was collapsing around it.",
@@ -156,6 +163,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "south-sudan",
     name: "South Sudan",
+    codes: [iso2("SS"), iso3("SSD"), geonames("7909807")],
     tldr: "One of the last countries with guinea worm, and a place where conflict and flooding make every NTD programme harder.",
     summary:
       "South Sudan is one of only three countries still reporting human guinea worm cases, with two in 2025, and it carries a heavy burden of visceral leishmaniasis, onchocerciasis, lymphatic filariasis, schistosomiasis, trachoma and soil-transmitted helminths. Conflict, displacement and seasonal flooding repeatedly interrupt programmes and move populations through areas where surveillance is absent, which is why it appears in almost every difficult-elimination story in the field.",
@@ -180,6 +188,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "tanzania",
     name: "Tanzania",
+    codes: [iso2("TZ"), iso3("TZA"), geonames("149590")],
     tldr: "A high-burden East African country with strong research capacity on schistosomiasis, filariasis and vector control.",
     summary:
       "Tanzania carries lymphatic filariasis, onchocerciasis, schistosomiasis, soil-transmitted helminths, trachoma and leishmaniasis, and it hosts the Ifakara Health Institute, one of the world's leading centres for vector biology and field trials of vector-control tools. Its research capacity means several of the field's most important trials — from net technologies to drug combinations — have been run here, and it is a site for the eWHORM basket trial of oxfendazole.",
@@ -204,6 +213,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "cameroon",
     name: "Cameroon",
+    codes: [iso2("CM"), iso3("CMR"), geonames("2233387")],
     tldr: "A Central African country where dog infections have made guinea worm harder to finish, and a centre of onchocerciasis and filariasis.",
     summary:
       "Cameroon has become the most important country for guinea worm animal infections, reporting the largest number of infected dogs in recent years after a lapse in surveillance allowed transmission to be re-established from across the Chad border. It also carries a heavy burden of onchocerciasis, lymphatic filariasis, schistosomiasis, soil-transmitted helminths and trachoma, and it was one of the countries where large-scale total community treatment for yaws was implemented.",
@@ -228,6 +238,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "ghana",
     name: "Ghana",
+    codes: [iso2("GH"), iso3("GHA"), geonames("2300660")],
     tldr: "A West African country that has eliminated trachoma and runs strong Buruli ulcer, yaws and filariasis programmes.",
     summary:
       "Ghana has eliminated trachoma as a public health problem and is working toward elimination of lymphatic filariasis and yaws. It carries onchocerciasis and schistosomiasis, and it is one of the most important countries for Buruli ulcer research and treatment, with the Noguchi Memorial Institute for Medical Research providing laboratory capacity and field support for West Africa.",
@@ -251,6 +262,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "uganda",
     name: "Uganda",
+    codes: [iso2("UG"), iso3("UGA"), geonames("226074")],
     tldr: "The only country with both forms of sleeping sickness, and the first to treat a child with the new paediatric schistosomiasis medicine.",
     summary:
       "Uganda is unusual in having both Gambiense and Rhodesiense sleeping sickness, which makes its national programme a test of two different control problems at once. It also carries schistosomiasis, soil-transmitted helminths, onchocerciasis, trachoma and rabies, and it was where the first preschool-aged child was treated with arpraziquantel in 2025 — a milestone for the youngest children with schistosomiasis. Its vector-control and vaccine trials, including TSOL18 pig vaccination for cysticercosis, have shaped practice well beyond its borders.",
@@ -275,6 +287,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "malawi",
     name: "Malawi",
+    codes: [iso2("MW"), iso3("MWI"), geonames("927384")],
     tldr: "A southern African country that has eliminated trachoma, lymphatic filariasis and is pressing on with schistosomiasis control.",
     summary:
       "Malawi has been one of the most successful southern African countries in NTD elimination, validated for both trachoma and lymphatic filariasis as public health problems. Schistosomiasis and soil-transmitted helminths remain widespread, particularly around Lake Malawi, and the country's community health worker networks are among the strongest in the region — which is why its programmes have performed well even with limited resources.",
@@ -299,6 +312,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "bangladesh",
     name: "Bangladesh",
+    codes: [iso2("BD"), iso3("BGD"), geonames("1210997")],
     tldr: "The first country in the world validated for eliminating visceral leishmaniasis, and a pioneer of dengue and cholera research.",
     summary:
       "Bangladesh was the first country in the world to be validated as having eliminated visceral leishmaniasis as a public health problem, in 2023, capping a two-decade regional effort built on rapid diagnostic testing and single-dose liposomal amphotericin B. It has also eliminated lymphatic filariasis and trachoma. Dengue is a growing problem, and icddr,b in Dhaka is one of the world's leading institutions for enteric and arboviral research.",
@@ -323,6 +337,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "nepal",
     name: "Nepal",
+    codes: [iso2("NP"), iso3("NPL"), geonames("1282988")],
     tldr: "A country that has eliminated trachoma and visceral leishmaniasis and is close on lymphatic filariasis, despite difficult terrain.",
     summary:
       "Nepal has reached the elimination threshold for trachoma, visceral leishmaniasis and lymphatic filariasis, which is a notable achievement for a country whose mountainous terrain makes delivery hard. Leprosy and soil-transmitted helminths remain, and snakebite envenoming is a significant and under-recognised cause of death in rural agricultural districts.",
@@ -347,6 +362,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "indonesia",
     name: "Indonesia",
+    codes: [iso2("ID"), iso3("IDN"), geonames("1643084")],
     tldr: "The country with the third-largest leprosy burden, and a vast archipelago where lymphatic filariasis and dengue are endemic.",
     summary:
       "Indonesia reports more than 10,000 new leprosy cases a year — one of only three countries to do so — and faces lymphatic filariasis, soil-transmitted helminths, schistosomiasis in a single valley in Sulawesi, dengue and yaws. Its geography, with thousands of inhabited islands, makes elimination programmes logistically formidable, and it is one of the countries where the Brugia species of filarial worm is important, which is why a Brugia-specific diagnostic was developed.",
@@ -371,6 +387,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "yemen",
     name: "Yemen",
+    codes: [iso2("YE"), iso3("YEM"), geonames("69543")],
     tldr: "A country at war that has nonetheless eliminated lymphatic filariasis and trachoma, while fighting leishmaniasis and dengue.",
     summary:
       "Yemen has eliminated lymphatic filariasis and trachoma as public health problems despite a devastating conflict, which says as much about the resilience of its health workers as about the interventions. Cutaneous leishmaniasis is a major burden — the conflict has produced large outbreaks in displacement settings — and dengue and soil-transmitted helminths are widespread. It is one of the clearest examples of a country achieving elimination targets while its health system is under extreme strain.",
@@ -394,6 +411,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "chad",
     name: "Chad",
+    codes: [iso2("TD"), iso3("TCD"), geonames("2434508")],
     tldr: "The epicentre of guinea worm animal infections, where the parasite appears to use fish and frogs as paratenic hosts.",
     summary:
       "Chad is the country where guinea worm eradication has become hardest to finish. It reports the largest number of human cases of any country and, until recently, the largest animal burden; infections have been linked to fish and frogs acting as paratenic hosts, which breaks the assumption that transmission runs only through drinking water. It has also made genuine progress, with animal infections falling for six consecutive years. The country carries schistosomiasis, soil-transmitted helminths and trachoma as well.",
@@ -419,6 +437,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "angola",
     name: "Angola",
+    codes: [iso2("AO"), iso3("AGO"), geonames("3351879")],
     tldr: "A country where guinea worm persists in dogs, alongside onchocerciasis, schistosomiasis and a heavy rabies burden.",
     summary:
       "Angola is one of the countries still reporting guinea worm infections, predominantly in dogs, which keeps it in the small group standing between the world and eradication. It also carries onchocerciasis, schistosomiasis, lymphatic filariasis, soil-transmitted helminths, leprosy and a substantial rabies burden from dog bites. Its health system is recovering from decades of conflict, and much of its NTD work depends on partnership support.",
@@ -443,6 +462,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "bolivia",
     name: "Bolivia",
+    codes: [iso2("BO"), iso3("BOL"), geonames("3923057")],
     tldr: "A country at the centre of Chagas disease, and the setting for long-running fascioliasis work on the Altiplano.",
     summary:
       "Bolivia has the highest Chagas disease prevalence in the world and is one of the countries where congenital transmission is the focus of elimination efforts, including through the Unitaid-funded CUIDA Chagas project. Cutaneous and mucosal leishmaniasis are endemic in the lowlands, and the Altiplano has been one of the most important settings for human fascioliasis research and for the triclabendazole treatment failures that now worry the field.",
@@ -467,6 +487,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "philippines",
     name: "Philippines",
+    codes: [iso2("PH"), iso3("PHL"), geonames("1694008")],
     tldr: "An archipelago where schistosomiasis, lymphatic filariasis, leprosy and rabies are all endemic across thousands of islands.",
     summary:
       "The Philippines carries schistosomiasis in the Visayas and Mindanao, lymphatic filariasis in many provinces, leprosy and soil-transmitted helminths, and a significant rabies burden addressed through dog vaccination and post-exposure prophylaxis. Yaws was historically endemic and is no longer a major problem. Its geography makes uniform coverage difficult and gives its programmes a strongly decentralised character.",
@@ -491,6 +512,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "papua-new-guinea",
     name: "Papua New Guinea",
+    codes: [iso2("PG"), iso3("PNG"), geonames("2088628")],
     tldr: "The country where azithromycin-resistant yaws emerged, threatening the eradication strategy.",
     summary:
       "Papua New Guinea has one of the world's largest yaws burdens and is the place where azithromycin-resistant yaws was reported, with evidence of local transmission of resistant strains — the single most serious threat to the global eradication strategy. It also carries lymphatic filariasis, leprosy, soil-transmitted helminths, trachoma, a heavy burden of snakebite and Buruli ulcer, across terrain and a health system that make delivery very difficult.",
@@ -515,6 +537,7 @@ export const countries: RecordOf<"countries">[] = [
   {
     id: "kenya",
     name: "Kenya",
+    codes: [iso2("KE"), iso3("KEN"), geonames("192950")],
     tldr: "A country that eliminated sleeping sickness as a public health problem in 2025 and leads on vector control research.",
     summary:
       "Kenya was validated by WHO in August 2025 as having eliminated human African trypanosomiasis as a public health problem, one of only four countries to have reached that status. It also carries visceral leishmaniasis, schistosomiasis, soil-transmitted helminths, lymphatic filariasis and dengue, and its research and vector-control institutions are central to the East African response. It has used triple-drug therapy to accelerate its lymphatic filariasis programme.",

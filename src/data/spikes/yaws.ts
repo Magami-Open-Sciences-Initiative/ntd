@@ -4,7 +4,7 @@ export const yawsSpike: Spike = {
   tldr: "A childhood bacterial infection of skin and bone that one dose of azithromycin cures — and the only NTD whose declared goal is worldwide eradication, now threatened by resistance to that single drug.",
 
   summary:
-    "Yaws affects children under 15 in warm, humid, poor rural communities and causes painless skin lesions that progress, if untreated, to destructive lesions of skin, bone and cartilage years later. A single oral dose of azithromycin cures it as effectively as injected penicillin, which is what makes mass treatment and eradication feasible — and in 2012 WHO launched the Morges strategy, aiming to eradicate yaws by treating entire endemic communities. Progress was real but the target has slipped repeatedly, and two problems stand in the way. The first is that the serological tests used to diagnose yaws cannot distinguish it from venereal syphilis, so programmes cannot easily tell whether they are seeing endemic transmission or a different disease. The second, and more dangerous, is azithromycin resistance: resistant strains have emerged in Papua New Guinea and caused local transmission, which threatens the strategy that depends on a single antibiotic.",
+    "Yaws affects children — about 75–80% of cases are in under-15s, peaking at ages 6 to 10 — in warm, humid, poor rural communities, and causes painless skin lesions that progress, if untreated, to destructive lesions of skin, bone and cartilage years later. A single oral dose of azithromycin cures it as effectively as injected penicillin, which is what makes mass treatment and eradication feasible — and in 2012 WHO launched the Morges strategy, aiming to eradicate yaws by treating entire endemic communities. Progress was real but the target has slipped repeatedly, and three problems stand in the way. The first is that the serological tests used to diagnose yaws cannot distinguish it from venereal syphilis, and about 40% of ulcers clinically mistaken for yaws are actually caused by Haemophilus ducreyi. The second, and more dangerous, is azithromycin resistance: resistant strains have emerged in Papua New Guinea, threatening the strategy that depends on a single antibiotic — though WHO still classes resistance as rare and linezolid is being evaluated as an alternative. The third is measurability: confirming eradication needs molecular testing most endemic districts lack.",
   stats: [
     { label: "Target", value: "Eradication", note: "the Morges strategy, launched 2012" },
     { label: "Goal by 2030", value: "Eradication", note: "WHO's current target year" },
@@ -15,21 +15,46 @@ export const yawsSpike: Spike = {
       source: { label: "WHO — yaws (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/yaws" },
     },
     {
-      label: "Countries still endemic",
-      value: "13",
-      number: 13,
+      label: "Countries currently endemic",
+      value: "15",
+      number: 15,
       unit: "countries",
+      year: 2023,
+      geography: "global",
+      note: "13 known in 2013, plus Liberia and the Philippines; a further 76 formerly endemic countries have unknown current status",
+      source: { label: "WHO — yaws (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/yaws" },
+    },
+    {
+      label: "Reported cases (2021)",
+      value: "123,866",
+      number: 123866,
+      unit: "suspected cases",
       year: 2021,
       geography: "global",
-      note: "123,866 cases reported from 13 countries in 2021, of which 1,102 were confirmed in 9",
+      note: "reported from 13 countries; only 1,102 confirmed, over 80% of cases from the Western Pacific",
+      source: { label: "WHO — yaws (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/yaws" },
+    },
+    {
+      label: "Who it affects",
+      value: "75–80% are children under 15",
+      unit: "%",
+      note: "peak incidence at ages 6–10; males and females equally affected",
+      source: { label: "WHO — yaws (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/yaws" },
+    },
+    {
+      label: "Diagnostic pitfall",
+      value: "~40% of yaws-like ulcers are H. ducreyi",
+      unit: "%",
+      note: "an unrelated bacterium, so clinical diagnosis alone over-counts yaws",
       source: { label: "WHO — yaws (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/yaws" },
     },
     {
       label: "Main threat",
       value: "Azithromycin resistance",
-      note: "reported in Papua New Guinea, 2018",
+      note: "reported in Papua New Guinea, 2018; WHO still classes it as rare, with linezolid under evaluation",
       source: { label: "WHO — yaws (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/yaws" },
     },
+    { label: "Azithromycin donated", value: "153 million tablets", note: "secured by WHO; EMS (Brazil) supplies mass-treatment countries" },
     { label: "Countries certified free", value: "A handful", note: "India among them; eradication is not yet complete anywhere" },
   ],
 
@@ -55,14 +80,24 @@ export const yawsSpike: Spike = {
       refs: ["azithromycin", "macrolide-resistance"],
     },
     {
+      date: "2022",
+      text: "A trial in Papua New Guinea shows three rounds of mass azithromycin at six-month intervals reduce active and latent yaws far more than one round — evidence that changes how the eradication strategy is delivered.",
+      refs: ["yaws-three-round-trial", "total-community-treatment", "azithromycin"],
+    },
+    {
       date: "2024",
       text: "Large-scale total community treatment is implemented across the Congo Basin, targeting more than 1.5 million people.",
       refs: ["total-community-treatment"],
     },
     {
       date: "2025",
-      text: "Reviews of yaws clinical features, diagnosis and treatment call for better diagnostics, including a test for azithromycin resistance.",
-      refs: ["yaws-dual-rdt", "macrolide-resistance"],
+      text: "Reviews of yaws clinical features, diagnosis and treatment call for better diagnostics, including a test for azithromycin resistance; the EDCTP supports a LAMP assay for treponemes and macrolide resistance in Cameroon, Côte d'Ivoire and Ghana.",
+      refs: ["yaws-dual-rdt", "macrolide-resistance", "lamp-yaws"],
+    },
+    {
+      date: "2026",
+      text: "Genomic and taxonomic work reclassifies the Treponema pallidum subspecies, and retrospective analyses confirm that repeated mass treatment reduces yaws transmission.",
+      refs: ["yaws-mda-transmission-2026", "yaws-three-round-trial"],
     },
   ],
 
@@ -71,21 +106,21 @@ export const yawsSpike: Spike = {
       id: "morges",
       title: "The Morges strategy and total community treatment",
       body:
-        "The Morges strategy is straightforward: find endemic communities, treat everyone in them with a single dose of oral azithromycin, and repeat until transmission stops. This is total community treatment, and it is followed by total targeted treatment, in which only cases and their contacts are treated, as prevalence falls. The approach is credible because azithromycin is a one-dose cure that can be given by a community health worker without an injection, which is what made the 1950s penicillin campaigns logistically difficult.\n\nIt has been applied at scale, most recently across the Congo Basin, where rounds in Cameroon, the Central African Republic and the Republic of Congo targeted more than one and a half million people. The challenge is that yaws responds to treatment but recurs when surveillance weakens — the exact failure of the 1950s campaign — so a successful round must be followed by years of case-finding and treatment, not a declaration of victory.",
+        "The Morges strategy is straightforward: find endemic communities, treat everyone in them with a single dose of oral azithromycin, and repeat until transmission stops. This is total community treatment, and it is followed by total targeted treatment, in which only cases and their contacts are treated, as prevalence falls. The approach is credible because azithromycin is a one-dose cure that can be given by a community health worker without an injection, which is what made the 1950s penicillin campaigns logistically difficult.\n\nIt has been applied at scale, most recently across the Congo Basin, where rounds in Cameroon, the Central African Republic and the Republic of Congo targeted more than one and a half million people. And a 2022 trial in Papua New Guinea showed that three rounds at six-month intervals cut active and latent yaws far more than a single round — evidence that has reshaped how the strategy is delivered, since one round is evidently not enough where transmission is intense. The challenge is that yaws responds to treatment but recurs when surveillance weakens — the exact failure of the 1950s campaign — so a successful round must be followed by years of case-finding and treatment, not a declaration of victory.",
       refs: ["total-community-treatment", "azithromycin", "community-health-workers", "elimination"],
     },
     {
       id: "resistance",
       title: "Azithromycin resistance: the threat to eradication",
       body:
-        "A disease whose eradication strategy rests on one antibiotic is exposed, and yaws is now exposed. Resistance to azithromycin in Treponema pallidum pertenue has been reported in Papua New Guinea, with evidence that resistant strains are transmitting locally. Because the entire Morges strategy is built on mass azithromycin, the emergence of resistance is not a complication — it is a threat to the goal itself.\n\nThe response has been to build alternatives and detection at the same time. Benzathine penicillin remains effective and can be used where azithromycin fails or is contraindicated, but it must be injected and needs a cold chain. WHO and partners have developed target product profiles for two diagnostics: a rapid test for yaws itself, and a test that can detect the macrolide resistance mutations, so programmes can see where resistance is emerging rather than discovering it after a campaign fails. That second test does not yet exist as a field product.",
+        "A disease whose eradication strategy rests on one antibiotic is exposed, and yaws is now exposed. Resistance to azithromycin in Treponema pallidum pertenue has been reported in Papua New Guinea, with evidence that resistant strains are transmitting locally. Because the entire Morges strategy is built on mass azithromycin, the emergence of resistance is not a complication — it is a threat to the goal itself. WHO still characterises resistant strains as rare, but they are the reason the field is building alternatives and detection at the same time.\n\nBenzathine penicillin remains effective and can be used where azithromycin fails or is contraindicated, but it must be injected and needs a cold chain. Linezolid, a cheap oral oxazolidinone with in-vitro and in-vivo activity against T. pallidum, is being clinically evaluated as an alternative for macrolide-resistant disease. On the detection side, WHO and partners have target product profiles for two diagnostics: a rapid test for yaws itself, and a test that can detect the macrolide-resistance mutations. The EDCTP is supporting a loop-mediated isothermal amplification (LAMP) assay for both treponemes and resistance mutations in Cameroon, Côte d'Ivoire and Ghana — a field-usable resistance test, and the piece that would let programmes see resistance emerging rather than discover it after a campaign fails.",
       refs: ["macrolide-resistance", "azithromycin", "benzathine-penicillin", "yaws-dual-rdt", "diagnostics-gap"],
     },
     {
       id: "diagnosis",
       title: "Diagnosis: dual rapid tests and the syphilis problem",
       body:
-        "The standard test for yaws detects antibodies to treponemes, and it cannot distinguish yaws from venereal syphilis — both are caused by Treponema pallidum subspecies. In a community where both occur, that ambiguity makes it hard to know what a positive result means, and hard to be confident that what is being treated is endemic transmission rather than imported syphilis. Dual rapid diagnostic tests that combine a treponemal and a non-treponemal test improve the picture by distinguishing active from past infection, and they are being used in yaws programmes.\n\nMolecular typing of the organism provides the definitive answer and has shown that yaws strains cluster geographically, which helps trace transmission. But it needs laboratory capacity that most endemic districts do not have. The diagnostic gap is at the heart of why yaws eradication has proved harder than it looked in 2012: a programme cannot certify the disappearance of a disease it cannot reliably distinguish from another.",
+        "The standard test for yaws detects antibodies to treponemes, and it cannot distinguish yaws from venereal syphilis — both are caused by Treponema pallidum subspecies. In a community where both occur, that ambiguity makes it hard to know what a positive result means, and hard to be confident that what is being treated is endemic transmission rather than imported syphilis. Dual Path Platform (DPP) tests that combine a treponemal and a non-treponemal test improve the picture by distinguishing active from past infection, and they are used in yaws programmes, with treponemal tests as a cheaper screen before DPP confirmation.\n\nA further trap is that clinical diagnosis alone is unreliable: about 40% of ulcers mistaken for yaws are actually caused by Haemophilus ducreyi, the chancroid bacterium, so programmes that treat on appearance treat a mixed caseload. Molecular PCR testing of lesion DNA provides the definitive answer, can monitor azithromycin-resistance mutations, and has shown that yaws strains cluster geographically — but it needs laboratory capacity that most endemic districts do not have, which is why culture-free field assays like LAMP matter.",
       refs: ["yaws-dual-rdt", "molecular-pcr", "sensitivity-specificity", "who"],
     },
     {
@@ -105,7 +140,9 @@ export const yawsSpike: Spike = {
   ],
 
   technologies: ["total-community-treatment"],
-  diagnostics: ["yaws-dual-rdt"],
-  institutions: ["who"],
+  trials: ["yaws-azithromycin", "yaws-three-round-trial", "linezolid-yaws"],
+  diagnostics: ["yaws-dual-rdt", "lamp-yaws"],
+  drugs: ["azithromycin", "benzathine-penicillin"],
+  institutions: ["who", "kccr-yaws"],
   terms: ["macrolide-resistance"],
 };

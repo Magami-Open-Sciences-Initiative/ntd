@@ -4,7 +4,7 @@ export const leprosySpike: Spike = {
   tldr: "A slow bacterial infection of skin and nerves that is curable but still leaves disability — and whose case numbers have stopped falling despite a prevention strategy that works.",
 
   summary:
-    "Leprosy is caused by Mycobacterium leprae, which grows slowly and prefers the cooler parts of the body: skin and peripheral nerves. It produces numb patches and, in the more severe forms, nerve damage, deformity and blindness. Multidrug therapy — rifampicin, dapsone and clofazimine — cures the infection, and a single dose of rifampicin prevents it in close contacts. The troubling feature of the last decade is that new-case detection has plateaued at around 200,000 a year rather than continuing to fall; 172,717 new cases were reported globally in 2024, a 5.5% decrease from 2023 and far from the trajectory needed for the WHO goal of interrupting transmission. Three countries — India, Brazil and Indonesia — report more than 10,000 cases each, and children account for 5.7% of new cases, with 266 of them already showing grade-2 disability at diagnosis. Those two facts, children and established disability, are the clearest evidence that transmission is continuing and that cases are still being found too late.",
+    "Leprosy is caused by Mycobacterium leprae, which grows slowly and prefers the cooler parts of the body: skin and peripheral nerves. It produces numb patches and, in the more severe forms, nerve damage, deformity and blindness. Multidrug therapy — rifampicin, dapsone and clofazimine — cures the infection, and a single dose of rifampicin prevents it in close contacts. The troubling feature of the last decade is that new-case detection has plateaued at around 170,000–200,000 a year rather than continuing to fall; 172,717 new cases were reported globally in 2024, a 5.5% decrease from 2023 and far from the trajectory needed for the WHO goal of interrupting transmission. Brazil, India and Indonesia reported more than 10,000 cases each — together 79.8% of the world total — and 9,397 of the new cases were children (about 5.4%), with 289 of them already showing grade-2 disability at diagnosis. Those two facts, children and established disability, are the clearest evidence that transmission is continuing and that cases are still being found too late.",
   stats: [
     {
       label: "New cases (2024)",
@@ -40,18 +40,48 @@ export const leprosySpike: Spike = {
       number: 3,
       unit: "countries",
       geography: "global",
-      note: "India, Brazil and Indonesia",
-      source: { label: "WHO — leprosy (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/leprosy" },
+      note: "Brazil, India and Indonesia — together 79.8% of all new cases",
+      source: { label: "WHO — Global leprosy update, 2024 (WER 100(37):365–384)", url: "https://www.who.int/publications/i/item/who-wer10037-365-384" },
     },
     {
       label: "Children among new cases",
-      value: "5.7%",
-      number: 5.7,
+      value: "5.4%",
+      number: 5.4,
       unit: "%",
       year: 2024,
       geography: "global",
-      note: "266 with grade-2 disability at diagnosis",
-      source: { label: "WHO — leprosy (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/leprosy" },
+      note: "9,397 children; 289 of them with grade-2 disability at diagnosis (3.1%)",
+      source: { label: "WHO — Global leprosy update, 2024 (WER 100(37):365–384)", url: "https://www.who.int/publications/i/item/who-wer10037-365-384" },
+    },
+    {
+      label: "Grade-2 disability at diagnosis (2024)",
+      value: "9,124",
+      number: 9124,
+      unit: "cases",
+      year: 2024,
+      geography: "global",
+      note: "5.3% of new cases; 1.1 per million population",
+      source: { label: "WHO — Global leprosy update, 2024 (WER 100(37):365–384)", url: "https://www.who.int/publications/i/item/who-wer10037-365-384" },
+    },
+    {
+      label: "Share of cases in three countries",
+      value: "79.8%",
+      number: 79.8,
+      unit: "%",
+      year: 2024,
+      geography: "global",
+      note: "Brazil, India and Indonesia together",
+      source: { label: "WHO — Global leprosy update, 2024 (WER 100(37):365–384)", url: "https://www.who.int/publications/i/item/who-wer10037-365-384" },
+    },
+    {
+      label: "Leprosy R&D funding (2023)",
+      value: "US$ 19 million",
+      number: 19,
+      unit: "million USD",
+      year: 2023,
+      geography: "global",
+      note: "record high, up ~40%; over half from industry, mostly late-stage bedaquiline testing",
+      source: { label: "G-FINDER 2024 Neglected Disease R&D report", url: "https://cdn.impactglobalhealth.org/media/G-FINDER%202024_Full%20report.pdf" },
     },
     {
       label: "Post-exposure prophylaxis",
@@ -79,13 +109,23 @@ export const leprosySpike: Spike = {
       refs: ["who", "eot"],
     },
     {
+      date: "2023",
+      text: "WHO issues technical guidance on interrupting transmission and eliminating leprosy disease, with a Leprosy Elimination Framework of three phases and monitoring/assessment tools.",
+      refs: ["who", "eot", "who-leprosy-elimination-framework"],
+    },
+    {
       date: "2024",
-      text: "The PEOPLE trial reports a 40% reduction in leprosy incidence from double-dose rifampicin prophylaxis in the Comoros and Madagascar.",
+      text: "The PEOPLE trial reports a 40% reduction in leprosy incidence from double-dose rifampicin prophylaxis across the Comoros and Madagascar (144,000 participants).",
       refs: ["people-leprosy-pep", "sdr-pep"],
     },
     {
+      date: "2024",
+      text: "Jordan becomes the first country verified by WHO for elimination of leprosy disease, moving to the post-elimination phase.",
+      refs: ["who", "eot", "who-leprosy-elimination-framework"],
+    },
+    {
       date: "2025",
-      text: "WHO's global update reports 172,717 new cases for 2024, and frames the remaining task as going 'beyond zero cases' to what elimination really means.",
+      text: "WHO's global update reports 172,717 new cases for 2024 (5.5% down on 2023), 9,124 with grade-2 disability, and record leprosy R&D funding of US$19 million in 2023.",
       refs: ["who", "stigma-and-disability"],
     },
     {
@@ -121,7 +161,7 @@ export const leprosySpike: Spike = {
       id: "disability",
       title: "Disability, transmission and the grade-2 question",
       body:
-        "Leprosy's most useful indicator is not how many cases are found but how much damage has already been done when they are found. Grade-2 disability means visible impairment — a foot ulcer, a clawed hand, an eye that cannot close — present at the moment of diagnosis, and it can only exist if the disease has been progressing unnoticed for months or years. Because children have the shortest possible incubation window, childhood cases are a direct sign of ongoing transmission, and grade-2 disability in a child is a failure of early detection twice over.\n\nThe 2024 figures — 5.7% of new cases in children, 266 of them with grade-2 disability — say that neither transmission nor late presentation has been solved. This is why WHO's framing has shifted from counting cases to what elimination actually means: interrupting transmission so that no child develops the disease, and preventing disability in everyone already infected through early diagnosis, nerve assessment and management of leprosy reactions.",
+        "Leprosy's most useful indicator is not how many cases are found but how much damage has already been done when they are found. Grade-2 disability means visible impairment — a foot ulcer, a clawed hand, an eye that cannot close — present at the moment of diagnosis, and it can only exist if the disease has been progressing unnoticed for months or years. Because children have the shortest possible incubation window, childhood cases are a direct sign of ongoing transmission, and grade-2 disability in a child is a failure of early detection twice over.\n\nThe 2024 figures — 9,397 children among the new cases (about 5.4%), 289 of them already with grade-2 disability, and 9,124 people in total (5.3%) presenting with visible impairment — say that neither transmission nor late presentation has been solved. This is why WHO's framing has shifted from counting cases to what elimination actually means: interrupting transmission so that no child develops the disease, and preventing disability in everyone already infected through early diagnosis, nerve assessment and management of leprosy reactions.",
       refs: ["stigma-and-disability", "community-health-workers", "mhealth-surveillance", "eot"],
     },
     {
@@ -135,6 +175,9 @@ export const leprosySpike: Spike = {
 
   drugs: ["bedaquiline"],
   trials: ["people-leprosy-pep", "be-people-leprosy"],
-  institutions: ["gpzl", "who"],
+  technologies: ["lepvax"],
+  guidelines: ["who-leprosy-elimination-framework", "zero-leprosy-strategy"],
+  diagnostics: ["leprosy-skin-test-antigens"],
+  institutions: ["gpzl", "who", "ahri", "fiocruz"],
   terms: ["sdr-pep"],
 };

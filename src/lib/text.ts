@@ -22,6 +22,7 @@ export const KIND_COLORS: Record<Kind, KindColor> = {
   roadmaps: { light: "#7e22ce", dark: "#d8b4fe" },
   guidelines: { light: "#b45309", dark: "#fcd34d" },
   bottlenecks: { light: "#b91c1c", dark: "#fca5a5" },
+  resistance: { light: "#be185d", dark: "#f9a8d4" },
   ideas: { light: "#047857", dark: "#6ee7b7" },
   terms: { light: "#57534e", dark: "#d6d3d1" },
 };

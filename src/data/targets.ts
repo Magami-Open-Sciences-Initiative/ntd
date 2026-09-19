@@ -131,7 +131,7 @@ export const targets: RecordOf<"targets">[] = [
     name: "Schistosome TRP ion channel",
     tldr: "The ion channel praziquantel opens; identifying it finally explained how the main anti-schistosomal drug works.",
     summary:
-      "For forty years after praziquantel became the only drug used against schistosomiasis, no one knew what it bound. Work using the free-living relative Dugesia and then schistosomes themselves traced its action to a transient receptor potential (TRP) ion channel: the drug opens it, calcium floods into the worm, and the worm contracts and dies. Naming the target opens the door to designing new drugs that hit the same channel — important, because praziquantel is a single point of failure for treating 250 million people.",
+      "For forty years after praziquantel became the only drug used against schistosomiasis, no one knew what it bound. Work using the free-living relative Dugesia and then schistosomes themselves traced its action to a transient receptor potential (TRP) ion channel: the drug opens it, calcium floods into the worm, and the worm contracts and dies. Naming the target opens the door to designing new drugs that hit the same channel — important, because praziquantel is a single point of failure for treating 250 million people. This entry is the schistosome channel specifically; praziquantel acts on homologous TRP channels in other flatworms, including Taenia, but those are separate proteins and are not what this record describes.",
     asOf: "2026-09",
     targetType: "Ion channel",
     organism: "Schistosoma",
@@ -142,8 +142,8 @@ export const targets: RecordOf<"targets">[] = [
     links: [
       { label: "Praziquantel's target identified (Nature Communications)", url: "https://pubmed.ncbi.nlm.nih.gov/?term=praziquantel+TRP+channel+schistosome" },
     ],
-    pathogens: ["schistosoma", "taenia-solium"],
-    diseases: ["schistosomiasis", "taeniasis-cysticercosis"],
+    pathogens: ["schistosoma"],
+    diseases: ["schistosomiasis"],
     drugs: ["praziquantel"],
     technologies: ["alphafold-structure-prediction", "ai-drug-discovery"],
     stats: [

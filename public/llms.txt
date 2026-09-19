@@ -2,8 +2,8 @@
 
 > Magami NTD is a public, cited knowledge graph of neglected tropical diseases — one cited, linked page for each object it covers, with a plain-English TL;DR on every page.
 
-Magami NTD is a project of Magami Open Sciences Initiative (https://magamios.org). It is 509 linked
-objects across 16 kinds, generated from an open corpus. Every object has a plain-English
+Magami NTD is a project of Magami Open Sciences Initiative (https://magamios.org). It is 946 linked
+objects across 17 kinds, generated from an open corpus. Every object has a plain-English
 TL;DR, a longer summary, the date it was last checked, and at least one primary source.
 
 Work in progress: content is being built and checked in the open and may be incomplete, out of date
@@ -17,21 +17,22 @@ or wrong. Verify anything that matters at its primary source. Nothing here is me
 
 ## Kinds
 - Diseases (27): https://ntd.magamios.org/diseases/ — Every neglected tropical disease the WHO names, with what causes it, who it strikes, and what can be done.
-- Pathogens (25): https://ntd.magamios.org/pathogens/ — The parasites, worms, bacteria, viruses, fungi and venoms behind the diseases.
+- Pathogens (28): https://ntd.magamios.org/pathogens/ — The parasites, worms, bacteria, viruses, fungi and venoms behind the diseases.
 - Vectors (9): https://ntd.magamios.org/vectors/ — The mosquitoes, flies, snails, bugs and mites that carry disease — and how to control them.
-- Treatments (55): https://ntd.magamios.org/drugs/ — Medicines that cure or control NTDs, from decades-old essential medicines to candidates in trials.
-- Diagnostics (35): https://ntd.magamios.org/diagnostics/ — How an infection is confirmed: from a stool smear under a microscope to a blood test that decides treatment.
-- Targets (46): https://ntd.magamios.org/targets/ — The molecules in a parasite a drug can switch off, and why they are hard or easy to drug.
-- Technologies (47): https://ntd.magamios.org/technologies/ — The tools that fight NTDs: vector control, vaccines, diagnostics, drug discovery and AI.
-- Trials (55): https://ntd.magamios.org/trials/ — Landmark and current studies, with results stated in plain terms.
-- Institutions (51): https://ntd.magamios.org/institutions/ — The institutes, agencies, funders and product-development partnerships doing the work.
-- Countries (27): https://ntd.magamios.org/countries/ — Where the burden is, what has been eliminated, and how the programmes are run.
-- People (34): https://ntd.magamios.org/people/ — The people whose work this corpus records — historical discoverers and the contemporary field.
+- Treatments (67): https://ntd.magamios.org/drugs/ — Medicines that cure or control NTDs, from decades-old essential medicines to candidates in trials.
+- Diagnostics (48): https://ntd.magamios.org/diagnostics/ — How an infection is confirmed: from a stool smear under a microscope to a blood test that decides treatment.
+- Targets (56): https://ntd.magamios.org/targets/ — The molecules in a parasite a drug can switch off, and why they are hard or easy to drug.
+- Technologies (52): https://ntd.magamios.org/technologies/ — The tools that fight NTDs: vector control, vaccines, diagnostics, drug discovery and AI.
+- Trials (105): https://ntd.magamios.org/trials/ — Landmark and current studies, with results stated in plain terms.
+- Institutions (100): https://ntd.magamios.org/institutions/ — The institutes, agencies, funders and product-development partnerships doing the work.
+- Countries (28): https://ntd.magamios.org/countries/ — Where the burden is, what has been eliminated, and how the programmes are run.
+- People (210): https://ntd.magamios.org/people/ — The people whose work this corpus records — historical discoverers and the contemporary field.
 - Roadmaps (7): https://ntd.magamios.org/roadmaps/ — History to horizon for each family of technology, step by step.
-- Guidelines (22): https://ntd.magamios.org/guidelines/ — The recommendations that set what programmes actually do — and what changed when they were updated.
+- Guidelines (33): https://ntd.magamios.org/guidelines/ — The recommendations that set what programmes actually do — and what changed when they were updated.
 - Bottlenecks (17): https://ntd.magamios.org/bottlenecks/ — The constraints slowing progress, and what would unlock them.
-- Ideas (12): https://ntd.magamios.org/ideas/ — Hypotheses and fixes, each with a proposed test.
-- Glossary (40): https://ntd.magamios.org/terms/ — Plain-English definitions of the words this field uses.
+- Resistance (17): https://ntd.magamios.org/resistance/ — Drug, insecticide and pesticide resistance in the field: how it works, where it has been found, and who is watching for it.
+- Ideas (95): https://ntd.magamios.org/ideas/ — Hypotheses and fixes, each with a proposed test.
+- Glossary (47): https://ntd.magamios.org/terms/ — Plain-English definitions of the words this field uses.
 
 ## Licence
 Code: AGPL-3.0-only. Data: CC BY-SA 4.0, free to reuse (including commercially) with attribution and share-alike, so derivatives stay open. Credit it as "Magami NTD (https://ntd.magamios.org)".

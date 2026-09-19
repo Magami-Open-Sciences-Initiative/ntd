@@ -14,9 +14,40 @@ import { people } from "./people";
 import { roadmaps } from "./roadmaps";
 import { guidelines } from "./guidelines";
 import { bottlenecks } from "./bottlenecks";
+import { resistance } from "./resistance";
 import { ideas } from "./ideas";
 import { terms } from "./terms";
 import { ADDITIONS } from "./additions";
+import { CHAGAS_2026 } from "./chagas-2026";
+import { CHIKV_2026 } from "./chikungunya-2026";
+import { DENGUE_2026 } from "./dengue-2026";
+import { FBT_2026 } from "./foodborne-2026";
+import { HAT_2026 } from "./hat-2026";
+import { LF_2026 } from "./lf-2026";
+import { MALARIA_2026 } from "./malaria-2026";
+import { NOMA_2026 } from "./noma-2026";
+import { SCABIES_2026 } from "./scabies-2026";
+import { SNAKEBITE_2026 } from "./snakebite-2026";
+import { TRACHOMA_2026 } from "./trachoma-2026";
+import { YAWS_2026 } from "./yaws-2026";
+import { BURULI_ULCER_2026 } from "./buruli-ulcer-2026";
+import { DRACUNCULIASIS_2026 } from "./dracunculiasis-2026";
+import { EBOLA_2026 } from "./ebola-2026";
+import { ECHINOCOCCOSIS_2026 } from "./echinococcosis-2026";
+import { LEISHMANIASIS_2026 } from "./leishmaniasis-2026";
+import { LEPROSY_2026 } from "./leprosy-2026";
+import { MYCETOMA_2026 } from "./mycetoma-2026";
+import { ONCHOCERCIASIS_2026 } from "./onchocerciasis-2026";
+import { PODOCONIOSIS_2026 } from "./podoconiosis-2026";
+import { RABIES_2026 } from "./rabies-2026";
+import { SCHISTOSOMIASIS_2026 } from "./schistosomiasis-2026";
+import { STH_2026 } from "./sth-2026";
+import { TAENIASIS_CYSTICERCOSIS_2026 } from "./taeniasis-cysticercosis-2026";
+import { TUBERCULOSIS_2026 } from "./tuberculosis-2026";
+import { ZIKA_2026 } from "./zika-2026";
+import { DB_LINKS } from "./db-links";
+import { INSTITUTION_COUNTRIES } from "./institution-countries";
+import { INSTITUTION_WEBSITES, INSTITUTION_CONTACTS } from "./institution-websites";
 import { DISEASE_SPIKES } from "./spikes";
 import { DRUG_DEEPDIVES } from "./deep-drugs";
 import { africanPeople } from "./people-africa";
@@ -32,6 +63,9 @@ import { EXTRA_SOURCES } from "./extra-sources";
 import { PATHOGEN_COUNTRIES } from "./pathogen-countries";
 import { VECTOR_COUNTRIES } from "./vector-countries";
 import { DRUG_ENRICHMENT } from "./drug-enrichment";
+import { DRUG_ACCESS } from "./access-2026";
+import { COUNTRY_EQUITY, TECH_ECONOMICS, DISEASE_COSTS, DIAGNOSTIC_EQUITY, EQUITY_ECONOMICS_2026 } from "./implementation-economics";
+import { SCRAPED_PRICE_PATCHES } from "./access-prices.generated";
 import { DIAGNOSTIC_ENRICHMENT } from "./diagnostic-enrichment";
 import { TARGETS_EXTRA } from "./targets-extra";
 import { STRUCTURES, type Structure } from "./structures";
@@ -70,15 +104,64 @@ const RAW_INPUTS: { kind: Kind; records: unknown[] }[] = [
   { kind: "roadmaps", records: roadmaps },
   { kind: "guidelines", records: guidelines },
   { kind: "bottlenecks", records: bottlenecks },
+  { kind: "resistance", records: resistance },
   { kind: "ideas", records: ideas },
   { kind: "terms", records: terms },
   ...ADDITIONS,
+  ...CHAGAS_2026,
+  ...CHIKV_2026,
+  ...DENGUE_2026,
+  ...FBT_2026,
+  ...HAT_2026,
+  ...LF_2026,
+  ...MALARIA_2026,
+  ...NOMA_2026,
+  ...SCABIES_2026,
+  ...SNAKEBITE_2026,
+  ...TRACHOMA_2026,
+  ...YAWS_2026,
+  ...BURULI_ULCER_2026,
+  ...DRACUNCULIASIS_2026,
+  ...EBOLA_2026,
+  ...ECHINOCOCCOSIS_2026,
+  ...LEISHMANIASIS_2026,
+  ...LEPROSY_2026,
+  ...MYCETOMA_2026,
+  ...ONCHOCERCIASIS_2026,
+  ...PODOCONIOSIS_2026,
+  ...RABIES_2026,
+  ...SCHISTOSOMIASIS_2026,
+  ...STH_2026,
+  ...TAENIASIS_CYSTICERCOSIS_2026,
+  ...TUBERCULOSIS_2026,
+  ...ZIKA_2026,
   ...EMERGING_ADDITIONS,
+  ...EQUITY_ECONOMICS_2026,
   ...TARGETS_EXTRA,
 ];
 
-/** Structures as per-record patches, so a drug page can render its molecule. */
-const STRUCTURE_PATCHES: Record<string, Spike> = Object.fromEntries(
+/** Standardised-database links (NCBI Taxonomy, GBIF, domain DBs) per pathogen/vector. */
+const DB_PATCHES = DB_LINKS as unknown as Record<string, Spike>;
+
+/**
+ * Institution patches: domicile as a graph ref to its corpus country record,
+ * plus the verified homepage (and a note when the link points to a parent body).
+ */
+const INSTITUTION_PATCHES: Record<string, Spike> = Object.fromEntries(
+  Object.entries(INSTITUTION_COUNTRIES).map(([id, cs]) => [id, { countries: cs } as Spike]),
+);
+for (const [id, w] of Object.entries(INSTITUTION_WEBSITES)) {
+  INSTITUTION_PATCHES[id] = {
+    ...(INSTITUTION_PATCHES[id] ?? {}),
+    website: w.url,
+    ...(w.note ? { websiteNote: w.note } : {}),
+  };
+}
+for (const [id, c] of Object.entries(INSTITUTION_CONTACTS)) {
+  INSTITUTION_PATCHES[id] = { ...(INSTITUTION_PATCHES[id] ?? {}), contact: c };
+}
+
+/** Structures as per-record patches, so a drug page can render its molecule. */const STRUCTURE_PATCHES: Record<string, Spike> = Object.fromEntries(
   Object.entries(STRUCTURES).map(([id, s]: [string, Structure]) => [id, { structure: s }]),
 );
 
@@ -102,12 +185,15 @@ const PROTEIN_ABSENT_PATCHES: Record<string, Spike> = Object.fromEntries([
  * touched by its prose deep dive and its structure and its class list at once.
  */
 const DEEP_DIVES: Partial<Record<Kind, Record<string, Spike>>> = {
-  diseases: DISEASE_SPIKES,
-  drugs: mergeSpikes(DRUG_DEEPDIVES, STRUCTURE_PATCHES, DRUG_ENRICHMENT),
-  pathogens: PATHOGEN_COUNTRIES,
-  vectors: VECTOR_COUNTRIES,
+  diseases: mergeSpikes(DISEASE_SPIKES, DISEASE_COSTS),
+  drugs: mergeSpikes(DRUG_DEEPDIVES, STRUCTURE_PATCHES, DRUG_ENRICHMENT, DRUG_ACCESS, SCRAPED_PRICE_PATCHES),
+  pathogens: mergeSpikes(PATHOGEN_COUNTRIES, DB_PATCHES),
+  vectors: mergeSpikes(VECTOR_COUNTRIES, DB_PATCHES),
   targets: mergeSpikes(SEQUENCE_PATCHES, PROTEIN_ABSENT_PATCHES),
-  diagnostics: DIAGNOSTIC_ENRICHMENT,
+  diagnostics: mergeSpikes(DIAGNOSTIC_ENRICHMENT, DIAGNOSTIC_EQUITY),
+  institutions: INSTITUTION_PATCHES,
+  technologies: TECH_ECONOMICS,
+  countries: COUNTRY_EQUITY,
 };
 
 function mergeSpikes(...maps: Record<string, Spike>[]): Record<string, Spike> {

@@ -4,7 +4,7 @@ export const rabiesSpike: Spike = {
   tldr: "A virus from animal bites that is almost always fatal once symptoms start and almost always preventable if treated promptly — the target of a global push to reach zero human dog-mediated deaths by 2030.",
 
   summary:
-    "Rabies is transmitted mainly by dog bites and travels along nerves to the brain, causing encephalitis that is nearly uniformly fatal once it begins. Prompt wound washing, a short course of vaccination and, for severe bites, rabies immunoglobulin prevent it essentially every time. Because dogs cause almost all human cases, the disease can be eliminated by vaccinating dogs — the strategy that removed dog-mediated human rabies from much of the Americas and from KwaZulu-Natal in South Africa. \"Zero by 30\", the global strategic plan agreed in 2015, aims for zero human deaths from dog-mediated rabies by 2030. The gap is not scientific: it is access. Most deaths happen where vaccine, immunoglobulin and timely care are unavailable or unaffordable, and the cost of immunoglobulin, made from human plasma, is the single most stubborn obstacle in the treatment pathway.",
+    "Rabies is transmitted mainly by dog bites and travels along nerves to the brain, causing encephalitis that is nearly uniformly fatal once it begins. Prompt wound washing, a short course of vaccination and, for severe bites, rabies immunoglobulin prevent it essentially every time. Because dogs cause almost all human cases, the disease can be eliminated by vaccinating dogs — the strategy that removed dog-mediated human rabies from much of the Americas and from KwaZulu-Natal in South Africa. \"Zero by 30\", the global strategic plan agreed in 2015, aims for zero human deaths from dog-mediated rabies by 2030. The gap is not scientific: it is access. Most deaths happen where vaccine, immunoglobulin and timely care are unavailable or unaffordable; the cost of plasma-derived immunoglobulin is the single most stubborn obstacle in the treatment pathway; and no WHO-approved test can diagnose rabies before symptoms begin. In the Americas, where dog-mediated rabies is mostly controlled, bats are now the primary source of human infection. By September 2026, three countries — Bhutan, Chile and Mexico — had been validated as having eliminated dog-mediated human rabies.",
 
   stats: [
     {
@@ -62,8 +62,34 @@ export const rabiesSpike: Spike = {
       note: "Bhutan, Chile and Mexico, as of September 2026",
       source: { label: "WHO — rabies (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/rabies" },
     },
+    {
+      label: "Intradermal cost saving",
+      value: "60–80%",
+      unit: "%",
+      note: "moving from intramuscular to intradermal administration cuts vaccine cost without losing efficacy, and improves completion",
+      source: { label: "WHO — rabies (fact sheet, Sept 2026)", url: "https://www.who.int/news-room/fact-sheets/detail/rabies" },
+    },
+    {
+      label: "Average PEP cost",
+      value: "≈ US$ 108",
+      unit: "USD",
+      year: 2018,
+      geography: "global",
+      note: "plus travel and lost income — unaffordable on US$1–2 a day",
+      source: { label: "WHO — rabies (fact sheet, Sept 2026)", url: "https://www.who.int/news-room/fact-sheets/detail/rabies" },
+    },
+    {
+      label: "WHO-prequalified human vaccines",
+      value: "3",
+      number: 3,
+      unit: "vaccines",
+      year: 2024,
+      geography: "global",
+      note: "RABIVAX-S, VaxiRab N and VERORAB — the entire WHO-prequalified supply",
+      source: { label: "WHO — rabies (fact sheet, Sept 2026)", url: "https://www.who.int/news-room/fact-sheets/detail/rabies" },
+    },
     { label: "Target", value: "Zero by 30", note: "zero human dog-mediated deaths by 2030" },
-    { label: "Dog vaccination needed", value: "≥ 70% coverage", unit: "%", note: "to interrupt transmission" },
+    { label: "Dog vaccination needed", value: "≥ 70% coverage", unit: "%", note: "to interrupt transmission; culling dogs does not work" },
   ],
 
   timeline: [
@@ -92,9 +118,19 @@ export const rabiesSpike: Spike = {
       refs: ["one-health-ntd-integration", "access-and-pricing"],
     },
     {
+      date: "2024",
+      text: "Gavi commits to boosting access to human rabies vaccines in more than 50 countries, bringing rabies into routine immunisation financing.",
+      refs: ["gavi", "rabies-vaccination", "united-against-rabies"],
+    },
+    {
       date: "2025",
       text: "A phase 4 study reports on a rabies monoclonal antibody in category III exposures, advancing an alternative to plasma-derived immunoglobulin.",
-      refs: ["rabies-monoclonal-antibody"],
+      refs: ["rabies-monoclonal-antibody", "rabies-monoclonal-antibodies"],
+    },
+    {
+      date: "2026",
+      text: "Chile (14 September) and Bhutan (4 September) are validated by WHO for eliminating dog-transmitted human rabies, joining Mexico — the first three countries validated since the Zero by 30 plan.",
+      refs: ["who", "eot", "united-against-rabies"],
     },
   ],
 
@@ -136,6 +172,9 @@ export const rabiesSpike: Spike = {
     },
   ],
 
-  trials: ["rabies-monoclonal-antibody"],
+  drugs: ["rabies-monoclonal-antibodies"],
+  trials: ["rabies-monoclonal-antibody", "rabies-dose-sparing"],
+  people: ["louis-nel", "claude-sabeta", "wanda-markotter", "thumbi-mwangi", "katie-hampson"],
+  institutions: ["united-against-rabies", "gavi"],
   terms: ["eot", "zoonosis"],
 };

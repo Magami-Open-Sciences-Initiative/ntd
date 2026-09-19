@@ -889,6 +889,7 @@ export const EMERGING_ADDITIONS: { kind: Kind; records: unknown[] }[] = [
         ...R,
         phase: "Phase 3",
         registry: "ClinicalTrials.gov NCT04704830",
+        registryUrl: "https://clinicaltrials.gov/study/NCT04704830",
         status: "Reported positive; recommended 2023",
         intervention: "R21/Matrix-M, with a booster dose",
         result:
@@ -913,6 +914,7 @@ export const EMERGING_ADDITIONS: { kind: Kind; records: unknown[] }[] = [
         ...R,
         phase: "Phase 2/3",
         registry: "ClinicalTrials.gov NCT02589782",
+        registryUrl: "https://clinicaltrials.gov/study/NCT02589782",
         status: "Reported positive; recommended 2022",
         intervention: "Bedaquiline, pretomanid, linezolid and moxifloxacin, all oral",
         sponsor: "Médecins Sans Frontières and partners",
@@ -939,6 +941,7 @@ export const EMERGING_ADDITIONS: { kind: Kind; records: unknown[] }[] = [
         ...R,
         phase: "Phase 2b complete; phase 3 under way",
         registry: "ClinicalTrials.gov NCT01755598",
+        registryUrl: "https://clinicaltrials.gov/study/NCT01755598",
         status: "Reported positive; confirmatory trial ongoing",
         intervention: "M72/AS01E subunit vaccine",
         result:
@@ -963,6 +966,7 @@ export const EMERGING_ADDITIONS: { kind: Kind; records: unknown[] }[] = [
         ...R,
         phase: "Phase 3, cluster-randomised ring vaccination",
         registry: "PACTR201503001057193",
+        registryUrl: "https://trialsearch.who.int/Trial2.aspx?TrialID=PACTR201503001057193",
         status: "Reported positive",
         intervention: "rVSV-ZEBOV vaccine given to contacts and their contacts",
         result: "High protection against Ebola in vaccinated rings, with no confirmed cases after the vaccine's onset of protection.",
@@ -985,6 +989,7 @@ export const EMERGING_ADDITIONS: { kind: Kind; records: unknown[] }[] = [
         ...R,
         phase: "Phase 2/3 randomised controlled trial",
         registry: "ClinicalTrials.gov NCT03719586",
+        registryUrl: "https://clinicaltrials.gov/study/NCT03719586",
         status: "Reported positive; stopped early for benefit",
         intervention: "Four investigational Ebola treatments including monoclonal antibody products",
         result:

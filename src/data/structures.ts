@@ -12,7 +12,7 @@
    *
    * Compounds with no small-molecule structure are listed in NO_STRUCTURE.
    *
-   * Generated file. Last fetched: 2026-09-17.
+   * Generated file. Last fetched: 2026-09-18.
    */
 
   export type Structure = {
@@ -430,6 +430,51 @@
     "smiles": "CC(=O)NCC1CN(C(=O)O1)C2=CC(=C(C=C2)N3CCOCC3)F",
     "image": "/structures/441401.png",
     "pubchem": "https://pubchem.ncbi.nlm.nih.gov/compound/441401"
+  },
+  "emetine": {
+    "cid": 10219,
+    "formula": "C29H40N2O4",
+    "weight": "480.6",
+    "smiles": "CCC1CN2CCC3=CC(=C(C=C3C2CC1CC4C5=CC(=C(C=C5CCN4)OC)OC)OC)OC",
+    "image": "/structures/10219.png",
+    "pubchem": "https://pubchem.ncbi.nlm.nih.gov/compound/10219",
+    "note": "Structure shown is emetine base; the dihydrochloride salt used in the 2026 CHIKV study differs by protonation and chloride counter-ions."
+  },
+  "ganaplacide": {
+    "cid": 49856296,
+    "formula": "C22H23F2N5O",
+    "weight": "411.4",
+    "smiles": "CC1(C2=NC(=C(N2CCN1C(=O)CN)NC3=CC=C(C=C3)F)C4=CC=C(C=C4)F)C",
+    "image": "/structures/49856296.png",
+    "pubchem": "https://pubchem.ncbi.nlm.nih.gov/compound/49856296",
+    "note": "Investigational imidazolopiperazine (KAF156/GNF156); in GanLum with lumefantrine."
+  },
+  "cipargamin": {
+    "cid": 44469321,
+    "formula": "C19H14Cl2FN3O",
+    "weight": "390.2",
+    "smiles": "CC1CC2=C(C3(N1)C4=C(C=CC(=C4)Cl)NC3=O)NC5=CC(=C(C=C25)F)Cl",
+    "image": "/structures/44469321.png",
+    "pubchem": "https://pubchem.ncbi.nlm.nih.gov/compound/44469321",
+    "note": "Investigational spiroindolone PfATP4 inhibitor (ex-KAE609/NITD609)."
+  },
+  "an2-502998": {
+    "cid": 145400294,
+    "formula": "C20H28BNO6",
+    "weight": "389.3",
+    "smiles": "B1(C2=C(CO1)C=CC(=C2C)C(=O)NC(C(C)C)C(=O)OCC3CCOCC3)O",
+    "image": "/structures/145400294.png",
+    "pubchem": "https://pubchem.ncbi.nlm.nih.gov/compound/145400294",
+    "note": "AN2-502998 was formerly AN15368; PubChem holds it under the earlier code (synonyms include AN15368). Investigational Chagas candidate."
+  },
+  "iid432": {
+    "cid": 176514755,
+    "formula": "C19H19N7O",
+    "weight": "361.4",
+    "smiles": "CC1=NC2=C(C=C1)C=C(C=C2)N3CCC(C3)NC(=O)CN4C=NC(=N4)C#N",
+    "image": "/structures/176514755.png",
+    "pubchem": "https://pubchem.ncbi.nlm.nih.gov/compound/176514755",
+    "note": "Investigational cyanotriazole for Chagas disease; the fetched connectivity SMILES carries no stereochemistry (the (S)-pyrrolidine configuration is in the structure image)."
   }
 };
 
@@ -439,6 +484,9 @@
   "rabies-postexposure-prophylaxis": "Not a single molecule: an inactivated virus vaccine given with human rabies immunoglobulin.",
   "ixchiq": "Not a single molecule: a live-attenuated chikungunya virus vaccine.",
   "vimkunya": "Not a single molecule: a virus-like-particle chikungunya vaccine.",
+  "butantan-chik-vla1555": "Not a single molecule: a live-attenuated chikungunya virus vaccine, locally manufactured by Instituto Butantan.",
+  "qdenga": "Not a single molecule: a live-attenuated tetravalent dengue vaccine.",
+  "butantan-dv": "Not a single molecule: a single-dose live-attenuated tetravalent dengue vaccine made by Instituto Butantan.",
   "ansuvimab": "Not a small molecule: a monoclonal antibody, a protein of about 1,400 amino acids."
 };
   

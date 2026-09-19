@@ -138,6 +138,12 @@ export const KIND_FR: Record<Kind, { singular: string; plural: string; blurb: st
     plural: "Idées",
     blurb: "Des hypothèses et des solutions, chacune avec un test proposé.",
   },
+  resistance: {
+    singular: "Résistance",
+    plural: "Résistances",
+    blurb:
+      "La résistance aux médicaments, aux insecticides et aux pesticides : comment elle fonctionne, où elle a été détectée et qui la surveille.",
+  },
   terms: {
     singular: "Terme",
     plural: "Glossaire",

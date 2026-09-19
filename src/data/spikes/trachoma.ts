@@ -4,7 +4,7 @@ export const trachomaSpike: Spike = {
   tldr: "A bacterial eye infection that, after decades of reinfection, turns the eyelashes inward and blinds — and the NTD programme closest to finishing the job.",
 
   summary:
-    "Trachoma is caused by Chlamydia trachomatis and spreads eye to eye through fingers, shared cloths and eye-seeking flies, especially where faces are unwashed and water is scarce. Repeated childhood infections scar the inner eyelid; over years the lid turns inward and the lashes scrape the cornea, causing pain and irreversible blindness. Prevention uses the SAFE strategy — surgery for trichiasis, antibiotics, facial cleanliness and environmental improvement — and it has worked better than almost any other NTD intervention. By January 2026 the number of people globally requiring trachoma interventions had fallen below 100 million for the first time, and twenty-seven countries had been validated as having eliminated trachoma as a public health problem, with at least one in every endemic WHO region. The remaining work is the endgame: the last districts with persistent transmission, the surgery backlog for people already blinded by in-turned lashes, and the fact that mass azithromycin selects for macrolide resistance that could undermine the antibiotic arm of the strategy.",
+    "Trachoma is caused by Chlamydia trachomatis and spreads eye to eye through fingers, shared cloths and eye-seeking flies, especially where faces are unwashed and water is scarce. Repeated childhood infections scar the inner eyelid; over years the lid turns inward and the lashes scrape the cornea, causing pain and irreversible blindness. Women are blinded up to four times as often as men. Prevention uses the SAFE strategy — surgery for trichiasis, antibiotics, facial cleanliness and environmental improvement — and it has worked better than almost any other NTD intervention: by 4 September 2026, thirty-three countries had been validated as having eliminated trachoma as a public health problem, across every WHO region. The remaining work is the endgame: about 92 million people still living in endemic areas (March 2026), the surgery backlog for people already blinded by in-turned lashes, and the fact that mass azithromycin selects for macrolide resistance that could undermine the antibiotic arm of the strategy.",
   stats: [
     {
       label: "People at risk",
@@ -13,15 +13,7 @@ export const trachomaSpike: Spike = {
       unit: "million people",
       year: 2026,
       geography: "global",
-      note: "live in trachoma-endemic areas (WHO, March 2026)",
-      source: { label: "WHO — trachoma (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/trachoma" },
-    },
-    {
-      label: "People requiring interventions",
-      value: "< 100 million",
-      number: 100,
-      unit: "million people",
-      note: "first time below 100 million, reported January 2026",
+      note: "live in trachoma-endemic areas (WHO, March 2026 data)",
       source: { label: "WHO — trachoma (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/trachoma" },
     },
     {
@@ -36,11 +28,12 @@ export const trachomaSpike: Spike = {
     },
     {
       label: "Countries validated",
-      value: "27",
-      number: 27,
+      value: "33",
+      number: 33,
       unit: "countries",
+      year: 2026,
       geography: "global",
-      note: "with at least one in every endemic WHO region",
+      note: "as of 4 September 2026, including Algeria, China, Egypt, Ghana, India, Malawi, Nepal, Senegal and Timor-Leste",
       source: { label: "WHO — trachoma (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/trachoma" },
     },
     {
@@ -49,17 +42,35 @@ export const trachomaSpike: Spike = {
       number: 1.9,
       unit: "million people",
       geography: "global",
-      note: "about 1.4% of all blindness worldwide",
+      note: "about 1.4% of all blindness worldwide; women affected up to 4× as often as men",
       source: { label: "WHO — trachoma (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/trachoma" },
     },
     {
-      label: "Antibiotic coverage (2025)",
-      value: "47%",
-      number: 47,
-      unit: "%",
+      label: "Trichiasis surgery (2025)",
+      value: "98,829",
+      number: 98829,
+      unit: "operations",
       year: 2025,
       geography: "global",
-      note: "47.4 million people treated with antibiotics in 2025",
+      note: "people who received corrective surgery for trachomatous trichiasis",
+      source: { label: "WHO — trachoma (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/trachoma" },
+    },
+    {
+      label: "Antibiotic treatment (2025)",
+      value: "47.4 million (47% coverage)",
+      number: 47.4,
+      unit: "million people",
+      year: 2025,
+      geography: "global",
+      note: "global antibiotic coverage 47%",
+      source: { label: "WHO — trachoma (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/trachoma" },
+    },
+    {
+      label: "Economic cost",
+      value: "US$2.9–5.3 billion/year",
+      unit: "USD/year",
+      geography: "global",
+      note: "lost productivity from blindness and visual impairment; rising to US$8 billion when trichiasis is included",
       source: { label: "WHO — trachoma (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/trachoma" },
     },
     {
@@ -72,34 +83,38 @@ export const trachomaSpike: Spike = {
       source: { label: "International Trachoma Initiative", url: "https://www.trachoma.org/" },
     },
     { label: "Strategy", value: "SAFE", note: "surgery, antibiotics, facial cleanliness, environment" },
-    { label: "Leading cause", value: "Infectious blindness worldwide" },
     { label: "Target", value: "Elimination as a public health problem by 2030" },
   ],
 
   timeline: [
     {
-      date: "1998",
-      text: "The International Trachoma Initiative is founded and begins managing Pfizer's donation of azithromycin.",
-      refs: ["iti", "azithromycin"],
-    },
-    {
-      date: "1998",
-      text: "WHO launches the Alliance for the Global Elimination of Trachoma, setting the SAFE strategy as the framework.",
+      date: "1993",
+      text: "WHO adopts the SAFE strategy — surgery, antibiotics, facial cleanliness, environmental improvement — as the framework for trachoma control.",
       refs: ["safe-strategy", "who"],
     },
     {
+      date: "1996",
+      text: "WHO launches the Alliance for the Global Elimination of Trachoma by 2020 (GET2020).",
+      refs: ["who"],
+    },
+    {
+      date: "1998",
+      text: "The World Health Assembly adopts resolution WHA51.11, targeting elimination of trachoma as a public health problem, and the International Trachoma Initiative is founded to manage Pfizer's azithromycin donation.",
+      refs: ["iti", "azithromycin", "who"],
+    },
+    {
       date: "2006",
-      text: "A trial finds that a single dose of azithromycin after trichiasis surgery cuts recurrence by about a third.",
+      text: "The STAR trial finds that a single dose of azithromycin after trichiasis surgery cuts recurrence by about a third.",
       refs: ["star-trichiasis", "azithromycin"],
     },
     {
       date: "2025",
-      text: "Egypt and Fiji are validated, making 27 countries in total and at least one in every endemic region.",
+      text: "Papua New Guinea, Burundi, Senegal and Fiji are validated, taking the total to 26 and covering every endemic WHO region.",
       refs: ["who", "iti"],
     },
     {
       date: "2026",
-      text: "WHO reports that the global population requiring trachoma interventions has fallen below 100 million for the first time.",
+      text: "By 4 September 2026, thirty-three countries had been validated as having eliminated trachoma as a public health problem, with 92 million people still at risk (March 2026 data).",
       refs: ["who", "ictc"],
     },
   ],
@@ -109,7 +124,7 @@ export const trachomaSpike: Spike = {
       id: "finishing",
       title: "The programme closest to finishing",
       body:
-        "Trachoma is the strongest argument that NTD elimination is achievable. The tools are unglamorous and the strategy is a list — surgery for people whose lids have already turned in, repeated mass azithromycin for communities with active infection, face-washing, and water and sanitation — but it has driven prevalence down across whole regions. Twenty-seven countries have been validated as having eliminated it as a public health problem, and the population still needing interventions has fallen below 100 million for the first time.\n\nWhat is left is the hard part. The remaining endemic districts are often the poorest, most remote and most water-scarce, and they are where the 'F' and 'E' of SAFE matter most and are hardest to deliver. Countries that have stopped mass treatment must keep surveying to prove that transmission is really gone, because a district that looks clean on paper and then seeds new infections is the failure mode that would undo the programme.",
+        "Trachoma is the strongest argument that NTD elimination is achievable. The tools are unglamorous and the strategy is a list — surgery for people whose lids have already turned in, repeated mass azithromycin for communities with active infection, face-washing, and water and sanitation — but it has driven prevalence down across whole regions. Thirty-three countries have been validated as having eliminated it as a public health problem, and an estimated 92 million people remain at risk (March 2026 data).\n\nWhat is left is the hard part. The remaining endemic districts are often the poorest, most remote and most water-scarce, and they are where the 'F' and 'E' of SAFE matter most and are hardest to deliver. Countries that have stopped mass treatment must keep surveying to prove that transmission is really gone, because a district that looks clean on paper and then seeds new infections is the failure mode that would undo the programme.",
       refs: ["who", "elimination-roadmap", "surveillance-data-gap", "ictc"],
     },
     {

@@ -283,7 +283,7 @@ export const guidelines: RecordOf<"guidelines">[] = [
     name: "Towards Zero Leprosy: global leprosy strategy 2021–2030",
     tldr: "The strategy aiming to interrupt leprosy transmission and eliminate the disease in most countries by 2030.",
     summary:
-      "This strategy set leprosy's 2030 targets: interruption of transmission, elimination of the disease in most countries, and meaningful reductions in new cases and in grade-2 disability. It shifted the emphasis from counting and treating cases toward stopping transmission, which is why it is coupled with the scale-up of contact screening and single-dose rifampicin post-exposure prophylaxis, and with efforts to find cases earlier so that disability is prevented rather than managed. The plateau in global case numbers at around 200,000 a year is the measure it will be judged against.",
+      "This strategy set leprosy's 2030 targets: interruption of transmission, elimination of the disease in most countries, and meaningful reductions in new cases and in grade-2 disability. It shifted the emphasis from counting and treating cases toward stopping transmission, which is why it is coupled with the scale-up of contact screening and single-dose rifampicin post-exposure prophylaxis, and with efforts to find cases earlier so that disability is prevented rather than managed. It is judged against a case detection that has plateaued: 172,717 new cases were reported in 2024, down 5.5% from 182,815 in 2023 but still far above the trajectory needed to interrupt transmission, with 9,124 people (5.3%) already showing grade-2 disability when they were diagnosed. The 2023 technical guidance on interrupting transmission and eliminating leprosy supplies the phased, verifiable framework the strategy needs.",
     asOf: "2026-09",
     issuer: "WHO",
     issued: "2021",
@@ -299,7 +299,8 @@ export const guidelines: RecordOf<"guidelines">[] = [
     diseases: ["leprosy"],
     drugs: ["rifampicin", "dapsone", "clofazimine"],
     institutions: ["who", "gpzl"],
-    technologies: ["mass-drug-administration"],
+    technologies: ["mass-drug-administration", "lepvax"],
+    guidelines: ["who-leprosy-elimination-framework"],
     terms: ["sdr-pep", "elimination", "eot", "stigma-and-disability"],
     stats: [
       { label: "Horizon", value: "2021–2030" },

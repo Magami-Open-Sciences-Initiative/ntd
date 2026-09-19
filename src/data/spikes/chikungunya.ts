@@ -6,29 +6,35 @@ const WHO_CHIK: { label: string; url: string } = {
 };
 
 export const chikungunyaSpike: Spike = {
-  tldr: "An Aedes-borne virus that causes sudden fever and joint pain so severe it is hard to move, and can leave a minority of patients with pain for months or years — with a licensed vaccine the field cannot yet use in the people most at risk.",
+  tldr: "An Aedes-borne virus that causes sudden fever and joint pain so severe it is hard to move, and can leave a minority of patients with pain for months or years — with one vaccine withdrawn in the US and the other expanding, while outbreaks surge on four continents.",
 
   summary:
-    "Chikungunya is caused by the chikungunya virus (CHIKV), first identified in Tanzania in 1952, and transmitted by the same day-biting Aedes aegypti and Aedes albopictus mosquitoes as dengue and Zika. It begins abruptly, 4–8 days after a bite, with fever and severe, often debilitating joint pain; a minority of patients have joint pain for weeks, months or even years, which is a substantial economic burden in its own right. Newborns infected around delivery and older adults with underlying conditions are at higher risk of severe disease; deaths are uncommon and usually associated with pre-existing conditions. There is no specific antiviral — care is fever and pain control — and outbreaks have become more frequent and widespread since 2004, with the virus now identified in more than 110 countries. Two vaccines are licensed, but the first was paused in people aged 60 and over in 2025 after serious adverse events, narrowing who can receive it.",
+    "Chikungunya is caused by the chikungunya virus (CHIKV), first identified in Tanzania in 1952, and transmitted by the same day-biting Aedes aegypti and Aedes albopictus mosquitoes as dengue and Zika. It begins abruptly, 4–8 days after a bite, with fever and severe, often debilitating joint pain; a minority of patients have joint pain for weeks, months or even years, which is a substantial economic burden in its own right. Newborns infected around delivery and older adults with underlying conditions are at higher risk of severe disease; deaths are uncommon and usually associated with pre-existing conditions. There is no specific antiviral — care is fever and pain control — though the nsP2 protease now has oral leads with mouse efficacy. Outbreaks have become more frequent and widespread since 2004, with the virus now reported in 119 countries and a major resurgence in 2025–2026 across the Americas (313,000 cases), Réunion (54,500 cases, 45 deaths) and Europe. Two vaccines are licensed: Ixchiq, whose US licence was suspended in August 2025 and withdrawn in January 2026 after chikungunya-like serious events, and Vimkunya, a virus-like-particle vaccine now approved in the US, EU, UK and Switzerland and submitted in Brazil.",
 
   stats: [
     {
-      label: "Vaccine pause (2025)",
-      value: "17 serious events, 2 deaths",
-      number: 17,
-      unit: "events",
+      label: "Cases reported (2025)",
+      value: "502,264 (186 deaths)",
+      number: 502264,
+      unit: "cases",
       year: 2025,
-      geography: "United States",
-      note: "in recipients aged 62–89; FDA and CDC paused Ixchiq in people aged 60 and over",
-      source: { label: "FDA/CDC — pause in use of Ixchiq in people 60 and older", url: "https://www.fda.gov/vaccines-blood-biologics/safety-availability-biologics/fda-and-cdc-recommend-pause-use-ixchiq-chikungunya-vaccine-live-individuals-60-years-age-and-older" },
+      geography: "global, 41 countries and territories",
+      note: "208,335 confirmed; Americas 313,132 cases with 170 deaths; resurgence ongoing into 2026",
+      source: { label: "PAHO — chikungunya epidemiological alert (Feb 2026)", url: "https://www.paho.org/en/documents/epidemiological-alert-chikungunya-10-february-2026" },
     },
     {
       label: "Vaccines licensed",
       value: "2",
       number: 2,
       unit: "vaccines",
-      note: "Ixchiq and Vimkunya; neither is widely available yet",
+      note: "Ixchiq (US licence withdrawn January 2026) and Vimkunya (US, EU, UK, Switzerland; Brazil submission 2026)",
       source: WHO_CHIK,
+    },
+    {
+      label: "Ixchiq US withdrawal (2026)",
+      value: "Licence suspended Aug 2025, withdrawn Jan 2026",
+      note: "FDA cited chikungunya-like serious events including hospitalisations and encephalitis with one death; EMA lifted its elderly restriction; Brazil rollout continues",
+      source: { label: "FDA — Ixchiq safety communication (Aug 2025)", url: "https://www.fda.gov/safety/medical-product-safety-information/fda-update-safety-ixchiq-chikungunya-vaccine-live-fda-suspends-biologics-license-fda-safety" },
     },
   ],
 
@@ -55,8 +61,18 @@ export const chikungunyaSpike: Spike = {
     },
     {
       date: "2025",
-      text: "A second chikungunya vaccine, the virus-like-particle vaccine Vimkunya, is licensed, giving the field two products.",
+      text: "A second chikungunya vaccine, the virus-like-particle vaccine Vimkunya, is licensed in the US, EU and UK, giving the field two products.",
       refs: ["vimkunya"],
+    },
+    {
+      date: "2025",
+      text: "The FDA suspends Ixchiq's US licence over chikungunya-like serious events; Réunion's outbreak (54,500 confirmed cases) becomes the first mass-use setting for the vaccine.",
+      refs: ["ixchiq"],
+    },
+    {
+      date: "2026",
+      text: "Valneva withdraws Ixchiq's US licence while Brazil approves locally made VLA1555 and launches a pilot Ixchiq campaign; Vimkunya gains Swiss approval and starts a paediatric Phase 3.",
+      refs: ["ixchiq", "vimkunya", "butantan-chik-vla1555", "ixchiq-brazil-pvs", "vimkunya-pediatric"],
     },
   ],
 
@@ -70,10 +86,10 @@ export const chikungunyaSpike: Spike = {
     },
     {
       id: "vaccine-setback",
-      title: "Two vaccines, one paused",
+      title: "Two vaccines, one withdrawn in the US",
       body:
-        "Chikungunya got its first licensed vaccine in 2023, which was a genuine advance for a disease with no specific treatment. Then in May 2025 the FDA and CDC recommended a pause in its use in people aged 60 and older while they investigated post-marketing reports of serious adverse events — seventeen in total, including two deaths, in people aged 62 to 89. In August 2025 the FDA issued a further safety update. The events were neurological and cardiac, and the label already carried a warning that the live vaccine can cause severe or prolonged chikungunya-like reactions.\n\nThe practical effect is a narrowing of who can receive it: fine for younger travellers and some at-risk groups, not usable in the older adults who are most vulnerable to severe chikungunya. A second product, the virus-like-particle vaccine Vimkunya, was licensed in 2025 and is not subject to the same pause, but neither vaccine is widely available. It is a reminder that a licence is not the end of the story, and that post-marketing surveillance does real work — but it leaves the field without a product it can use in a large part of the population that needs protection.",
-      refs: ["ixchiq", "vimkunya", "chikungunya-vaccination", "who"],
+        "Chikungunya got its first licensed vaccine in 2023, which was a genuine advance for a disease with no specific treatment. Then in May 2025 the FDA and CDC recommended a pause in its use in people aged 60 and older while they investigated post-marketing reports of serious adverse events — seventeen in total, including two deaths, in people aged 62 to 89. In August 2025 the FDA went further and suspended Ixchiq's US licence over chikungunya-like illness in recipients, including hospitalisations and encephalitis with one death; in January 2026 Valneva voluntarily withdrew the US application. Europe's regulator lifted its own elderly restriction, and Brazil — which licensed Ixchiq in April 2025 and locally made VLA1555 in May 2026 — launched a pilot Ixchiq campaign in February 2026, so the product's future is now in endemic countries rather than traveller markets.\n\nThe second product, the virus-like-particle vaccine Vimkunya, was never subject to the pause: as a non-infectious VLP it cannot cause disease, and by April 2026 it held US, EU, UK and Swiss approvals with Brazil and Canada filings pending and a paediatric Phase 3 (ages 2–11) under way. It is a reminder that a licence is not the end of the story, and that post-marketing surveillance does real work — but the field has gone from two usable products to effectively one in the age group that needs protection most.",
+      refs: ["ixchiq", "vimkunya", "butantan-chik-vla1555", "chikungunya-vaccination", "who"],
     },
     {
       id: "care",
@@ -84,8 +100,10 @@ export const chikungunyaSpike: Spike = {
     },
   ],
 
-  drugs: ["ixchiq", "vimkunya"],
+  drugs: ["ixchiq", "vimkunya", "butantan-chik-vla1555", "emetine"],
+  trials: ["vla1553-trial", "chikv-vlp-followup", "ixchiq-brazil-pvs", "vimkunya-pediatric"],
   technologies: ["chikungunya-vaccination"],
-  institutions: ["who", "paho"],
+  institutions: ["who", "paho", "valneva"],
+  guidelines: ["arbovirus-clinical-guideline-2025"],
   terms: [],
 };

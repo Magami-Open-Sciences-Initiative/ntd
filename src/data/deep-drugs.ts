@@ -397,10 +397,10 @@ export const DRUG_DEEPDIVES: Record<string, Spike> = {
   mosnodenvir: {
     sections: [
       {
-        id: "challenge-failure",
-        title: "Challenge-model success, field failure",
+        id: "challenge-limbo",
+        title: "Challenge-model success, sponsor exit, rescue talks",
         body:
-          "Mosnodenvir protected volunteers in a controlled human infection model, which is an unusually strong early signal for a dengue antiviral and raised hopes of a preventive drug. In 2025 the developer discontinued the Phase 2 field study, citing strategic rather than safety reasons. The lesson is not that the science failed but that a challenge-model result does not by itself produce a medicine: the field trial, and the funding to run it for a disease of poor countries, is a separate and harder step.",
+          "Mosnodenvir protected volunteers in a controlled human infection model — 6 of 10 high-dose recipients uninfected — which is an unusually strong early signal for a dengue antiviral and raised hopes of a preventive drug. In October 2024 Johnson & Johnson halted the ~1,600-participant field study on leaving infectious-disease R&D entirely, a commercial rather than scientific verdict. The NEJM publication of the challenge data plus adoption talks with new sponsors mean the compound is in limbo rather than dead — and with Novartis's EYU688 and a Serum Institute monoclonal now in Phase 2, the field has more than one antiviral shot on goal for the first time.",
       },
     ],
   },

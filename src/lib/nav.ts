@@ -89,6 +89,7 @@ export const NAV: NavGroup[] = [
       { label: KIND_META.roadmaps.plural, href: kindHref("roadmaps") },
       { label: KIND_META.guidelines.plural, href: kindHref("guidelines") },
       { label: KIND_META.bottlenecks.plural, href: kindHref("bottlenecks") },
+      { label: KIND_META.resistance.plural, href: kindHref("resistance") },
       { label: KIND_META.ideas.plural, href: kindHref("ideas") },
     ],
   },

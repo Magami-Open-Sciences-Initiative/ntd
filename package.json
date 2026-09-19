@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "validate": "tsx scripts/validate.ts",
+    "equity": "tsx scripts/equity-analysis.ts",
     "build:api": "tsx scripts/build-api.ts",
     "build:llms": "tsx scripts/build-llms.ts",
     "fetch:structures": "tsx scripts/fetch-structures.ts",

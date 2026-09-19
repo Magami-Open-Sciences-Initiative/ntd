@@ -25,9 +25,9 @@ export const DIAGNOSTIC_ENRICHMENT: Record<string, Spike> = {
     samples: ["Finger-prick blood", "Serum", "Plasma"],
     stage: "Regulatory achieved for several products",
     products: [
-      { name: "Filariasis IgG/IgM Rapid Test", manufacturer: "Hangzhou AllTest Biotech", stage: "Regulatory achieved", format: "Rapid diagnostic test" },
-      { name: "Leishmania IgG/IgM Rapid Test", manufacturer: "Assure Tech. (Hangzhou)", stage: "Regulatory status unknown", format: "Rapid diagnostic test" },
-      { name: "Bioline Onchocerciasis IgG4", manufacturer: "Abbott", stage: "Regulatory status unknown", format: "Rapid diagnostic test" },
+      { name: "Filariasis IgG/IgM Rapid Test", manufacturer: "Hangzhou AllTest Biotech", stage: "Regulatory achieved", format: "Rapid diagnostic test", url: "https://zjkuake.com" },
+      { name: "Leishmania IgG/IgM Rapid Test", manufacturer: "Assure Tech. (Hangzhou)", stage: "Regulatory status unknown", format: "Rapid diagnostic test", url: "https://diareagent.com" },
+      { name: "Bioline Onchocerciasis IgG4", manufacturer: "Abbott", stage: "Regulatory status unknown", format: "Rapid diagnostic test", url: "https://abbott.com" },
     ],
   },
 
@@ -42,8 +42,8 @@ export const DIAGNOSTIC_ENRICHMENT: Record<string, Spike> = {
     samples: ["Finger-prick blood", "Serum", "Plasma"],
     stage: "Late-stage development to regulatory achieved",
     products: [
-      { name: "Brugia Rapid Test", manufacturer: "Reszon Diagnostics International", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "antibody Brugia assay, 25 minutes" },
-      { name: "POCKIT Brugia spp. Reagent Set", manufacturer: "GeneReach Biotechnology", stage: "Research use only", format: "NAT reagent kit (proprietary platform)" },
+      { name: "Brugia Rapid Test", manufacturer: "Reszon Diagnostics International", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "antibody Brugia assay, 25 minutes", url: "https://reszonics.com", approvals: [{ body: "Malaysia MDA", status: "registered" }] },
+      { name: "POCKIT Brugia spp. Reagent Set", manufacturer: "GeneReach Biotechnology", stage: "Research use only", format: "NAT reagent kit (proprietary platform)", url: "https://genereach.com" },
     ],
   },
 
@@ -58,7 +58,7 @@ export const DIAGNOSTIC_ENRICHMENT: Record<string, Spike> = {
     samples: ["Serum", "Plasma", "Finger-prick blood"],
     stage: "Research use only",
     products: [
-      { name: "ITM CATT/T.b.gambiense", manufacturer: "Institute of Tropical Medicine, Belgium", stage: "Research use only", format: "Slide agglutination", note: "the reference screening test for Gambiense HAT; 10 minutes" },
+      { name: "ITM CATT/T.b.gambiense", manufacturer: "Institute of Tropical Medicine, Belgium", stage: "Research use only", format: "Slide agglutination", note: "the reference screening test for Gambiense HAT; 10 minutes", url: "https://diagnostics.itg.be" },
     ],
   },
 
@@ -74,10 +74,10 @@ export const DIAGNOSTIC_ENRICHMENT: Record<string, Spike> = {
     stage: "Regulatory achieved for several products",
     regulatory: "CE-IVDD and national approvals; used in blood-donor screening",
     products: [
-      { name: "Elecsys Chagas", manufacturer: "Roche Diagnostics", stage: "Regulatory achieved", format: "Chemiluminescent immunoassay", note: "high-throughput laboratory platform" },
-      { name: "Bioline Chagas Ab", manufacturer: "Abbott", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "true point of care, 15 minutes" },
-      { name: "Chagas Virclia IgG + IgM MONOTEST", manufacturer: "Vircell", stage: "Regulatory achieved", format: "Chemiluminescent immunoassay" },
-      { name: "Anti-T. cruzi (Chagas) assay", manufacturer: "Ortho Clinical Diagnostics", stage: "Regulatory achieved", format: "Laboratory immunoassay" },
+      { name: "Elecsys Chagas", manufacturer: "Roche Diagnostics", stage: "Regulatory achieved", format: "Chemiluminescent immunoassay", note: "high-throughput laboratory platform", url: "https://molecular.roche.com", approvals: [{ body: "Australia TGA", status: "registered" }, { body: "Brazil ANVISA", status: "registered" }, { body: "Colombia INVIMA", status: "registered" }, { body: "Bolivia AGEMED", status: "registered" }, { body: "Mexico COFEPRIS", status: "registered" }, { body: "Paraguay DINAVISA", status: "registered" }, { body: "Peru DIGEMID", status: "registered" }, { body: "Argentina ANMAT", status: "registered" }, { body: "Chile ANAMED", status: "registered" }] },
+      { name: "Bioline Chagas Ab", manufacturer: "Abbott", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "true point of care, 15 minutes", url: "https://abbott.com", approvals: [{ body: "Brazil ANVISA", status: "registered" }, { body: "Colombia INVIMA", status: "registered" }, { body: "Bolivia AGEMED", status: "registered" }, { body: "Mexico COFEPRIS", status: "registered" }, { body: "Paraguay DINAVISA", status: "registered" }, { body: "Peru DIGEMID", status: "registered" }, { body: "Argentina ANMAT", status: "registered" }, { body: "Chile ANAMED", status: "registered" }] },
+      { name: "Chagas Virclia IgG + IgM MONOTEST", manufacturer: "Vircell", stage: "Regulatory achieved", format: "Chemiluminescent immunoassay", url: "https://vircell.com", approvals: [{ body: "Brazil ANVISA", status: "registered" }, { body: "Colombia INVIMA", status: "registered" }, { body: "Mexico COFEPRIS", status: "registered" }, { body: "Peru DIGEMID", status: "registered" }, { body: "Chile ANAMED", status: "registered" }, { body: "CE", status: "IVDD registered" }] },
+      { name: "Anti-T. cruzi (Chagas) assay", manufacturer: "Ortho Clinical Diagnostics", stage: "Regulatory achieved", format: "Laboratory immunoassay", url: "https://www.quidelortho.com", approvals: [{ body: "Brazil ANVISA", status: "registered" }, { body: "Colombia INVIMA", status: "registered" }, { body: "Mexico COFEPRIS", status: "registered" }, { body: "Paraguay DINAVISA", status: "registered" }, { body: "Chile ANAMED", status: "registered" }] },
     ],
   },
 
@@ -92,9 +92,9 @@ export const DIAGNOSTIC_ENRICHMENT: Record<string, Spike> = {
     samples: ["Serum", "Plasma", "Whole blood"],
     stage: "Regulatory achieved for several multiplex panels",
     products: [
-      { name: "BioFire Global Fever Special Pathogens Panel", manufacturer: "BioFire Defense", stage: "Regulatory achieved", format: "Cartridge-based processing", note: "multiplex panel including chikungunya, dengue, Zika, Ebola, Lassa, Marburg and malaria; 60 minutes" },
-      { name: "BioFire Tropical Fever Panel", manufacturer: "bioMérieux", stage: "Regulatory achieved", format: "Cartridge-based processing", note: "60 minutes; WHO EUL under assessment and US FDA 510(k)" },
-      { name: "Bosphore Tropical Fever Panel Kit v1", manufacturer: "Anatolia Geneworks", stage: "Regulatory achieved", format: "NAT reagent kit (open source)" },
+      { name: "BioFire Global Fever Special Pathogens Panel", manufacturer: "BioFire Defense", stage: "Regulatory achieved", format: "Cartridge-based processing", note: "multiplex panel including chikungunya, dengue, Zika, Ebola, Lassa, Marburg and malaria; 60 minutes", url: "https://biofiredefense.com", approvals: [{ body: "WHO EUL", status: "under assessment" }, { body: "US FDA", status: "510(k) cleared" }] },
+      { name: "BioFire Tropical Fever Panel", manufacturer: "bioMérieux", stage: "Regulatory achieved", format: "Cartridge-based processing", note: "60 minutes; WHO EUL under assessment and US FDA 510(k)", url: "https://biomerieux-diagnostics.com", approvals: [{ body: "CE", status: "IVDD registered" }, { body: "US FDA", status: "510(k) cleared" }] },
+      { name: "Bosphore Tropical Fever Panel Kit v1", manufacturer: "Anatolia Geneworks", stage: "Regulatory achieved", format: "NAT reagent kit (open source)", url: "https://anatoliageneworks.com", approvals: [{ body: "CE", status: "IVDD registered" }] },
     ],
   },
 
@@ -109,8 +109,8 @@ export const DIAGNOSTIC_ENRICHMENT: Record<string, Spike> = {
     samples: ["Serum"],
     stage: "Research use only to early-stage development",
     products: [
-      { name: "Neurocysticercosis (T. solium) IgG assay", manufacturer: "Kephera Diagnostics", stage: "Research use only", format: "ELISA", note: "150 minutes" },
-      { name: "Neurocysticercosis (T. solium) RDT", manufacturer: "Kephera Diagnostics", stage: "Early-stage development", format: "Rapid diagnostic test" },
+      { name: "Neurocysticercosis (T. solium) IgG assay", manufacturer: "Kephera Diagnostics", stage: "Research use only", format: "ELISA", note: "150 minutes", url: "https://kephera.com" },
+      { name: "Neurocysticercosis (T. solium) RDT", manufacturer: "Kephera Diagnostics", stage: "Early-stage development", format: "Rapid diagnostic test", url: "https://kephera.com" },
     ],
   },
 
@@ -125,10 +125,10 @@ export const DIAGNOSTIC_ENRICHMENT: Record<string, Spike> = {
     samples: ["Whole blood", "Serum", "Plasma"],
     stage: "Regulatory achieved for many products",
     products: [
-      { name: "SD BIOLINE Dengue Duo (NS1 Ag + IgG/IgM)", manufacturer: "Abbott", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "true point of care, 20 minutes; combines antigen and antibody detection" },
-      { name: "ichroma Dengue NS1 Ag", manufacturer: "Boditech Med", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "near point of care, 12 minutes" },
-      { name: "STANDARD F Dengue NS1 Ag", manufacturer: "SD Biosensor", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "15 minutes" },
-      { name: "Platelia Dengue NS1 Ag", manufacturer: "Bio-Rad", stage: "Regulatory achieved", format: "Laboratory immunoassay", note: "microplate ELISA for reference laboratories" },
+      { name: "SD BIOLINE Dengue Duo (NS1 Ag + IgG/IgM)", manufacturer: "Abbott", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "true point of care, 20 minutes; combines antigen and antibody detection", url: "https://abbott.com", approvals: [{ body: "Brazil ANVISA", status: "registered" }, { body: "CE", status: "IVDD registered" }] },
+      { name: "ichroma Dengue NS1 Ag", manufacturer: "Boditech Med", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "near point of care, 12 minutes", url: "https://boditech.co.kr/en", approvals: [{ body: "CE", status: "IVDD registered" }] },
+      { name: "STANDARD F Dengue NS1 Ag", manufacturer: "SD Biosensor", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "15 minutes", url: "https://sdbiosensor.com", approvals: [{ body: "CE", status: "IVDD registered" }] },
+      { name: "Platelia Dengue NS1 Ag", manufacturer: "Bio-Rad", stage: "Regulatory achieved", format: "Laboratory immunoassay", note: "microplate ELISA for reference laboratories", url: "https://bio-rad.com", approvals: [{ body: "CE", status: "IVDD registered" }] },
     ],
   },
 
@@ -154,7 +154,7 @@ export const DIAGNOSTIC_ENRICHMENT: Record<string, Spike> = {
     samples: ["Whole blood", "Post-mortem swabs"],
     stage: "Regulatory achieved for multiplex panels",
     products: [
-      { name: "BioFire Global Fever Special Pathogens Panel", manufacturer: "BioFire Defense", stage: "Regulatory achieved", format: "Cartridge-based processing", note: "panel covering Ebola, Marburg, Lassa, dengue, chikungunya and malaria; 60 minutes" },
+      { name: "BioFire Global Fever Special Pathogens Panel", manufacturer: "BioFire Defense", stage: "Regulatory achieved", format: "Cartridge-based processing", note: "panel covering Ebola, Marburg, Lassa, dengue, chikungunya and malaria; 60 minutes", url: "https://biofiredefense.com", approvals: [{ body: "WHO EUL", status: "under assessment" }, { body: "US FDA", status: "510(k) cleared" }] },
     ],
   },
 
@@ -169,8 +169,8 @@ export const DIAGNOSTIC_ENRICHMENT: Record<string, Spike> = {
     samples: ["Finger-prick blood"],
     stage: "Regulatory achieved",
     products: [
-      { name: "Bioline Filariasis Test Strip", manufacturer: "Abbott", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "the standard W. bancrofti antigen test; 10 minutes" },
-      { name: "STANDARD Q Filariasis Ag", manufacturer: "SD Biosensor", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "10 minutes" },
+      { name: "Bioline Filariasis Test Strip", manufacturer: "Abbott", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "the standard W. bancrofti antigen test; 10 minutes", url: "https://abbott.com", approvals: [{ body: "Brazil ANVISA", status: "registered" }, { body: "CE", status: "IVDD registered" }] },
+      { name: "STANDARD Q Filariasis Ag", manufacturer: "SD Biosensor", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "10 minutes", url: "https://sdbiosensor.com", approvals: [{ body: "CE", status: "IVDD registered" }] },
     ],
   },
 
@@ -210,7 +210,7 @@ export const DIAGNOSTIC_ENRICHMENT: Record<string, Spike> = {
     samples: ["Stool"],
     stage: "Established method; kits are commercially available",
     products: [
-      { name: "HELM TEST Kato-Katz kit", manufacturer: "Bio-Manguinhos / Fiocruz", stage: "Regulatory status unknown", format: "Reagent kit + slide", note: "60 minutes" },
+      { name: "HELM TEST Kato-Katz kit", manufacturer: "Bio-Manguinhos / Fiocruz", stage: "Regulatory status unknown", format: "Reagent kit + slide", note: "60 minutes", url: "https://bio.fiocruz.br/index.php/br/" },
     ],
   },
 
@@ -248,6 +248,9 @@ export const DIAGNOSTIC_ENRICHMENT: Record<string, Spike> = {
     operator: "Trained technician",
     samples: ["Stool"],
     stage: "Established method; apparatus commercially available",
+    products: [
+      { name: "Mini-FLOTAC", manufacturer: "University of Naples Federico II", stage: "Established method", format: "Flotation apparatus + counting chamber", note: "the reference flotation apparatus for stool egg counting", url: "https://parassitologia.unina.it" },
+    ],
   },
 
   "molecular-lamp": {
@@ -285,7 +288,7 @@ export const DIAGNOSTIC_ENRICHMENT: Record<string, Spike> = {
     samples: ["Swab", "Fine-needle aspirate", "Tissue"],
     stage: "Research use only to evaluated prototypes",
     products: [
-      { name: "NP Mycobacterium Ulcerans LAMP Test Kit", manufacturer: "Pinpoint Molecular", stage: "Research use only", format: "NAT reagent kit (open source)", note: "M. ulcerans LAMP; true point of care, 30 minutes" },
+      { name: "NP Mycobacterium Ulcerans LAMP Test Kit", manufacturer: "Pinpoint Molecular", stage: "Research use only", format: "NAT reagent kit (open source)", note: "M. ulcerans LAMP; true point of care, 30 minutes", url: "https://pop-updiagnostics.com" },
     ],
   },
 
@@ -300,7 +303,7 @@ export const DIAGNOSTIC_ENRICHMENT: Record<string, Spike> = {
     samples: ["Urine"],
     stage: "Regulatory achieved",
     products: [
-      { name: "Urine CCA (Schisto) ECO Teste", manufacturer: "ECO Diagnostica", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "20 minutes" },
+      { name: "Urine CCA (Schisto) ECO Teste", manufacturer: "ECO Diagnostica", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "20 minutes", url: "https://ecodiagnostica.com.br", approvals: [{ body: "Brazil ANVISA", status: "registered" }, { body: "CE", status: "IVDD registered" }] },
     ],
   },
 
@@ -315,9 +318,9 @@ export const DIAGNOSTIC_ENRICHMENT: Record<string, Spike> = {
     samples: ["Finger-prick blood", "Serum", "Plasma"],
     stage: "Regulatory achieved for several products",
     products: [
-      { name: "SD BIOLINE Leishmania Ab", manufacturer: "Abbott", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "10 minutes; widely used in elimination programmes" },
-      { name: "OnSite Leishmania Ab Rapid Test", manufacturer: "CTK Biotech", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "15 minutes" },
-      { name: "rK28 RDT", manufacturer: "CTK Biotech", stage: "Research use only", format: "Rapid diagnostic test", note: "next-generation rK28 antigen; 10 minutes" },
+      { name: "SD BIOLINE Leishmania Ab", manufacturer: "Abbott", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "10 minutes; widely used in elimination programmes", url: "https://abbott.com", approvals: [{ body: "CE", status: "IVDD registered" }] },
+      { name: "OnSite Leishmania Ab Rapid Test", manufacturer: "CTK Biotech", stage: "Regulatory achieved", format: "Rapid diagnostic test", note: "15 minutes", url: "https://ctkbiotech.com", approvals: [{ body: "CE", status: "IVDD registered" }] },
+      { name: "rK28 RDT", manufacturer: "CTK Biotech", stage: "Research use only", format: "Rapid diagnostic test", note: "next-generation rK28 antigen; 10 minutes", url: "https://ctkbiotech.com" },
     ],
   },
 
@@ -393,7 +396,7 @@ export const DIAGNOSTIC_ENRICHMENT: Record<string, Spike> = {
     samples: ["Serum", "Urine"],
     stage: "Regulatory achieved for multiplex panels",
     products: [
-      { name: "BioFire Global Fever Special Pathogens Panel", manufacturer: "BioFire Defense", stage: "Regulatory achieved", format: "Cartridge-based processing", note: "multiplex panel including Zika, dengue and chikungunya; 60 minutes" },
+      { name: "BioFire Global Fever Special Pathogens Panel", manufacturer: "BioFire Defense", stage: "Regulatory achieved", format: "Cartridge-based processing", note: "multiplex panel including Zika, dengue and chikungunya; 60 minutes", url: "https://biofiredefense.com", approvals: [{ body: "WHO EUL", status: "under assessment" }, { body: "US FDA", status: "510(k) cleared" }] },
     ],
   },
 };

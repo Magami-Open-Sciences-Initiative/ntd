@@ -4,7 +4,7 @@ export const taeniasisCysticercosisSpike: Spike = {
   tldr: "The pork tapeworm gives people a gut worm, but its eggs cause cysts in the brain that are a leading preventable cause of epilepsy — and a pig vaccine plus a dewormer can now break the cycle.",
 
   summary:
-    "A person gets the adult tapeworm, Taenia solium, by eating undercooked pork containing cysts. But if someone swallows the tapeworm's eggs — from contaminated food, water or their own hands — the larvae form cysts in the brain, causing neurocysticercosis, one of the most common preventable causes of epilepsy worldwide. Pigs are the intermediate host, and free-roaming pigs that eat human faeces keep the cycle going. What has changed is that the animal side of the cycle is now closable. TSOL18, a recombinant pig vaccine sold as Cysvax by Indian Immunologicals, prevents new cysts, and oxfendazole clears existing ones; a trial in Uganda found that three-monthly vaccination combined with oxfendazole eliminated transmission by pigs. Because people and pigs live in the same households, control is inherently a One Health problem: human treatment, pig vaccination, meat inspection and sanitation have to move together.",
+    "A person gets the adult tapeworm, Taenia solium, by eating undercooked pork containing cysts. (Two other species, T. saginata and T. asiatica, also cause intestinal taeniasis but do not cause major disease — cysticercosis is a T. solium problem alone.) But if someone swallows the tapeworm's eggs — from contaminated food, water or their own hands — the larvae form cysts in the brain, causing neurocysticercosis, one of the most common preventable causes of epilepsy worldwide. Pigs are the intermediate host, and free-roaming pigs that eat human faeces keep the cycle going. What has changed is that the animal side of the cycle is now closable. TSOL18, a recombinant pig vaccine sold as Cysvax by Indian Immunologicals, prevents new cysts, and oxfendazole clears existing ones; a trial in Uganda found that three-monthly vaccination combined with oxfendazole eliminated transmission by pigs. On the human side, WHO has negotiated the donation of taenicides from Bayer, making large-scale treatment of tapeworm carriers feasible. Because people and pigs live in the same households, control is inherently a One Health problem: human treatment, pig vaccination, meat inspection and sanitation have to move together.",
   stats: [
     {
       label: "DALYs a year (2015)",
@@ -59,8 +59,13 @@ export const taeniasisCysticercosisSpike: Spike = {
     },
     {
       date: "2020s",
+      text: "WHO negotiates the donation of taenicides from Bayer, makes them available for T. solium control, and publishes a mapping protocol plus target product profiles for the diagnosis of NCC, taeniasis and porcine cysticercosis.",
+      refs: ["who", "paho-who-taeniasis-pc-guideline", "cysticercosis-serology"],
+    },
+    {
+      date: "2020s",
       text: "The ring strategy — treating people and vaccinating pigs in a ring around a detected tapeworm carrier — is evaluated as an elimination approach.",
-      refs: ["one-health-ntd-integration", "mass-drug-administration"],
+      refs: ["one-health-ntd-integration", "mass-drug-administration", "taenia-elimination-vs-control"],
     },
   ],
 
@@ -104,6 +109,8 @@ export const taeniasisCysticercosisSpike: Spike = {
 
   technologies: ["tsol18-vaccine"],
   diagnostics: ["cysticercosis-serology"],
-  trials: ["pig-vaccination-oxfendazole"],
-  institutions: ["galvmed", "who"],
+  trials: ["pig-vaccination-oxfendazole", "taenia-elimination-vs-control", "efecab-burkina-faso"],
+  guidelines: ["paho-who-taeniasis-pc-guideline"],
+  people: ["hector-garcia", "kabemba-mwape", "helena-ngowi"],
+  institutions: ["galvmed", "who", "cysticercosis-working-group"],
 };

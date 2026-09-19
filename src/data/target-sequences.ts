@@ -17,7 +17,7 @@
  * Targets with no single protein to attach are listed in NO_SEQUENCE with the
  * reason. Model-organism stand-ins are deliberately not used.
  *
- * Generated file. Last fetched: 2026-09-17.
+ * Generated file. Last fetched: 2026-09-18.
  */
 
 export type TargetSequence = {
@@ -711,5 +711,9 @@ export const NO_SEQUENCE: Record<string, string> = {
  */
 export const UNCONFIRMED: Record<string, string> = {
   "schistosome-trp-channel": "no PDB structure exists for the praziquantel-binding channel, and two S. mansoni TRP-channel paralogs (1150 and 1201 aa) are annotated, so annotation alone cannot say which one PZQ binds",
-  "trypanosome-nitroreductase": "no PDB structure for a trypanosome nitroreductase; and the record may conflate two organisms — fexinidazole is activated by the T. brucei enzyme, benznidazole by the T. cruzi one"
+  "trypanosome-nitroreductase": "no PDB structure for a trypanosome nitroreductase; and the record may conflate two organisms — fexinidazole is activated by the T. brucei enzyme, benznidazole by the T. cruzi one",
+  "tc-cpsf3": "UniProt annotates only other cleavage-and-polyadenylation subunits (2, 5, 30 kDa) plus unnamed putatives for T. cruzi — no entry identifiable as the AN2-502998-bound CPSF3 orthologue",
+  "tc-topoisomerase-ii": "several T. cruzi topoisomerase II paralogs are annotated (reviewed P30190 plus strain-specific TrEMBL entries) and the IID432 paper models on human TOP2A (PDB 5GWK), so the bound isoform is not pinned to an accession",
+  "tc-impdh": "two identical-length CL Brener alleles (Q4DM82, Q4CUG6) plus strain variants; the repurposing paper (Lobo-Rojas et al. 2026) names no accession",
+  "tc-lysrs": "the chromene-inhibitor paper reports work in the Dm28c strain without naming a UniProt accession"
 };

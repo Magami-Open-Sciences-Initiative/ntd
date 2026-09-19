@@ -4,18 +4,18 @@ export const hatSpike: Spike = {
   tldr: "A tsetse-borne parasite that attacks the brain if untreated — now curable with a single day of tablets, and moving country by country toward elimination.",
 
   summary:
-    "Human African trypanosomiasis is caused by Trypanosoma brucei and transmitted by tsetse flies. The Gambiense form, in West and Central Africa, is chronic and progresses over years; the Rhodesiense form, in East and Southern Africa, is acute and can kill within weeks. Once the parasite crosses into the brain, the disease causes sleep disturbance, neurological damage and death. Two decades of active case-finding, better drugs and tsetse control have brought reported cases from more than 26,000 in 2000 to roughly 600 in 2024, more than half of them in the Democratic Republic of the Congo. In 2026 the treatment story completed its transformation: acoziborole, a three-tablet single-dose oral cure effective in both stages of Gambiense disease, was approved in Europe and then registered in the DRC — the first country, and the one with the largest burden. Elimination is no longer a slogan: Togo and Côte d'Ivoire were the first countries validated as having eliminated Gambiense HAT as a public health problem, followed by Guinea in January 2025 and Kenya in August 2025.",
+    "Human African trypanosomiasis is caused by Trypanosoma brucei and transmitted by tsetse flies. The Gambiense form, in West and Central Africa, is chronic and progresses over years; the Rhodesiense form, in East and Southern Africa, is acute and can kill within weeks. Once the parasite crosses into the brain, the disease causes sleep disturbance, neurological damage and death. Two decades of active case-finding, better drugs and tsetse control have brought Gambiense cases from 27,862 in 1999 to 430 in 2025 (plus 41 Rhodesiense), and ten countries have been validated for elimination — Benin, Chad, Côte d'Ivoire, Equatorial Guinea, Ghana, Guinea, Kenya, Rwanda, Togo and Uganda. In 2026 the treatment story completed its transformation: acoziborole, a three-tablet single-dose oral cure effective in both stages of Gambiense disease, was approved in Europe and then registered in the DRC in July — the first country, and the one with the largest burden. Even Rhodesiense disease, the harder half, gained its first all-oral treatment as fexinidazole became first-line in Ethiopia, Malawi and Zimbabwe.",
 
   stats: [
     {
-      label: "Reported cases (2024)",
-      value: "≈ 600",
-      number: 600,
+      label: "Reported cases (2025)",
+      value: "471",
+      number: 471,
       unit: "cases",
-      year: 2024,
+      year: 2025,
       geography: "global",
-      note: "below 1,000 every year since 2018; the Democratic Republic of the Congo reports about 61%",
-      source: { label: "WHO — human African trypanosomiasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/trypanosomiasis-human-african-(sleeping-sickness)" },
+      note: "430 Gambiense + 41 Rhodesiense; below 1,000 every year since 2018; the Democratic Republic of the Congo reports the majority",
+      source: { label: "WHO — HAT data (GHO)", url: "https://www.who.int/data/gho/data/themes/topics/human-african-trypanosomiasis" },
     },
     {
       label: "Reported cases (1998)",
@@ -48,14 +48,14 @@ export const hatSpike: Spike = {
     { label: "Regimen", value: "Three tablets, one day", note: "adults and adolescents ≥ 12 years, ≥ 40 kg" },
     {
       label: "Countries validated for elimination",
-      value: "4",
-      number: 4,
+      value: "10",
+      number: 10,
       unit: "countries",
       geography: "Africa",
-      note: "Togo, Côte d'Ivoire, Guinea (2025), Kenya (2025)",
-      source: { label: "WHO — human African trypanosomiasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/trypanosomiasis-human-african-(sleeping-sickness)" },
+      note: "Benin, Chad, Côte d'Ivoire, Equatorial Guinea, Ghana, Guinea (2025), Kenya (2025), Rwanda, Togo, Uganda",
+      source: { label: "WHO — Kenya elimination (Aug 2025)", url: "https://www.who.int/news/item/08-08-2025-kenya-achieves-elimination-of-human-african-trypanosomiasis-or-sleeping-sickness" },
     },
-    { label: "WHO target", value: "Eliminate Gambiense HAT by 2030" },
+    { label: "WHO target", value: "Interrupt transmission (zero cases) by 2030" },
   ],
 
   timeline: [
@@ -71,8 +71,8 @@ export const hatSpike: Spike = {
     },
     {
       date: "2025",
-      text: "Guinea and then Kenya are validated by WHO as having eliminated Gambiense sleeping sickness as a public health problem.",
-      refs: ["who", "eot"],
+      text: "Kenya is validated as the tenth country to eliminate sleeping sickness as a public health problem; fexinidazole becomes first-line Rhodesiense treatment in Ethiopia, Malawi and Zimbabwe.",
+      refs: ["who", "eot", "fexinidazole"],
     },
     {
       date: "2026",
@@ -81,8 +81,8 @@ export const hatSpike: Spike = {
     },
     {
       date: "2026",
-      text: "The Democratic Republic of the Congo registers acoziborole, the first country to approve it, opening the path to importation across Central and West Africa.",
-      refs: ["acoziborole", "dndi", "who"],
+      text: "The Democratic Republic of the Congo registers acoziborole in July, the first country to approve it, opening the path to importation across Central and West Africa; ACOZI-KIDS completes follow-up in 35 children.",
+      refs: ["acoziborole", "dndi", "who", "acozi-kids"],
     },
   ],
 
@@ -91,21 +91,21 @@ export const hatSpike: Spike = {
       id: "single-dose",
       title: "The single-dose era",
       body:
-        "The treatment history of sleeping sickness is one of the fastest transformations in the NTD field. Melarsoprol, an arsenic compound given by intravenous injection, caused a fatal encephalopathy in a small percentage of patients. Eflornithine reduced that but needed infusions over days. NECT combined it with oral nifurtimox and simplified the regimen. Fexinidazole, approved in 2019, was the first all-oral cure and removed the need for hospitalisation and lumbar-puncture staging for many patients.\n\nAcoziborole completes the arc. A single oral dose of three tablets cures up to 96% of patients across both stages of Gambiense disease, in adults and adolescents weighing at least 40 kilograms — no injections, no hospital, no cold chain. The European Medicines Agency approved it in 2026 and the Democratic Republic of the Congo registered it in June 2026, with other Central and West African countries expected to authorise importation. The clinical significance is that a disease that required weeks of hospital care can now be treated in a village clinic in a day.",
+        "The treatment history of sleeping sickness is one of the fastest transformations in the NTD field. Melarsoprol, an arsenic compound given by intravenous injection, caused a fatal encephalopathy in a small percentage of patients. Eflornithine reduced that but needed infusions over days. NECT combined it with oral nifurtimox and simplified the regimen. Fexinidazole, approved in 2019, was the first all-oral cure and removed the need for hospitalisation and lumbar-puncture staging for many patients.\n\nAcoziborole completes the arc. A single oral dose of three tablets cures up to 96% of patients across both stages of Gambiense disease, in adults and adolescents weighing at least 40 kilograms — no injections, no hospital, no cold chain. The European Medicines Agency gave a positive opinion in February 2026 and the Democratic Republic of the Congo registered it in July 2026, with Guinea and other Central and West African countries expected to authorise importation; Sanofi donates it via Foundation S. ACOZI-KIDS (35 children aged 1–14, crushed tablets) completed follow-up in 2026, and StrogHAT screened 455,000 people toward a test-and-treat strategy. The clinical significance is that a disease that required weeks of hospital care can now be treated in a village clinic in a day.",
       refs: ["acoziborole", "fexinidazole", "nifurtimox", "eflornithine", "melarsoprol"],
     },
     {
       id: "elimination",
       title: "Elimination is now a country-by-country fact",
       body:
-        "WHO's aim is to eliminate Gambiense sleeping sickness as a public health problem, and that is turning into a list of validated countries rather than an aspiration. Togo and Côte d'Ivoire were the first to be validated; Guinea followed in January 2025 and Kenya in August 2025. Each validation requires years of case-finding, treatment and surveillance showing that transmission has been interrupted, not merely reduced.\n\nWhat makes this achievable is the combination of a low burden with a tool that works: when cases are few and a single dose cures them, the effort shifts from mass screening to hunting individual cases and following their contacts. The remaining endemic burden is concentrated in the Democratic Republic of the Congo and a handful of neighbours, which is why the DRC's registration of acoziborole matters more than any other country's.",
+        "WHO's aim is the interruption of transmission — zero cases — and validation as a public health problem is turning into a list of countries rather than an aspiration. Ten are validated: Togo, Côte d'Ivoire, Benin, Equatorial Guinea, Ghana, Rwanda, Uganda, Chad, Guinea (January 2025) and Kenya (August 2025, the tenth). Each validation requires years of case-finding, treatment and surveillance showing that transmission has been interrupted, not merely reduced.\n\nWhat makes this achievable is the combination of a low burden with a tool that works: when cases are few and a single dose cures them, the effort shifts from mass screening to hunting individual cases and following their contacts. The remaining endemic burden is concentrated in the Democratic Republic of the Congo and a handful of neighbours, which is why the DRC's registration of acoziborole matters more than any other country's.",
       refs: ["who", "eot", "elimination-roadmap", "dndi"],
     },
     {
       id: "rhodesiense",
       title: "Rhodesiense: the harder half",
       body:
-        "The Rhodesiense form of the disease gets a fraction of the attention and remains genuinely difficult. It is acute, progresses to the brain within weeks, and affects pastoral and fishing communities in East and Southern Africa where it is often a zoonosis with an animal reservoir. Fexinidazole is not effective enough in severe Rhodesiense disease, so late-stage patients still rely on melarsoprol, the arsenic drug with the dangerous side effect profile.\n\nThere is no single-dose cure for Rhodesiense disease, no rapid diagnostic test comparable to the antibody screening used for Gambiense, and the animal reservoir means human treatment alone cannot interrupt transmission. Improving this half of the disease is the next task in the field, and it depends on both drug development and veterinary control.",
+        "The Rhodesiense form of the disease gets a fraction of the attention and remains genuinely difficult. It is acute, progresses to the brain within weeks, and affects pastoral and fishing communities in East and Southern Africa where it is often a zoonosis with an animal reservoir — including four Zambezi Valley traveller cases in 2024–2025, the first since 2019. The picture changed in 2025: fexinidazole became the first all-oral treatment for Rhodesiense disease, available in Ethiopia, Malawi and Zimbabwe (with Zambia approving the extended indication), replacing toxic hospital regimens; WHO's 2024 guidance made it first-line for both stages.\n\nThere is still no single-dose cure for Rhodesiense disease, no rapid diagnostic test comparable to the antibody screening used for Gambiense, and the animal reservoir means human treatment alone cannot interrupt transmission. Improving this half of the disease is the next task in the field, and it depends on rolling out fexinidazole, finding an RDT, and veterinary control.",
       refs: ["melarsoprol", "suramin", "fexinidazole", "zoonosis", "vaccine-gap"],
     },
     {
@@ -124,8 +124,8 @@ export const hatSpike: Spike = {
     },
   ],
 
-  drugs: ["acoziborole"],
-  trials: ["acoziborole-hat"],
+  drugs: ["acoziborole", "fexinidazole"],
+  trials: ["acoziborole-hat", "stop-hat-phase3", "acozi-kids", "stroghat"],
   technologies: ["tiny-targets"],
   institutions: ["dndi", "who"],
   terms: [],

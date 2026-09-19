@@ -37,6 +37,25 @@ export const schistosomiasisSpike: Spike = {
       source: { label: "WHO — schistosomiasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/schistosomiasis" },
     },
     {
+      label: "People treated (2024)",
+      value: "> 100.5 million",
+      number: 100.5,
+      unit: "million people",
+      year: 2024,
+      geography: "global",
+      note: "of the 253.7 million needing treatment; adults lag children badly",
+      source: { label: "WHO — schistosomiasis (fact sheet, Feb 2026)", url: "https://www.who.int/news-room/fact-sheets/detail/schistosomiasis" },
+    },
+    {
+      label: "R&D funding trend",
+      value: "−23% in 2023",
+      unit: "%",
+      year: 2023,
+      geography: "global",
+      note: "down US$10m; still the highest-funded helminth disease, but over half the fall was vaccine R&D",
+      source: { label: "G-FINDER 2024 Neglected Disease R&D report", url: "https://cdn.impactglobalhealth.org/media/G-FINDER%202024_Full%20report.pdf" },
+    },
+    {
       label: "Treatment coverage (2024)",
       value: "39.6%",
       number: 39.6,
@@ -86,9 +105,24 @@ export const schistosomiasisSpike: Spike = {
       refs: ["arpraziquantel", "pediatric-praziquantel-consortium"],
     },
     {
+      date: "2024",
+      text: "WHO publishes a monitoring-and-evaluation framework for schistosomiasis and STH control, giving programmes the tools to track progress and adapt as epidemiology changes.",
+      refs: ["who", "who-schisto-me-framework-2024"],
+    },
+    {
       date: "2025",
       text: "A controlled human infection challenge study of the Sm-p80 (SchistoShield) vaccine advances, and a trial adds anti-inflammatory therapy for female genital schistosomiasis.",
       refs: ["schistoshield", "wings4fgs-fgs", "fgs"],
+    },
+    {
+      date: "2025",
+      text: "The first preschool-aged children are treated with arpraziquantel in Uganda; an implementation study follows to bring the child-friendly tablet into national programmes.",
+      refs: ["arpraziquantel", "arpraziquantel-implementation", "pediatric-praziquantel-consortium"],
+    },
+    {
+      date: "2026",
+      text: "WHO confirms Schistosoma haematobium transmission in Cabo Verde, a country not previously considered endemic — evidence that the disease's geography is still moving.",
+      refs: ["who", "schistosoma"],
     },
   ],
 
@@ -118,14 +152,14 @@ export const schistosomiasisSpike: Spike = {
       id: "fgs",
       title: "Female genital schistosomiasis",
       body:
-        "When Schistosoma haematobium eggs lodge in the genital tract they cause lesions, pain, bleeding and discharge — a condition, female genital schistosomiasis, that affects an estimated 56 million women and girls in sub-Saharan Africa. It is routinely misdiagnosed as a sexually transmitted infection, and because the lesions are vascular it increases susceptibility to HIV.\n\nTreatment with praziquantel clears the worms, but the inflammatory damage can persist, so research has moved to whether adding an anti-inflammatory to praziquantel reduces long-term scarring — the question the WINGS-4-FGS trial is designed to answer. FGS is also a case study in why 'treat everyone' campaigns matter: an infection dismissed as something else is an infection that never gets the one-dose cure.",
+        "When Schistosoma haematobium eggs lodge in the genital tract they cause lesions, pain, bleeding and discharge — a condition, female genital schistosomiasis, that affects an estimated 56 million women and girls in sub-Saharan Africa. It is routinely misdiagnosed as a sexually transmitted infection, and because the lesions are vascular it increases susceptibility to HIV. The male counterpart, male genital schistosomiasis, causes ejaculatory pain and blood in the semen, can impair fertility, and is even less recognised — WHO describes it, but semen is not part of routine testing, so it is almost never diagnosed.\n\nTreatment with praziquantel clears the worms, but the inflammatory damage can persist, so research has moved to whether adding an anti-inflammatory to praziquantel reduces long-term scarring — the question the WINGS-4-FGS trial is designed to answer. FGS is also a case study in why 'treat everyone' campaigns matter: an infection dismissed as something else is an infection that never gets the one-dose cure.",
       refs: ["wings4fgs-fgs", "fgs", "praziquantel", "stigma-and-disability"],
     },
     {
       id: "vaccines",
       title: "Vaccines and new drugs",
       body:
-        "There is no schistosomiasis vaccine, and the case for one is strong because praziquantel does not prevent reinfection — a vaccine that reduced infection intensity would add something the drug cannot. The most advanced candidate is SchistoShield (Sm-p80 with a GLA-SE adjuvant), which completed early clinical testing and is being evaluated with a controlled human infection model, where volunteers are deliberately exposed to a defined number of cercariae so that protection can be measured directly. That design is unusual in parasitology and is itself a milestone.\n\nOn the drug side, the fear is that a single medicine carries 240 million people. DNDi and Merck have assembled a schistosomiasis translational platform and a shared 'compound box' of characterised molecules to test against the parasite, and the 2020 identification of praziquantel's molecular target — a schistosome TRP channel — makes rational design of a second drug possible for the first time.",
+        "There is no schistosomiasis vaccine, and the case for one is strong because praziquantel does not prevent reinfection — a vaccine that reduced infection intensity would add something the drug cannot. The most advanced candidate is SchistoShield (Sm-p80 with a GLA-SE adjuvant), which completed early clinical testing and is being evaluated with a controlled human infection model, where volunteers are deliberately exposed to a defined number of cercariae so that protection can be measured directly. That design is unusual in parasitology and is itself a milestone.\n\nOn the drug side, the fear is that a single medicine carries a quarter of a billion people. DNDi and Merck have assembled a schistosomiasis translational platform and a shared 'compound box' of characterised molecules to test against the parasite, and the 2020 identification of praziquantel's molecular target — a schistosome TRP channel — makes rational design of a second drug possible for the first time.",
       refs: ["schistoshield", "vaccine-gap", "schistosome-trp-channel", "open-science-drug-discovery", "ntd-vaccines-roadmap"],
     },
     {
@@ -138,7 +172,9 @@ export const schistosomiasisSpike: Spike = {
   ],
 
   drugs: ["arpraziquantel"],
-  trials: ["schistoshield", "wings4fgs-fgs"],
+  trials: ["schistoshield", "wings4fgs-fgs", "arpraziquantel-implementation"],
+  guidelines: ["who-schisto-me-framework-2024"],
+  people: ["narcis-kabatereine", "bonnie-webster", "amadou-garba"],
   institutions: ["pediatric-praziquantel-consortium", "dndi", "icmr"],
-  terms: ["fgs", "eot"],
+  terms: ["fgs", "male-genital-schistosomiasis", "schistosome-hybrids", "eot"],
 };

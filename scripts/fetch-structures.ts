@@ -73,6 +73,11 @@ const SPECS: Spec[] = [
   { id: "ethambutol", query: "Ethambutol" },
   { id: "pretomanid", query: "Pretomanid" },
   { id: "linezolid", query: "Linezolid" },
+  { id: "emetine", query: "Emetine", note: "Structure shown is emetine base; the dihydrochloride salt used in the 2026 CHIKV study differs by protonation and chloride counter-ions." },
+  { id: "ganaplacide", query: "Ganaplacide", note: "Investigational imidazolopiperazine (KAF156/GNF156); in GanLum with lumefantrine." },
+  { id: "cipargamin", query: "Cipargamin", note: "Investigational spiroindolone PfATP4 inhibitor (ex-KAE609/NITD609)." },
+  { id: "an2-502998", cid: 145400294, note: "AN2-502998 was formerly AN15368; PubChem holds it under the earlier code (synonyms include AN15368). Investigational Chagas candidate." },
+  { id: "iid432", cid: 176514755, note: "Investigational cyanotriazole for Chagas disease; the fetched connectivity SMILES carries no stereochemistry (the (S)-pyrrolidine configuration is in the structure image)." },
 ];
 
 /** No small-molecule structure exists — record why rather than leaving a gap. */
@@ -81,6 +86,9 @@ const NO_STRUCTURE: Record<string, string> = {
   "rabies-postexposure-prophylaxis": "Not a single molecule: an inactivated virus vaccine given with human rabies immunoglobulin.",
   ixchiq: "Not a single molecule: a live-attenuated chikungunya virus vaccine.",
   vimkunya: "Not a single molecule: a virus-like-particle chikungunya vaccine.",
+  "butantan-chik-vla1555": "Not a single molecule: a live-attenuated chikungunya virus vaccine, locally manufactured by Instituto Butantan.",
+  qdenga: "Not a single molecule: a live-attenuated tetravalent dengue vaccine.",
+  "butantan-dv": "Not a single molecule: a single-dose live-attenuated tetravalent dengue vaccine made by Instituto Butantan.",
   ansuvimab: "Not a small molecule: a monoclonal antibody, a protein of about 1,400 amino acids.",
 };
 

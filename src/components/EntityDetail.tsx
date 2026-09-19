@@ -27,8 +27,20 @@ export function EntityDetail({ node }: { node: Node }) {
   const meta = KIND_META[kind];
   const specs = KIND_FIELDS[kind];
 
+  // Resistance records are backlinks (a resistance record points at the disease,
+  // pathogen or vector it concerns), so this panel is derived from the graph
+  // rather than from a field on the record. It lifts them out of "Connected"
+  // into their own section, next to the treatment and control fields.
+  const allBacklinks = backlinksByKind(node.id);
+  const resistanceNodes = allBacklinks.find((g) => g.kind === "resistance")?.nodes ?? [];
+  const showsResistancePanel = specs.some((s) => s.type === "resistance");
+
   const visible = specs.filter((s) => {
     if (s.type === "targets") return isNonEmpty(rec.targets) || isNonEmpty(rec.targetNote);
+    if (s.type === "resistance") return resistanceNodes.length > 0;
+    // Institutions: when the domicile is linked to a country record, show the
+    // linked chip instead of the free-text country line (avoid showing both).
+    if (kind === "institutions" && s.key === "country" && isNonEmpty(rec.countries)) return false;
     return isNonEmpty(rec[s.key]);
   });
 
@@ -111,6 +123,32 @@ export function EntityDetail({ node }: { node: Node }) {
             );
           }
 
+          if (s.type === "registry") {
+            const text = Array.isArray(raw) ? raw.join(", ") : String(raw);
+            const url = typeof rec.registryUrl === "string" ? rec.registryUrl : undefined;
+            return (
+              <section key={s.key}>
+                <SectionHeading id={anchor}>{s.label}</SectionHeading>
+                <p className="prose-magami leading-relaxed text-ink-2">
+                  {text}
+                  {url ? (
+                    <>
+                      {" — "}
+                      <a
+                        href={url}
+                        className="link-underline text-ink"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        view the registry entry →
+                      </a>
+                    </>
+                  ) : null}
+                </p>
+              </section>
+            );
+          }
+
           if (s.type === "products") {
             const items = raw as {
               name: string;
@@ -118,6 +156,8 @@ export function EntityDetail({ node }: { node: Node }) {
               stage?: string;
               format?: string;
               note?: string;
+              url?: string;
+              approvals?: { body: string; status: string; date?: string; note?: string }[];
             }[];
             return (
               <section key={s.key}>
@@ -126,13 +166,48 @@ export function EntityDetail({ node }: { node: Node }) {
                   {items.map((it) => (
                     <li key={`${it.name}-${it.manufacturer}`} className="px-4 py-3">
                       <div className="flex flex-wrap items-baseline gap-x-2">
-                        <span className="font-medium text-ink">{it.name}</span>
+                        {it.url ? (
+                          <a
+                            href={it.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="link-underline font-medium text-ink"
+                          >
+                            {it.name}
+                          </a>
+                        ) : (
+                          <span className="font-medium text-ink">{it.name}</span>
+                        )}
                         <span className="text-ink-2">{it.manufacturer}</span>
                       </div>
-                      <div className="mt-0.5 flex flex-wrap gap-x-3 font-mono text-[11px] uppercase tracking-wider text-ink-3">
+                      <div className="mt-0.5 flex flex-wrap items-center gap-x-3 font-mono text-[11px] uppercase tracking-wider text-ink-3">
                         {it.stage ? <span>{it.stage}</span> : null}
                         {it.format ? <span>{it.format}</span> : null}
+                        {it.url ? (
+                          <a
+                            href={it.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="link-underline text-ink-3 hover:text-ink"
+                          >
+                            product site ↗
+                          </a>
+                        ) : null}
                       </div>
+                      {it.approvals?.length ? (
+                        <div className="mt-1.5 flex flex-wrap gap-1.5">
+                          {it.approvals.map((a, i) => (
+                            <span
+                              key={`${a.body}-${i}`}
+                              title={a.note}
+                              className="rounded border border-line px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-ink-3"
+                            >
+                              {a.body}: {a.status}
+                              {a.date ? ` · ${a.date}` : ""}
+                            </span>
+                          ))}
+                        </div>
+                      ) : null}
                       {it.note ? <p className="mt-1 text-xs leading-relaxed text-ink-2">{it.note}</p> : null}
                     </li>
                   ))}
@@ -141,6 +216,208 @@ export function EntityDetail({ node }: { node: Node }) {
                   Products listed from the FIND Test Directory (finddx.org). Inclusion is not an
                   endorsement, and a listing does not imply WHO prequalification or national approval.
                 </p>
+              </section>
+            );
+          }
+
+          if (s.type === "pricing") {
+            const items = raw as {
+              catalogue: string;
+              price: string;
+              unit?: string;
+              year?: number;
+              note?: string;
+              url?: string;
+            }[];
+            return (
+              <section key={s.key}>
+                <SectionHeading id={anchor}>{s.label}</SectionHeading>
+                <ul className="divide-y divide-[var(--line)] overflow-hidden rounded-lg border border-line bg-surface text-sm">
+                  {items.map((it, i) => (
+                    <li key={`${it.catalogue}-${i}`} className="px-4 py-3">
+                      <div className="flex flex-wrap items-baseline gap-x-2">
+                        <span className="font-medium text-ink">{it.price}</span>
+                        {it.unit ? <span className="text-ink-2">{it.unit}</span> : null}
+                        <span className="ml-auto font-mono text-[11px] uppercase tracking-wider text-ink-3">
+                          {it.catalogue}
+                          {it.year ? ` · ${it.year}` : ""}
+                        </span>
+                      </div>
+                      {it.note ? (
+                        <p className="mt-0.5 text-xs leading-relaxed text-ink-2">{it.note}</p>
+                      ) : null}
+                      {it.url ? (
+                        <a
+                          href={it.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="link-underline mt-1 inline-block font-mono text-[11px] uppercase tracking-wider text-ink-3 hover:text-ink"
+                        >
+                          catalogue ↗
+                        </a>
+                      ) : null}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          }
+
+          if (s.type === "costs") {
+            const items = raw as {
+              intervention: string;
+              cost: string;
+              per: string;
+              note?: string;
+              source?: { label: string; url: string };
+            }[];
+            return (
+              <section key={s.key}>
+                <SectionHeading id={anchor}>{s.label}</SectionHeading>
+                <ul className="divide-y divide-[var(--line)] overflow-hidden rounded-lg border border-line bg-surface text-sm">
+                  {items.map((it, i) => (
+                    <li key={`${it.intervention}-${i}`} className="px-4 py-3">
+                      <div className="flex flex-wrap items-baseline gap-x-2">
+                        <span className="font-medium text-ink">{it.cost}</span>
+                        <span className="text-ink-2">{it.per}</span>
+                        <span className="ml-auto font-mono text-[11px] uppercase tracking-wider text-ink-3">
+                          {it.intervention}
+                        </span>
+                      </div>
+                      {it.note ? (
+                        <p className="mt-0.5 text-xs leading-relaxed text-ink-2">{it.note}</p>
+                      ) : null}
+                      {it.source ? (
+                        <a
+                          href={it.source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="link-underline mt-1 inline-block font-mono text-[11px] uppercase tracking-wider text-ink-3 hover:text-ink"
+                        >
+                          {it.source.label} ↗
+                        </a>
+                      ) : null}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          }
+
+          if (s.type === "equity") {
+            const e = raw as Record<string, unknown>;
+            const FLAGS: [string, string][] = [
+              ["coverageGap", "Coverage gap"],
+              ["conflictAffected", "Conflict-affected"],
+              ["genderInequality", "Gender inequity"],
+              ["disabilityGap", "Disability gap"],
+              ["genderResponsive", "Gender-responsive"],
+              ["disabilityInclusive", "Disability-inclusive"],
+              ["conflictAdapted", "Conflict-adapted"],
+            ];
+            const on = FLAGS.filter(([k]) => e[k] === true);
+            const note = typeof e.note === "string" ? e.note : "";
+            return (
+              <section key={s.key}>
+                <SectionHeading id={anchor}>{s.label}</SectionHeading>
+                <div className="flex flex-wrap gap-2">
+                  {on.map(([k, l]) => (
+                    <span
+                      key={k}
+                      className="rounded-full border border-line px-2.5 py-1 text-xs tracking-wide text-ink-2"
+                    >
+                      {l}
+                    </span>
+                  ))}
+                </div>
+                {note ? (
+                  <p className="mt-2 text-sm leading-relaxed text-ink-2">{note}</p>
+                ) : null}
+              </section>
+            );
+          }
+
+          if (s.type === "codes") {
+            const items = raw as { code: string; label: string; url: string }[];
+            return (
+              <section key={s.key}>
+                <SectionHeading id={anchor}>{s.label}</SectionHeading>
+                <ul className="divide-y divide-[var(--line)] overflow-hidden rounded-lg border border-line bg-surface text-sm">
+                  {items.map((it) => (
+                    <li
+                      key={`${it.code}-${it.label}`}
+                      className="flex flex-wrap items-baseline gap-x-3 gap-y-1 px-4 py-3"
+                    >
+                      <span className="font-mono text-xs font-medium text-ink">{it.code}</span>
+                      <span className="text-ink-2">{it.label}</span>
+                      <a
+                        href={it.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="link-underline ml-auto whitespace-nowrap font-mono text-[11px] uppercase tracking-wider text-ink-3"
+                      >
+                        {s.linkLabel ?? "WHO ICD-10 ↗"}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-2 text-xs leading-relaxed text-ink-3">
+                  {s.footnote ??
+                    "Codes from the WHO International Classification of Diseases, 10th revision. Each links to the code in the official WHO ICD-10 browser."}
+                </p>
+              </section>
+            );
+          }
+
+          if (s.type === "dbs") {
+            const items = raw as { id?: string; name: string; url: string; note?: string }[];
+            return (
+              <section key={s.key}>
+                <SectionHeading id={anchor}>{s.label}</SectionHeading>
+                <ul className="divide-y divide-[var(--line)] overflow-hidden rounded-lg border border-line bg-surface text-sm">
+                  {items.map((it, i) => (
+                    <li
+                      key={`${it.name}-${it.id ?? i}`}
+                      className="flex flex-wrap items-baseline gap-x-3 gap-y-1 px-4 py-3"
+                    >
+                      {it.id ? (
+                        <span className="font-mono text-xs text-ink-3">{it.id}</span>
+                      ) : null}
+                      <a
+                        href={it.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="link-underline text-ink"
+                      >
+                        {it.name} ↗
+                      </a>
+                      {it.note ? (
+                        <span className="text-xs leading-relaxed text-ink-2">{it.note}</span>
+                      ) : null}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          }
+
+          if (s.type === "website") {
+            const url = String(raw);
+            const note = rec.websiteNote ? String(rec.websiteNote) : "";
+            return (
+              <section key={s.key}>
+                <SectionHeading id={anchor}>{s.label}</SectionHeading>
+                <p className="text-sm">
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-underline text-ink"
+                  >
+                    {url} ↗
+                  </a>
+                </p>
+                {note ? <p className="mt-1 text-xs leading-relaxed text-ink-2">{note}</p> : null}
               </section>
             );
           }
@@ -230,6 +507,59 @@ export function EntityDetail({ node }: { node: Node }) {
                 {typeof note === "string" && note.length ? (
                   <p className={`text-sm leading-relaxed text-ink-2 ${raw ? "mt-3" : ""}`}>{note}</p>
                 ) : null}
+              </section>
+            );
+          }
+
+          if (s.type === "resistance") {
+            return (
+              <section key={s.key}>
+                <SectionHeading id={anchor}>{s.label}</SectionHeading>
+                <p className="mb-4 max-w-2xl text-sm leading-relaxed text-ink-2">
+                  {resistanceNodes.length === 1
+                    ? "One resistance record in this corpus links here."
+                    : `${resistanceNodes.length} resistance records in this corpus link here.`}{" "}
+                  Each is a standalone record of how the resistance works, where it has been seen and
+                  who watches for it.
+                </p>
+                <div className="space-y-3">
+                  {resistanceNodes.map((n) => {
+                    const r = n.record as Rec;
+                    return (
+                      <Link
+                        key={n.id}
+                        href={entityHref(n.kind, n.id)}
+                        className="block rounded-lg border border-line bg-surface p-4 transition-colors hover:border-rule"
+                      >
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                          <span className="font-medium text-ink">{n.name}</span>
+                          {isNonEmpty(r.resistanceType) ? (
+                            <span className="rounded-full border border-line px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-ink-3">
+                              {String(r.resistanceType)}
+                            </span>
+                          ) : null}
+                          {isNonEmpty(r.status) ? (
+                            <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--kind-fg)]">
+                              {String(r.status)}
+                            </span>
+                          ) : null}
+                        </div>
+                        <p className="mt-2 text-sm leading-relaxed text-ink-2">{n.record.tldr}</p>
+                        <span className="mt-2 inline-block font-mono text-[10px] uppercase tracking-wider text-ink-3">
+                          Read the record →
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+                <p className="mt-3">
+                  <Link
+                    href="/resistance/"
+                    className="link-underline font-mono text-[11px] uppercase tracking-wider text-ink-2"
+                  >
+                    All resistance records →
+                  </Link>
+                </p>
               </section>
             );
           }
@@ -482,7 +812,7 @@ export function EntityDetail({ node }: { node: Node }) {
         })}
       </div>
 
-      <Connected id={node.id} />
+      <Connected id={node.id} exclude={showsResistancePanel ? ["resistance"] : []} />
 
       <section id="cite" className="mt-12 scroll-mt-24">
         <SectionHeading>Cite this page</SectionHeading>
@@ -522,8 +852,8 @@ export function EntityDetail({ node }: { node: Node }) {
   );
 }
 
-function Connected({ id }: { id: string }) {
-  const groups = backlinksByKind(id);
+function Connected({ id, exclude = [] }: { id: string; exclude?: string[] }) {
+  const groups = backlinksByKind(id).filter((g) => !exclude.includes(g.kind));
   if (!groups.length) return null;
   return (
     <section id="connected" className="mt-12 scroll-mt-24">

@@ -41,7 +41,7 @@ export const pathogens: RecordOf<"pathogens">[] = [
     name: "Trypanosoma cruzi",
     tldr: "The parasite carried by blood-sucking triatomine bugs that causes Chagas disease, which can damage the heart decades after infection.",
     summary:
-      "Trypanosoma cruzi infects an estimated six to seven million people in Latin America. The acute phase is usually mild and unnoticed; the chronic phase can follow years later with cardiomyopathy, heart failure and sudden death in about a third of those infected. It is also transmitted by blood transfusion, organ transplant and from mother to child, which is why blood-bank screening matters even outside endemic areas.",
+      "Trypanosoma cruzi infects about 8 million people worldwide, mostly in Latin America. The acute phase is usually mild and unnoticed; the chronic phase can follow years later with cardiomyopathy, heart failure and sudden death in about a third of those infected. It is also transmitted by blood transfusion, organ transplant and from mother to child, which is why blood-bank screening matters even outside endemic areas.",
     asOf: "2026-09",
     organism: "Protozoan parasite",
     taxonomy: "Kinetoplastida, Trypanosomatidae",
@@ -49,19 +49,21 @@ export const pathogens: RecordOf<"pathogens">[] = [
       "Trypomastigotes invade host cells and multiply as intracellular amastigotes; the immune response contains but does not clear the infection, leaving lifelong persistence.",
     lifecycle:
       "Triatomine bugs take a blood meal and defecate nearby; the person scratches the faeces into the bite wound or a mucous membrane, transferring the parasite.",
-    drugTargets: "The cysteine protease cruzain and sterol 14α-demethylase (CYP51) are the best-studied drug targets.",
+    drugTargets:
+      "The cysteine protease cruzain and sterol 14α-demethylase (CYP51) are the best-studied drug targets; the nitro drugs (benznidazole, nifurtimox, fexinidazole) are prodrugs activated by the parasite type I nitroreductase. Newer validated targets include the mRNA-processing factor CPSF3 (AN2-502998) and topoisomerase II (IID432).",
     links: [
       { label: "WHO — Chagas disease", url: "https://www.who.int/news-room/fact-sheets/detail/chagas-disease-(american-trypanosomiasis)" },
     ],
     diseases: ["chagas"],
     vectors: ["triatomine-bug"],
-    targets: ["cruzain", "cyp51"],
-    drugs: ["benznidazole", "nifurtimox"],
+    targets: ["cruzain", "cyp51", "trypanosome-nitroreductase", "tc-cpsf3", "tc-topoisomerase-ii"],
+    drugs: ["benznidazole", "nifurtimox", "fexinidazole", "an2-502998"],
     technologies: ["ai-drug-discovery", "alphafold-structure-prediction"],
     stats: [
-      { label: "People infected", value: "6–7 million" },
-      { label: "Annual deaths", value: "≈ 12,000" },
-      { label: "Chronic cardiac involvement", value: "≈ 30%", note: "of those infected" },
+      { label: "People infected", value: "8 million", note: "WHO estimate, April 2026" },
+      { label: "Annual deaths", value: "> 10,000", note: "WHO estimate; PAHO estimates about 12,000" },
+      { label: "Chronic cardiac involvement", value: "≈ 30%", note: "of those infected; about 1 in 10 develop digestive, neurological or mixed alterations" },
+      { label: "People at risk", value: "> 100 million", note: "global; congenital transmission now the main route worldwide with over 10,000 new cases a year" },
     ],
   },
   {
@@ -240,14 +242,14 @@ export const pathogens: RecordOf<"pathogens">[] = [
     technologies: ["wash-interventions", "mhealth-surveillance", "community-health-workers"],
     stats: [
       { label: "Cases in the 1980s", value: "≈ 3.5 million/yr", note: "estimated" },
-      { label: "Cases (recent years)", value: "Single digits to low tens", note: "human cases, reported annually" },
+      { label: "Cases (recent years)", value: "10 in 2025, the lowest ever recorded", number: 10, unit: "cases", year: 2025, geography: "global", note: "provisional human cases; 15 in 2024, 14 in 2023", source: { label: "The Carter Center — 10 human cases reported in 2025 (Jan 2026)", url: "https://www.cartercenter.org/news/guinea-worm-announcement" } },
       { label: "Objective", value: "Eradication", note: "certification under way" },
     ],
     timeline: [
       { date: "1986", text: "The Guinea Worm Eradication Programme begins with the Carter Center and WHO." },
       { date: "1989", text: "Cases fall below one million a year." },
       { date: "2010s", text: "Chad reports infections linked to fish and frogs as paratenic hosts, complicating elimination." },
-      { date: "2024", text: "Human cases remain in single digits to low tens across a handful of countries." },
+      { date: "2024", text: "Fifteen human cases are confirmed worldwide; 664 animal infections are reported, mostly dogs in Cameroon and Chad." },
     ],
   },
   {
@@ -525,7 +527,7 @@ export const pathogens: RecordOf<"pathogens">[] = [
     name: "Chikungunya virus",
     tldr: "An Aedes-borne virus that causes sudden fever and joint pain so severe it can persist for months.",
     summary:
-      "Chikungunya virus causes an abrupt fever with disabling joint and muscle pain; most people recover, but a substantial minority have joint pain lasting months or years. Outbreaks are explosive and move with travellers and Aedes mosquitoes. There is no specific antiviral; a vaccine, Ixchiq, has been licensed in some countries for people at high risk, and control rests on Aedes control.",
+      "Chikungunya virus causes an abrupt fever with disabling joint and muscle pain; most people recover, but a substantial minority have joint pain lasting months or years. Outbreaks are explosive and move with travellers and Aedes mosquitoes — 502,264 cases were reported across 41 countries in 2025, with resurgence into 2026. There is no specific antiviral, though the nsP2 protease now has oral leads with mouse efficacy; two vaccines are licensed (Ixchiq, withdrawn in the US in 2026; Vimkunya, expanding), and control otherwise rests on Aedes control.",
     asOf: "2026-09",
     organism: "Virus",
     taxonomy: "Togaviridae, Alphavirus",
@@ -533,15 +535,19 @@ export const pathogens: RecordOf<"pathogens">[] = [
       "The virus targets joints and connective tissue, which explains the persistent rheumatic symptoms; immunity after infection is long-lasting.",
     lifecycle:
       "Aedes mosquitoes transmit the virus between people and can also maintain local cycles; infection in the mosquito is lifelong, so a single bite can transmit later.",
+    drugTargets: "The nsP2 cysteine protease/helicase — essential for polyprotein processing — is the leading antiviral target; the E1/E2 envelope glycoproteins are the vaccine antigens.",
     links: [
       { label: "WHO — Chikungunya", url: "https://www.who.int/news-room/fact-sheets/detail/chikungunya" },
     ],
     diseases: ["chikungunya"],
     vectors: ["aedes-aegypti", "aedes-albopictus"],
-    technologies: ["vector-surveillance", "dengue-vaccination"],
+    targets: ["chikungunya-glycoprotein", "chikv-nsp2"],
+    drugs: ["ixchiq", "vimkunya", "butantan-chik-vla1555", "emetine"],
+    technologies: ["vector-surveillance", "dengue-vaccination", "chikungunya-vaccination"],
     stats: [
+      { label: "Cases reported (2025)", value: "502,264 (186 deaths)", note: "41 countries and territories" },
       { label: "Persistent joint pain", value: "Up to a third of patients, months to years" },
-      { label: "Vaccine", value: "Ixchiq licensed in several countries", note: "for high-risk individuals" },
+      { label: "Vaccines", value: "Ixchiq (US withdrawn 2026) and Vimkunya (expanding)", note: "plus Brazil-made VLA1555" },
     ],
   },
   {
@@ -586,7 +592,7 @@ export const pathogens: RecordOf<"pathogens">[] = [
       { label: "WHO — Mycetoma", url: "https://www.who.int/news-room/fact-sheets/detail/mycetoma" },
     ],
     diseases: ["mycetoma"],
-    drugs: ["antimonials", "azithromycin"],
+    drugs: ["itraconazole", "fosravuconazole"],
     technologies: ["genomic-surveillance", "ai-microscopy"],
     stats: [
       { label: "Reported cases", value: "Tens of thousands across the mycetoma belt" },

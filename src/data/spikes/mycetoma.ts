@@ -15,8 +15,8 @@ export const mycetomaSpike: Spike = {
       note: "fungal (eumycetoma) or bacterial (actinomycetoma), needing different treatment",
       source: { label: "WHO — mycetoma (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/mycetoma" },
     },
-    { label: "Reporting countries", value: "> 30", number: 30, unit: "countries" },
-    { label: "Geography", value: "The Sahel 'mycetoma belt'", note: "Sudan carries the largest burden" },
+    { label: "Where endemic", value: "Africa, Asia, Europe and Latin America", note: "the 'mycetoma belt' includes Sudan, Mexico, Chad, Ethiopia, Senegal, Somalia, Yemen, India and Venezuela", source: { label: "WHO — mycetoma (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/mycetoma" } },
+    { label: "Where most cases are reported", value: "Sudan and Mexico", note: "accurate global incidence and prevalence are unknown", source: { label: "WHO — mycetoma (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/mycetoma" } },
     {
       label: "Age affected",
       value: "15–30 years",
@@ -29,7 +29,22 @@ export const mycetomaSpike: Spike = {
     {
       label: "First randomised trial",
       value: "Fosravuconazole",
-      note: "once weekly; not superior to itraconazole, but safe and simpler",
+      note: "once weekly; not superior to itraconazole and numerically less effective; stopped early for futility",
+      source: { label: "Fahal et al., Lancet Infect Dis 2024", url: "https://pubmed.ncbi.nlm.nih.gov/39098321/" },
+    },
+    {
+      label: "Itraconazole cure at 12 months",
+      value: "75%",
+      number: 75,
+      unit: "%",
+      note: "with surgery at 6 months — higher than either fosravuconazole dose",
+      source: { label: "Fahal et al., Lancet Infect Dis 2024", url: "https://pubmed.ncbi.nlm.nih.gov/39098321/" },
+    },
+    {
+      label: "R&D funding (2023)",
+      value: "under US$ 1 million",
+      note: "among the most neglected NTDs by research spending; over half from industry",
+      source: { label: "G-FINDER 2024 Neglected Disease R&D report", url: "https://cdn.impactglobalhealth.org/media/G-FINDER%202024_Full%20report.pdf" },
     },
     { label: "Outcome in advanced disease", value: "Amputation", note: "common in fungal mycetoma" },
   ],
@@ -41,8 +56,8 @@ export const mycetomaSpike: Spike = {
       refs: ["who"],
     },
     {
-      date: "2019",
-      text: "The first randomised clinical trial for a eumycetoma treatment begins in Khartoum, testing fosravuconazole against itraconazole.",
+      date: "2017",
+      text: "The first randomised clinical trial for a eumycetoma treatment begins in Khartoum, testing fosravuconazole against itraconazole (NCT03086226).",
       refs: ["fosravuconazole-mycetoma", "fosravuconazole"],
     },
     {
@@ -52,7 +67,7 @@ export const mycetomaSpike: Spike = {
     },
     {
       date: "2024",
-      text: "The trial reports that neither dose of fosravuconazole was superior to itraconazole, but that it caused no new safety concerns and needed only weekly dosing.",
+      text: "The trial, stopped early for futility, reports 12-month cure rates of 50% and 65% for the two fosravuconazole doses against 75% for itraconazole — no new safety signals and weekly dosing, but no efficacy gain.",
       refs: ["fosravuconazole-mycetoma", "fosravuconazole"],
     },
     {
@@ -67,7 +82,7 @@ export const mycetomaSpike: Spike = {
       id: "trial",
       title: "The first randomised trial — and what it actually showed",
       body:
-        "Fosravuconazole was the first drug ever tested against eumycetoma in a randomised, double-blind trial, run at a single centre in Sudan by the Mycetoma Research Centre with DNDi and Eisai. It compared two once-weekly doses against daily itraconazole, the standard of care, with surgery at six months. The result was not a victory on efficacy: neither dose was superior to itraconazole, and both had numerically lower cure rates.\n\nWhat the trial did establish was that a once-weekly oral regimen is safe and tolerable, which matters in a disease treated for a year or more and in patients who travel long distances to a clinic. It also proved that a rigorous randomised trial is possible in one of the hardest settings in the world, and it built the trial infrastructure and the mycetoma community that future studies depend on. That is a real result even when the primary endpoint is not met.",
+        "Fosravuconazole was the first drug ever tested against eumycetoma in a randomised, double-blind trial, run at a single centre in Sudan by the Mycetoma Research Centre with DNDi and Eisai. It compared two once-weekly doses against daily itraconazole, the standard of care, with surgery at six months. The result was not a victory on efficacy: the trial was stopped early for futility, and 12-month cure was 50% on 300 mg weekly, 65% on 200 mg weekly and 75% on itraconazole — neither fosravuconazole dose superior, and both numerically worse.\n\nWhat the trial did establish was that a once-weekly oral regimen is safe and tolerable, which matters in a disease treated for a year or more and in patients who travel long distances to a clinic. It also proved that a rigorous randomised trial is possible in one of the hardest settings in the world, and it built the trial infrastructure and the mycetoma community that future studies depend on. That is a real result even when the primary endpoint is not met.",
       refs: ["fosravuconazole-mycetoma", "fosravuconazole", "mrc-khartoum", "dndi"],
     },
     {

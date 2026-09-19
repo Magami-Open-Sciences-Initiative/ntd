@@ -1,10 +1,10 @@
 import type { Spike } from "../merge";
 
 export const lymphaticFilariasisSpike: Spike = {
-  tldr: "Mosquito-borne filarial worms that block the lymph system and cause the permanent swelling of elephantiasis — a disease 23 countries have now eliminated as a public health problem.",
+  tldr: "Mosquito-borne filarial worms that block the lymph system and cause the permanent swelling of elephantiasis — a disease 21 countries and territories have now eliminated as a public health problem.",
 
   summary:
-    "Lymphatic filariasis is caused by Wuchereria bancrofti, Brugia malayi and Brugia timori, spread by mosquitoes. Most infections are asymptomatic, but in a minority the lymphatic vessels become blocked and the limbs or scrotum swell permanently — a disfiguring, disabling and heavily stigmatised condition. Mass drug administration has driven enormous progress: 23 countries and territories have now been validated by WHO as having eliminated lymphatic filariasis as a public health problem, Brazil being the twentieth in 2024 after China became the first in 2007. Triple-drug therapy combining ivermectin, DEC and albendazole clears microfilariae far faster than earlier regimens and can accelerate the endgame. What is not solved is the last mile: transmission can persist years after treatment stops, the available diagnostics miss the Brugia species, no drug reliably kills the adult worms, and the people already living with lymphoedema and hydrocele need care that mass treatment does not provide.",
+    "Lymphatic filariasis is caused by Wuchereria bancrofti, Brugia malayi and Brugia timori, spread by mosquitoes. Most infections are asymptomatic, but in a minority the lymphatic vessels become blocked and the limbs or scrotum swell permanently — a disfiguring, disabling and heavily stigmatised condition. Mass drug administration has driven enormous progress: 21 countries and territories have now been validated by WHO as having eliminated lymphatic filariasis as a public health problem — Brazil the twentieth in 2024 and Timor-Leste completing the list — after China became the first in 2007. Triple-drug therapy combining ivermectin, DEC and albendazole clears microfilariae far faster than earlier regimens and can accelerate the endgame. What is not solved is the last mile: transmission can persist years after treatment stops, the available diagnostics miss the Brugia species, no drug reliably kills the adult worms, and the people already living with lymphoedema and hydrocele need care that mass treatment does not provide.",
 
   stats: [
     {
@@ -43,8 +43,8 @@ export const lymphaticFilariasisSpike: Spike = {
       number: 21,
       unit: "countries and territories",
       geography: "global",
-      note: "WHO's list includes Bangladesh, Brazil, Malawi, Sri Lanka, Thailand, Togo, Viet Nam and Yemen",
-      source: { label: "WHO — lymphatic filariasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/lymphatic-filariasis" },
+      note: "latest: Timor-Leste and Brazil; 16 more under surveillance but not yet validated (WER Oct 2025)",
+      source: { label: "WHO — GPELF progress report 2024 (WER Oct 2025)", url: "https://www.who.int/publications/i/item/who-wer10040-439-449" },
     },
     {
       label: "Cumulative treatments since 2000",
@@ -62,6 +62,15 @@ export const lymphaticFilariasisSpike: Spike = {
       number: 871,
       unit: "million people",
       note: "a 58.6% fall in the population needing MDA",
+      source: { label: "WHO — lymphatic filariasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/lymphatic-filariasis" },
+    },
+    {
+      label: "Living with chronic disease",
+      value: "≥ 36 million",
+      number: 36,
+      unit: "million people",
+      geography: "global",
+      note: "25 million hydrocele + 15 million lymphoedema; programme economic benefit $24B (2000–2007), $100.5B losses averted",
       source: { label: "WHO — lymphatic filariasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/lymphatic-filariasis" },
     },
     { label: "Road map target", value: "58 of 72 endemic countries", note: "≥ 80% validated by 2030" },
@@ -91,7 +100,7 @@ export const lymphaticFilariasisSpike: Spike = {
     },
     {
       date: "2025",
-      text: "Twenty-three countries have been validated, and India's ICMR starts a Phase IIa trial of oxfendazole as a possible treatment for the worm itself.",
+      text: "Twenty-one countries stand validated (WER Oct 2025), and India's ICMR starts a Phase IIa trial of oxfendazole as a possible treatment for the worm itself, joined by a Ghanaian rifampicin short-course RCT.",
       refs: ["oxfendazole-lf", "icmr", "oxfendazole"],
     },
   ],
@@ -101,7 +110,7 @@ export const lymphaticFilariasisSpike: Spike = {
       id: "the-count",
       title: "Elimination as a public health problem: the count",
       body:
-        "Success here is measured against a specific threshold rather than zero transmission. A country is validated as having eliminated lymphatic filariasis as a public health problem when transmission has been reduced below a defined level and that status survives a rigorous dossier review — China was first, in 2007, and by the end of 2025 twenty-three countries and territories had been validated, including Bangladesh, Malawi, Sri Lanka, Thailand, Togo, Yemen, Brazil and a long list of Pacific island states.\n\nThe 2021–2030 road map aims for at least 80% of endemic countries — 58 of 72 — to reach that status by 2030. That is an ambitious target, and the countries still in the programme are, by definition, the ones where transmission has been hardest to break: high-burden India and Nigeria, and settings where the vector or the parasite behaves differently.",
+        "Success here is measured against a specific threshold rather than zero transmission. A country is validated as having eliminated lymphatic filariasis as a public health problem when transmission has been reduced below a defined level and that status survives a rigorous dossier review — China was first, in 2007, and by late 2025 twenty-one countries and territories had been validated — Bangladesh, Brazil, Cambodia, Egypt, Malawi, Sri Lanka, Thailand, Timor-Leste, Togo, Yemen and Pacific island states — with 16 more under surveillance but not yet validated.\n\nThe 2021–2030 road map aims for at least 80% of endemic countries — 58 of 72 — to reach that status by 2030. That is an ambitious target, and the countries still in the programme are, by definition, the ones where transmission has been hardest to break: high-burden India and Nigeria, and settings where the vector or the parasite behaves differently.",
       refs: ["who", "elimination-roadmap", "eot", "uniting-ntds"],
     },
     {
@@ -141,10 +150,10 @@ export const lymphaticFilariasisSpike: Spike = {
     },
   ],
 
-  drugs: ["oxfendazole"],
-  trials: ["oxfendazole-lf"],
-  diagnostics: ["filarial-test-strip", "brugia-test-plus"],
+  drugs: ["oxfendazole", "albendazole", "doxycycline"],
+  trials: ["oxfendazole-lf", "rifampicin-lf-ghana", "takeoff-lf"],
+  diagnostics: ["filarial-test-strip", "brugia-test-plus", "wb5-biomarker"],
   technologies: ["triple-drug-therapy-ida"],
-  institutions: ["icmr", "dndi"],
+  institutions: ["icmr", "dndi", "knust-filarial", "irss-burkina"],
   terms: ["eot"],
 };

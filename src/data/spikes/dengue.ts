@@ -9,7 +9,7 @@ export const dengueSpike: Spike = {
   tldr: "A mosquito-borne virus with four serotypes that causes sudden fever and, on a second infection with a different serotype, can leak plasma and kill — and 2024 was its worst year on record.",
 
   summary:
-    "Dengue is caused by four serotypes of dengue virus and transmitted by day-biting Aedes aegypti and Aedes albopictus mosquitoes. A first infection is usually mild or silent; a second infection with a different serotype is the dangerous one, because antibody-dependent enhancement raises the risk of severe dengue — plasma leakage and shock around the time the fever breaks. That biology is why case management is careful fluid therapy rather than a drug, and why vaccine development has been so hard. Reported cases rose from 505,430 in 2000 to a record 14.6 million in 2024, with more than 12,000 deaths and more than 100 countries affected on all continents. There is still no approved antiviral, but the last two years brought a wave of good news on prevention: 2024 was a record year for Wolbachia deployments, and Brazil approved the world's first single-dose dengue vaccine in November 2025.",
+    "Dengue is caused by four serotypes of dengue virus and transmitted by day-biting Aedes aegypti and Aedes albopictus mosquitoes. A first infection is usually mild or silent; a second infection with a different serotype is the dangerous one, because antibody-dependent enhancement raises the risk of severe dengue — plasma leakage and shock around the time the fever breaks. That biology is why case management is careful fluid therapy rather than a drug, and why vaccine development has been so hard. Reported cases rose from 505,430 in 2000 to 14.4 million in 2024 (11,201 deaths) across more than 100 countries; 2025 fell back sharply in the Americas but kept all four serotypes circulating. There is still no approved antiviral, though mosnodenvir's challenge-trial data (NEJM) awaits a new sponsor and Novartis's NS4B inhibitor EYU688 is in Phase 2. On prevention, Wolbachia is heading for a WHO recommendation in late 2027 — while Brazil's single-dose Butantan-DV, approved in November 2025, was suspended in June 2026 pending a safety review.",
 
   stats: [
     {
@@ -68,6 +68,16 @@ export const dengueSpike: Spike = {
       text: "Johnson & Johnson discontinues the Phase 2 field study of its dengue antiviral mosnodenvir despite encouraging early results.",
       refs: ["mosnodenvir-dengue", "mosnodenvir"],
     },
+    {
+      date: "2026",
+      text: "Brazil suspends the Butantan-DV rollout in June pending a safety review after two deaths; the NEJM publishes mosnodenvir's challenge-trial data as adoption talks continue.",
+      refs: ["butantan-dv", "qdenga", "mosnodenvir-dengue", "mosnodenvir"],
+    },
+    {
+      date: "2026",
+      text: "WHO opens a systematic review of Wolbachia population replacement, with a recommendation expected in late 2027.",
+      refs: ["wolbachia-method", "world-mosquito-program", "who"],
+    },
   ],
 
   sections: [
@@ -75,29 +85,29 @@ export const dengueSpike: Spike = {
       id: "surge",
       title: "The 2024 surge and what is driving it",
       body:
-        "The 2024 dengue season broke every record: 14.6 million cases reported to WHO, more than 12,000 deaths, and more than 100 countries affected on all continents. The Americas carried the largest share, with over thirteen million cases, more than twenty-two thousand classified as severe and more than eight thousand deaths; the United States, which usually sees dengue only in travellers, recorded a 359% increase over its 2010–2023 average, with sustained outbreaks in Puerto Rico and the U.S. Virgin Islands. Europe recorded 308 locally relevant cases in France, Italy and Spain, plus 1,291 cases and four deaths in the French overseas territories of Mayotte and Réunion. In early 2025 PAHO warned that renewed circulation of the DENV-3 serotype — which many populations have not seen recently — could drive further outbreaks; the first seven months of 2025 still produced more than four million cases and more than three thousand deaths across 97 countries.\n\nThe drivers are well understood and hard to reverse: urbanisation that creates breeding sites in water storage and discarded containers, unreliable piped water that forces households to store water, international travel that moves serotypes between regions, and a warming climate that expands the range of Aedes albopictus into temperate zones. Because Aedes aegypti bites during the day and breeds in domestic containers, bed nets do not work and house spraying reaches only part of the population.",
+        "The 2024 dengue season broke every record: 14,434,584 cases reported to WHO (7.7 million confirmed, 52,738 severe, 11,201 deaths) across more than 100 countries on all continents. The Americas carried over 90% of the total, with over thirteen million cases; Brazil alone reported 10.2 million cases and 6,321 deaths, alongside large epidemics in Argentina, Mexico, Colombia and Paraguay, while Indonesia and India topped Asia and Burkina Faso and Cabo Verde marked Africa's sharp rise. In early 2025 PAHO warned that renewed circulation of the DENV-3 serotype — which many populations have not seen recently — could drive further outbreaks. The year then fell back: the Americas reported 4.46 million suspected cases with 2,207 deaths in 2025 (down 66% and 74%), and early 2026 ran 60% below 2025 — but all four serotypes circulated throughout, keeping severe-disease risk high.\n\nThe drivers are well understood and hard to reverse: urbanisation that creates breeding sites in water storage and discarded containers, unreliable piped water that forces households to store water, international travel that moves serotypes between regions, and a warming climate that expands the range of Aedes albopictus into temperate zones. Because Aedes aegypti bites during the day and breeds in domestic containers, bed nets do not work and house spraying reaches only part of the population.",
       refs: ["aedes-aegypti", "aedes-albopictus", "climate-expansion", "paho", "vector-surveillance"],
     },
     {
       id: "vaccines",
       title: "Two vaccines, very different",
       body:
-        "Dengue vaccination is unusually hard because there are four serotypes and a second infection with a different one is more dangerous. The first licensed vaccine required pre-screening for prior infection, which limited its usefulness. The second, Qdenga (TAK-003), works without screening and WHO's May 2024 position paper recommends it for children aged 6 to 16 in settings of high transmission intensity, as a two-dose schedule — but explicitly not for younger children, and not in low-to-moderate transmission settings until questions about protection against DENV-3 and DENV-4 in people who have never had dengue are resolved.\n\nBrazil has taken a different route. Butantan-DV, developed by the Butantan Institute with a Chinese manufacturing partner, is the world's first single-dose dengue vaccine; Brazil's regulator approved it in November 2025 for people aged 12 to 59, with incorporation into the national immunisation programme planned for 2026 and more than a million doses prepared. A single dose matters enormously for campaigns: it removes the second visit, and in a country that has had the largest dengue burden in the world, it puts a locally developed product at the centre of the response.",
-      refs: ["dengue-vaccination", "tak-003-dengue", "butantan-dv-dengue", "butantan-institute", "vaccine-gap"],
+        "Dengue vaccination is unusually hard because there are four serotypes and a second infection with a different one is more dangerous. The first licensed vaccine required pre-screening for prior infection, which limited its usefulness. The second, Qdenga (TAK-003), works without screening and WHO's May 2024 position paper recommends it for children aged 6 to 16 in settings of high transmission intensity, as a two-dose schedule — but explicitly not for younger children, and not in low-to-moderate transmission settings until questions about protection against DENV-3 and DENV-4 in people who have never had dengue are resolved.\n\nBrazil took a different route. Butantan-DV, a single-dose live-attenuated vaccine developed by the Butantan Institute (from the NIH TV003 backbone) with WuXi as manufacturing partner, showed 74.7% overall efficacy, 91.6% against severe dengue and 100% against hospitalisation; Brazil's regulator approved it in November 2025 for ages 12 to 59, rollout to health workers began in February 2026 — and in June 2026 the ministry suspended the strategy as a precaution after two deaths, with Anvisa convening an expert review. A single dose still matters enormously for campaigns, but the suspension shows a Phase 3 safety database of ~16,000 is not the end of the story. Note the serotype caveat from the trial readouts: published efficacy centred on DENV-1 and DENV-2, with DENV-3/4 protection less established — the same shadow that hangs over Qdenga.",
+      refs: ["dengue-vaccination", "tak-003-dengue", "butantan-dv-dengue", "qdenga", "butantan-dv", "butantan-institute", "vaccine-gap"],
     },
     {
       id: "wolbachia",
       title: "Wolbachia: the strongest new tool",
       body:
-        "Wolbachia is a bacterium that, once established in Aedes aegypti, makes the mosquito far less able to transmit dengue, chikungunya and Zika — and because it is inherited through the mosquito's eggs, it spreads and persists without repeated releases. The evidence has accumulated from a gold-standard randomised trial to city-scale deployments: 77% fewer dengue cases in Yogyakarta, 89% in Niterói in Brazil with a corresponding drop in chikungunya, and reductions above 90% in Bello and Itagüí in Colombia even during the severe 2024 national outbreak. Campo Grande, Brazil recorded a 63% decline.\n\nBy its 2025 review the World Mosquito Program reported 16.1 million people protected across fifteen countries, an estimated 1.5 million dengue cases prevented and US$455 million in avoided healthcare costs, with new deployments beginning in Peru and Timor-Leste. Economics support it: modelling for Colombian cities found benefit-cost ratios above five to one over ten years. The method is not a vaccine and does not stop every case, but no other dengue intervention has produced reductions this large and this durable at city scale.",
-      refs: ["wolbachia-method", "world-mosquito-program", "awed-wolbachia", "aedes-aegypti", "vector-control-roadmap"],
+        "Wolbachia is a bacterium that, once established in Aedes aegypti, makes the mosquito far less able to transmit dengue, chikungunya and Zika — and because it is inherited through the mosquito's eggs, it spreads and persists without repeated releases. The evidence has accumulated from a gold-standard randomised trial to city-scale deployments: 77% fewer dengue cases in Yogyakarta, 89% in Niterói in Brazil with a corresponding drop in chikungunya, and reductions above 90% in Bello and Itagüí in Colombia even during the severe 2024 national outbreak. Campo Grande, Brazil recorded a 63% decline.\n\nBy its 2025 review the World Mosquito Program reported 16.1 million people protected across fifteen countries, an estimated 1.5 million dengue cases prevented and US$455 million in avoided healthcare costs, with new deployments beginning in Peru and Timor-Leste. In June 2026 WHO opened a formal systematic review of population replacement (plus suppression), with an integrated vector-control Guideline Development Group expected in Q1 2027 and recommendations in late 2027 — the step that turns a programme into policy. Economics already support it: modelling for Colombian cities found benefit-cost ratios above five to one over ten years. The method is not a vaccine and does not stop every case, but no other dengue intervention has produced reductions this large and this durable at city scale.",
+      refs: ["wolbachia-method", "world-mosquito-program", "awed-wolbachia", "aedes-aegypti", "vector-control-roadmap", "who"],
     },
     {
       id: "antiviral",
       title: "The antiviral that did not make it",
       body:
-        "A drug that stopped dengue early would change everything, because care is currently supportive and hospitals fill during outbreaks. The most advanced candidate was mosnodenvir (formerly JNJ-1802), a small molecule that showed it could protect volunteers in a human challenge model — a genuinely promising result that raised expectations of a preventive antiviral.\n\nIn 2025 the company discontinued the Phase 2 field study, despite the drug having been safe and well tolerated in earlier phases. The reasons are commercial and strategic as much as scientific, but the consequence for the field is real: there is still no approved dengue antiviral, and the challenge-model signal did not translate into a field-usable product. It is a caution about how much weight a challenge-model result can carry, and about who is willing to fund late-stage trials for a disease whose main market is poor.",
-      refs: ["mosnodenvir", "mosnodenvir-dengue", "dengue-ns5", "funding-gap"],
+        "A drug that stopped dengue early would change everything, because care is currently supportive and hospitals fill during outbreaks. The most advanced candidate was mosnodenvir (formerly JNJ-1802), a small molecule blocking the NS3–NS4B interaction that protected volunteers in a human challenge model — 6 of 10 high-dose recipients uninfected, the rest low-viraemia — published in the NEJM. The Phase 2 field study (~1,600 enrolled across South America and Asia) was halted in October 2024 when J&J exited infectious diseases, and the compound now sits in limbo with adoption talks under way.\n\nIt is no longer alone. A June 2026 systematic mapping review found only five published antiviral RCTs in dengue history (ivermectin ×2, chloroquine, two HCV repurposings) — and a live pipeline: Novartis's NS4B inhibitor EYU688 in Phase 2, a Serum Institute dengue monoclonal with Phase 2 complete and Phase 3 planned, and a molnupiravir trial for dengue and chikungunya in Brazil. AT-752 (NS5 polymerase) and JNJ-64281802 (NS3–NS4B) were terminated on recruitment and deprioritisation. The lesson of mosnodenvir stands: challenge-model success plus ~1,600 field participants still was not enough without a sponsor willing to finish — but for the first time there is more than one shot on goal.",
+      refs: ["mosnodenvir", "mosnodenvir-dengue", "eyu688-novartis-ph2", "sii-dengue-mab-ph2", "dengue-ns5", "dengue-ns4b", "funding-gap"],
     },
     {
       id: "care",
@@ -108,9 +118,10 @@ export const dengueSpike: Spike = {
     },
   ],
 
-  drugs: ["mosnodenvir"],
-  trials: ["awed-wolbachia", "mosnodenvir-dengue"],
-  technologies: ["wolbachia-method"],
-  institutions: ["world-mosquito-program", "butantan-institute", "paho"],
+  drugs: ["mosnodenvir", "qdenga", "butantan-dv"],
+  trials: ["awed-wolbachia", "mosnodenvir-dengue", "tak-003-dengue", "butantan-dv-dengue", "eyu688-novartis-ph2", "sii-dengue-mab-ph2"],
+  technologies: ["wolbachia-method", "dengue-vaccination"],
+  institutions: ["world-mosquito-program", "butantan-institute", "paho", "who"],
+  guidelines: ["arbovirus-clinical-guideline-2025"],
   terms: [],
 };

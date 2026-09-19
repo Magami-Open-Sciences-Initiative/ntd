@@ -8,12 +8,12 @@ export const echinococcosisSpike: Spike = {
 
   stats: [
     {
-      label: "People with cystic disease",
+      label: "People living with echinococcosis",
       value: "> 1 million",
       number: 1,
       unit: "million people",
       geography: "global",
-      note: "at any one time; across both cystic and alveolar echinococcosis",
+      note: "at any one time; cystic and alveolar disease combined",
       source: { label: "WHO — echinococcosis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/echinococcosis" },
     },
     {
@@ -45,10 +45,31 @@ export const echinococcosisSpike: Spike = {
       source: { label: "WHO — echinococcosis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/echinococcosis" },
     },
     { label: "Alveolar disease", value: "High fatality without treatment" },
-    { label: "EG95 vaccine efficacy in sheep", value: "96–100%", unit: "%" },
-    { label: "Dog deworming needed", value: "≥ 4 times a year", note: "praziquantel" },
-    { label: "Dogs under management in China", value: "≈ 2 million", number: 2, unit: "million dogs", note: "in endemic townships, 2024" },
-    { label: "China's elimination target", value: "2030", year: 2030 },
+    {
+      label: "EG95 vaccine efficacy in sheep",
+      value: "96–100%",
+      unit: "%",
+      note: "recombinant antigen vaccine; registered and in commercial production in China and Argentina",
+      source: { label: "WHO — echinococcosis prevention and control", url: "https://www.who.int/activities/strengthening-echinococcosis-prevention-and-control" },
+    },
+    {
+      label: "Dog deworming needed",
+      value: "≥ 4 times a year",
+      note: "praziquantel, as part of the One Health package with EG95 lamb vaccination",
+      source: { label: "WHO — echinococcosis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/echinococcosis" },
+    },
+    {
+      label: "Xizang canine infection rate",
+      value: "5.63% → 0.50% (2016–2022)",
+      note: "91% reduction across 74 counties under sustained dog deworming; compliance fell to 77% by 2022",
+      source: { label: "Jiang et al. — dog deworming cost-outcome, Xizang (PLoS NTD 2026)", url: "https://pubmed.ncbi.nlm.nih.gov/42566482" },
+    },
+    {
+      label: "Xinjiang incidence trend",
+      value: "−17.7% per year (2017–2023)",
+      note: "annual percent change under integrated control incl. monthly dog deworming and lamb vaccination",
+      source: { label: "Spatiotemporal distribution and control of echinococcosis in Xinjiang (2026)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12716753" },
+    },
   ],
 
   timeline: [
@@ -69,12 +90,22 @@ export const echinococcosisSpike: Spike = {
     },
     {
       date: "2024",
-      text: "China reports roughly two million dogs registered and dewormed across endemic townships as part of its national elimination programme.",
+      text: "China's 2004–2022 surveillance analysis counts 89,844 cases and confirms the Tibetan plateau as the highest-burden region for both forms of the disease.",
       refs: ["who", "one-health-ntd-integration"],
     },
     {
+      date: "2025",
+      text: "WHO publishes its first treatment guideline for cystic echinococcosis, staging care by cyst type and size; a 194-patient randomised trial of albendazole for early alveolar disease in Kyrgyzstan completes and is posted to ClinicalTrials.gov.",
+      refs: ["who", "albendazole", "ae-kyrgyzstan-albendazole-trial", "who-ce-treatment-guideline-2025"],
+    },
+    {
+      date: "2026",
+      text: "Whole-genome analysis maps E. granulosus diversity and a recombinant multiplex serology promises differential diagnosis of human cestodiases; Xizang reports a 91% fall in canine infection since 2016.",
+      refs: ["genomic-surveillance", "cestode-multiplex-serology", "one-health-ntd-integration"],
+    },
+    {
       date: "2030",
-      text: "China's national roadmap aims for elimination of echinococcosis, integrating it into economic development planning.",
+      text: "China's programme integrates echinococcosis into economic development planning; modelling projects roughly 20,000 new cases over 2023–2030 if control is sustained.",
       refs: ["who", "eot"],
     },
   ],
@@ -84,7 +115,7 @@ export const echinococcosisSpike: Spike = {
       id: "two-diseases",
       title: "Two diseases, one genus",
       body:
-        "Cystic echinococcosis, or hydatid disease, grows slowly and silently. A person may carry a liver cyst for a decade before it causes pain, jaundice or a cough, and the first sign can be rupture — which can cause anaphylaxis or spread daughter cysts through the abdomen. The WHO classification of cysts (CE1 to CE5) guides whether to treat, drain, or simply watch.\n\nAlveolar echinococcosis is different in kind. Caused by Echinococcus multilocularis and transmitted mainly by foxes and dogs, it forms a spongy mass that invades surrounding tissue and metastasises like a cancer. Untreated it is fatal; treated, it usually requires lifelong albendazole and often surgery. It is a disease of the northern hemisphere — central Europe, Russia, China, Japan, North America — and its range in Europe has been expanding.",
+        "Cystic echinococcosis, or hydatid disease, grows slowly and silently. A person may carry a liver cyst for a decade before it causes pain, jaundice or a cough, and the first sign can be rupture — which can cause anaphylaxis or spread daughter cysts through the abdomen. The WHO classification of cysts (CE1 to CE5) guides whether to treat, drain, or simply watch.\n\nAlveolar echinococcosis is different in kind. Caused by Echinococcus multilocularis and transmitted mainly by foxes and dogs, it forms a spongy mass that invades surrounding tissue and metastasises like a cancer. Untreated it is fatal; treated, it usually requires lifelong albendazole and often surgery. It is a disease of the northern hemisphere — central Europe, Russia, China, Japan, North America — and its range in Europe has been expanding. A third, neotropical form from E. vogeli (polycystic, mainly liver) and the extremely rare E. oligarthrus occurs in rural Central and South America.",
       refs: ["alveolar-echinococcosis", "albendazole", "echinococcus"],
     },
     {
@@ -98,15 +129,15 @@ export const echinococcosisSpike: Spike = {
       id: "china",
       title: "China's national programme",
       body:
-        "China carries the largest share of the global burden, concentrated on the Tibetan plateau and in pastoral communities where dogs, livestock and people live closely together. Its response is the clearest test of whether echinococcosis can actually be eliminated at scale: dog registration, repeated deworming, sheep vaccination, patient screening and free treatment, embedded in local economic development plans rather than run as a vertical health campaign.\n\nBy 2024 the programme reported roughly two million dogs under registration and deworming in endemic townships. A nineteen-year retrospective concluded that continued and expanded wildlife and dog deworming should further reduce human prevalence. The remaining obstacles are practical: stray dog populations that are not registered, the sheer cost of sustaining four rounds of deworming a year, and the fact that the plateau is vast and sparsely served.",
+        "China carries the largest share of the global burden, concentrated on the Tibetan plateau and in pastoral communities where dogs, livestock and people live closely together — 89,844 cases were recorded nationally between 2004 and 2022, with the plateau showing the highest rates for both cystic and alveolar disease. Its response is the clearest test of whether echinococcosis can actually be eliminated at scale: dog registration, repeated (often monthly) deworming, sheep vaccination, patient screening and free treatment, embedded in local economic development plans rather than run as a vertical health campaign.\n\nThe results are measurable: across 74 counties of Xizang the canine infection rate fell 91%, from 5.63% to 0.50%, between 2016 and 2022, and Xinjiang's reported incidence fell 17.7% a year from 2017 to 2023. The remaining obstacles are practical: deworming compliance slipped to 77% by 2022, stray dog populations escape registration, the cost of sustaining monthly deworming is high and uneven between counties, and the plateau is vast and sparsely served.",
       refs: ["who", "one-health-ntd-integration", "surveillance-data-gap"],
     },
     {
       id: "treatment",
       title: "Diagnosis and treatment",
       body:
-        "Diagnosis rests on imaging — ultrasound for abdominal cysts, CT and MRI for complicated or alveolar disease — supported by serology, which is sensitive but cannot reliably distinguish active from past infection. Ultrasound is portable and cheap enough for field use, and the standardised WHO cyst classification lets a district clinician decide between observation, drug treatment, drainage or surgery.\n\nTreatment is staged. Small, inactive cysts can be watched. Active cysts are treated with albendazole, sometimes with a procedure called PAIR (puncture, aspiration, injection, reaspiration) that collapses the cyst without open surgery. Larger or complicated cysts need surgery. Alveolar disease needs long-term or lifelong albendazole and specialist surgical care, and often recurs. None of this is simple, which is why prevention is the better investment.",
-      refs: ["pair", "albendazole", "echinococcosis"],
+        "Diagnosis rests on imaging — ultrasound for abdominal cysts, CT and MRI for complicated or alveolar disease — supported by serology, which is sensitive but cannot reliably distinguish active from past infection. Ultrasound is portable and cheap enough for field use, and the standardised WHO cyst classification lets a district clinician decide between observation, drug treatment, drainage or surgery.\n\nTreatment is staged. Small, inactive cysts can be watched. Active cysts are treated with albendazole, sometimes with a procedure called PAIR (puncture, aspiration, injection, reaspiration) that collapses the cyst without open surgery. Larger or complicated cysts need surgery. Alveolar disease needs long-term or lifelong albendazole and specialist surgical care, and often recurs. In June 2025 WHO published its first treatment guideline for cystic disease, formalising this staging: albendazole alone for small CE1/CE3a cysts, PAIR plus albendazole for mid-sized ones, percutaneous treatment for large ones, surgery plus albendazole for multivesicular CE2/CE3b cysts — and, strikingly, every recommendation is conditional on very-low-certainty evidence, which is itself a finding about how thin the trial base is. None of this is simple, which is why prevention is the better investment.",
+        refs: ["pair", "albendazole", "echinococcosis", "who-ce-treatment-guideline-2025"],
     },
     {
       id: "alveolar-europe",

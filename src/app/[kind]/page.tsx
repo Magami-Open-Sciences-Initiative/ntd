@@ -20,11 +20,13 @@ const GROUP_FIELD: Record<Kind, string | undefined> = {
   roadmaps: "family",
   guidelines: "issuer",
   bottlenecks: "scope",
+  resistance: "resistanceType",
   ideas: "stage",
   terms: "category",
 };
 
 const GROUP_LABEL: Partial<Record<Kind, string>> = {
+  resistance: "resists",
   diseases: "WHO group",
   pathogens: "type",
   vectors: "group",

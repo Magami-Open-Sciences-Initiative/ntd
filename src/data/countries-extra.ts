@@ -1,10 +1,12 @@
 import type { RecordOf } from "@/lib/schema";
+import { iso2, iso3, geonames } from "./codes";
 
 /** Countries added by later reviews. */
 export const extraCountries: RecordOf<"countries">[] = [
   {
     id: "guinea",
     name: "Guinea",
+    codes: [iso2("GN"), iso3("GIN"), geonames("2420477")],
     tldr: "A West African country that eliminated sleeping sickness as a public health problem in 2025 and helped test the single-dose cure.",
     summary:
       "Guinea was validated by WHO in January 2025 as having eliminated human African trypanosomiasis as a public health problem, one of only four countries to have reached that status, and it was one of the settings where acoziborole was clinically tested. The achievement is notable because Guinea's health system was devastated by the 2014–2016 Ebola epidemic, which killed health workers and eroded trust in clinics — and it rebuilt enough surveillance and case-finding capacity to drive a parasitic disease to elimination within a decade. The country also carries onchocerciasis, lymphatic filariasis, schistosomiasis and soil-transmitted helminths.",
@@ -37,6 +39,7 @@ export const moreCountries: RecordOf<"countries">[] = [
   {
     id: "south-africa",
     name: "South Africa",
+    codes: [iso2("ZA"), iso3("ZAF"), geonames("953987")],
     tldr: "The country with one of the world's heaviest tuberculosis and HIV burdens, and a research system that has shaped the evidence for both.",
     summary:
       "South Africa carries a very large share of the global tuberculosis burden, including a substantial share of its drug-resistant cases, and has one of the largest HIV epidemics — a combination that makes tuberculosis the country's leading cause of death and gives its treatment programme global significance. It also has the strongest biomedical research base on the continent, which is why so many of the trials and policy decisions described in this corpus involve South African institutions and researchers. Malaria transmission is limited to the north-east and is a target for elimination.",
@@ -66,6 +69,7 @@ export const moreCountries: RecordOf<"countries">[] = [
   {
     id: "senegal",
     name: "Senegal",
+    codes: [iso2("SN"), iso3("SEN"), geonames("2245662")],
     tldr: "A West African country that has eliminated trachoma, is close on onchocerciasis, and hosts a regional vaccine and diagnostic manufacturer.",
     summary:
       "Senegal has eliminated trachoma as a public health problem and is among the countries closing in on onchocerciasis elimination, while continuing to control malaria, schistosomiasis and soil-transmitted helminths. It is also unusual in the region for its manufacturing capacity: the Institut Pasteur de Dakar produces vaccines and diagnostics, which matters for a continent that has historically depended on imported supply. Its research and public health institutions have produced several of the figures in this corpus.",
@@ -95,6 +99,7 @@ export const moreCountries: RecordOf<"countries">[] = [
   {
     id: "mali",
     name: "Mali",
+    codes: [iso2("ML"), iso3("MLI"), geonames("2453866")],
     tldr: "A West African country with a broad NTD burden whose research centre has shaped understanding of malaria drug resistance.",
     summary:
       "Mali carries malaria, schistosomiasis, soil-transmitted helminths, trachoma, onchocerciasis and leprosy, and has a history of guinea worm and human African trypanosomiasis. Its Malaria Research and Training Centre at the University of Bamako has been a leading source of work on malaria parasite genetics and antimalarial drug resistance in Africa, which is the science that makes molecular resistance surveillance possible. Much of the country's NTD work is delivered through donor-supported campaigns in a difficult security environment.",
@@ -123,6 +128,7 @@ export const moreCountries: RecordOf<"countries">[] = [
   {
     id: "botswana",
     name: "Botswana",
+    codes: [iso2("BW"), iso3("BWA"), geonames("933860")],
     tldr: "A southern African country whose main infectious-disease burden is tuberculosis and HIV, with a strong national research and public health record.",
     summary:
       "Botswana's burden is dominated by HIV and tuberculosis rather than by the classical neglected tropical diseases, and it has run one of Africa's most effective antiretroviral programmes. It appears in this corpus mainly through the people it has produced in global health — including a WHO Regional Director for Africa and a former UNAIDS regional director — and as an example of a country whose health system is strong enough to run its own research. Schistosomiasis and soil-transmitted helminths occur in the north, particularly around the Okavango and Chobe river systems.",

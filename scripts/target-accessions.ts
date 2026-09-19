@@ -111,6 +111,36 @@ export const UNCONFIRMED: { id: string; why: string; how: string }[] = [
     why: "no PDB structure for a trypanosome nitroreductase; and the record may conflate two organisms — fexinidazole is activated by the T. brucei enzyme, benznidazole by the T. cruzi one",
     how: "settle the organism first, then take the accession from the paper that identified the prodrug activator (Baker/Wilkinson groups) and read back the entry name and length",
   },
+  {
+    id: "tc-cpsf3",
+    why: "UniProt annotates only other cleavage-and-polyadenylation subunits (2, 5, 30 kDa) plus unnamed putatives for T. cruzi — no entry identifiable as the AN2-502998-bound CPSF3 orthologue",
+    how: "take the accession from the AN2/DNDi development papers via the TriTrypDB locus of the T. cruzi CPSF3 orthologue (cf. T. brucei Tb927.4.1340), then read back the entry name and length",
+  },
+  {
+    id: "tc-topoisomerase-ii",
+    why: "several T. cruzi topoisomerase II paralogs are annotated (reviewed P30190 plus strain-specific TrEMBL entries) and the IID432 paper models on human TOP2A (PDB 5GWK), so the bound isoform is not pinned to an accession",
+    how: "take the isoform from the IID432 discovery paper (René et al., J Med Chem 2026) via its TriTrypDB locus, then read back the entry name and length",
+  },
+  {
+    id: "tc-impdh",
+    why: "two identical-length CL Brener alleles (Q4DM82, Q4CUG6) plus strain variants; the repurposing paper (Lobo-Rojas et al. 2026) names no accession",
+    how: "take the accession from the paper's methods via its TriTrypDB locus, then read back the entry name and length",
+  },
+  {
+    id: "tc-lysrs",
+    why: "the chromene-inhibitor paper reports work in the Dm28c strain without naming a UniProt accession",
+    how: "take the accession from the paper (2026, PMC13576447) via its TriTrypDB locus for the Dm28c LysRS, then read back the entry name and length",
+  },
+  {
+    id: "chikv-nsp2",
+    why: "nsP2 is a cleavage product of the P1234 polyprotein (reviewed Q8JUX6/Q5XXP4, 2474 aa) with no standalone UniProt entry; the protease domain structure PDB 4ZTB exists",
+    how: "no fetch possible until UniProt annotates mature-chain accessions; if that happens, take the nsP2 mature chain of the S27-African reference strain via its locus and read back the entry name and length",
+  },
+  {
+    id: "fasciola-cathepsin-l",
+    why: "the reviewed Q09093 is a 20-aa fragment and the TrEMBL entries are unnamed fragments of 166-326 aa, so annotation alone cannot pin the vaccine antigen to an accession",
+    how: "take the accession from the Dalton-group cathepsin-L vaccine papers via its GenBank/locus identifier, then read back the entry name and length",
+  },
 ];
 
 /**

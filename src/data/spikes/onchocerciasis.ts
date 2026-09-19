@@ -38,6 +38,25 @@ export const onchocerciasisSpike: Spike = {
       source: { label: "WHO — onchocerciasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/onchocerciasis" },
     },
     {
+      label: "People reached in 2024",
+      value: "171.6 million",
+      number: 171.6,
+      unit: "million people",
+      year: 2024,
+      geography: "global",
+      note: "26 countries reported treating against onchocerciasis; WHO requires at least 80% therapeutic coverage",
+      source: { label: "WHO — onchocerciasis (fact sheet, Dec 2025)", url: "https://www.who.int/news-room/fact-sheets/detail/onchocerciasis" },
+    },
+    {
+      label: "R&D funding trend",
+      value: "−22% in 2023",
+      unit: "%",
+      year: 2023,
+      geography: "global",
+      note: "down US$3.3m, declining each year since peaking in 2018 with moxidectin's approval",
+      source: { label: "G-FINDER 2024 Neglected Disease R&D report", url: "https://cdn.impactglobalhealth.org/media/G-FINDER%202024_Full%20report.pdf" },
+    },
+    {
       label: "No longer requiring treatment",
       value: "25.5 million",
       number: 25.5,
@@ -94,6 +113,11 @@ export const onchocerciasisSpike: Spike = {
       text: "Emodepside's Phase II part 1 meets its criteria against juvenile and adult worms; paediatric ivermectin work joins IVM-KIDS.",
       refs: ["emodepside-part2-oncho", "ivm-kids-paediatric", "emodepside"],
     },
+    {
+      date: "2025",
+      text: "WHO's 2024 update reports 26 countries treating and 25.5 million people no longer needing ivermectin, and confirms early O. volvulus exposure is associated with epilepsy in children.",
+      refs: ["who", "onchocerciasis-associated-epilepsy"],
+    },
   ],
 
   sections: [
@@ -101,7 +125,7 @@ export const onchocerciasisSpike: Spike = {
       id: "elimination-status",
       title: "Where elimination stands",
       body:
-        "The Americas finished first. Colombia, Ecuador, Mexico and Guatemala have all been verified by WHO as having eliminated transmission, the result of twice-yearly treatment and strong surveillance. In Africa, Niger was verified in January 2025 — the first country on the continent — and Senegal is close behind. A 2025 analysis found that eleven African countries have interrupted transmission in at least one focus, which is not the same as country-wide verification but shows the arc is real.\n\nThe cautionary case is Burkina Faso, where transmission was thought interrupted and then resurged after interventions stopped. That is the central lesson of the elimination era: treatment has to continue until the adult worms have died out naturally, which can take 15 years, and stopping early can undo a decade of work. WHO's 2024–2025 progress report found ivermectin was distributed in 84% of known endemic implementation units, of which 88% reached effective coverage — good numbers, but the last units are the hardest to reach.",
+        "The Americas finished first. Colombia (2013), Ecuador (2014), Mexico (2015) and Guatemala (2016) have all been verified by WHO as having eliminated transmission, the result of twice-yearly treatment and strong surveillance. In Africa, Niger was verified in January 2025 — the first country on the continent. Senegal stopped treatment in 2022 and is now under post-treatment surveillance, the stage before verification; and Equatorial Guinea, Ethiopia, Mali, Nigeria, Sudan, Tanzania, Togo and Uganda have stopped MDA in at least one focus, as has Venezuela. Stopping in a focus is not country-wide verification, but it shows the arc is real.\n\nThe cautionary case is Burkina Faso, where transmission was thought interrupted and then resurged after interventions stopped. That is the central lesson of the elimination era: treatment has to continue until the adult worms have died out naturally, which can take 15 years, and stopping early can undo a decade of work. WHO's 2024–2025 progress report found ivermectin was distributed in 84% of known endemic implementation units, of which 88% reached effective coverage — good numbers, but the last units are the hardest to reach.",
       refs: ["who", "elimination-roadmap", "eot"],
     },
     {
@@ -133,6 +157,13 @@ export const onchocerciasisSpike: Spike = {
       refs: ["elimination", "mass-drug-administration", "blackfly", "who"],
     },
     {
+      id: "epilepsy",
+      title: "Epilepsy: the complication that reframes elimination",
+      body:
+        "WHO's 2025 fact sheet states plainly what the field spent years establishing: early exposure to Onchocerca volvulus is associated with epilepsy in children. The link runs through nodding syndrome and other forms of onchocerciasis-associated epilepsy (OAE), seen in children in Uganda, South Sudan, Tanzania and the DRC who grew up in areas of intense transmission. Seizures begin in previously healthy children, often in clusters, and the cognitive and social damage is permanent.\n\nIt changes the argument for elimination. For decades the case for treating river blindness rested on preventing blindness in adults — a slow, decades-long payoff. If onchocerciasis causes childhood epilepsy, then interrupting transmission protects children within years, and the benefit is measured in a generation rather than in a lifetime. Community-directed treatment that stops transmission is, in effect, epilepsy prevention, which is why trials now measure seizure incidence alongside infection and why the disease sits at the intersection of NTD control and child neurology.",
+      refs: ["onchocerciasis-associated-epilepsy", "who", "mass-drug-administration", "elimination"],
+    },
+    {
       id: "morbidity",
       title: "Morbidity and the people already blind",
       body:
@@ -142,7 +173,9 @@ export const onchocerciasisSpike: Spike = {
   ],
 
   drugs: ["oxfendazole"],
-  trials: ["emodepside-part2-oncho", "ewhorm-oxfendazole", "ivm-kids-paediatric"],
-  institutions: ["gone", "dndi"],
-  terms: ["eot"],
+  trials: ["emodepside-part2-oncho", "ewhorm-oxfendazole", "ivm-kids-paediatric", "oncho-combination-regimens-ph2", "oncho-rapid-diagnostic-trial"],
+  diagnostics: ["oncho-rapid-diagnostic-test"],
+  people: ["daniel-boakye", "joseph-siewe-fodjo", "robert-colebunders"],
+  institutions: ["gone", "dndi", "noguchi"],
+  terms: ["eot", "onchocerciasis-associated-epilepsy"],
 };

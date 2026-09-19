@@ -25,6 +25,7 @@ export const registryTrials: RecordOf<"trials">[] = [
     intervention: "Moxidectin versus ivermectin, community-wide mass drug administration",
     result: "Ongoing; primary outcome is the prevalence of Onchocerca volvulus microfilariae. Primary completion estimated 2029.",
     registry: "ClinicalTrials.gov NCT07145736",
+    registryUrl: "https://clinicaltrials.gov/study/NCT07145736",
     links: [
       { label: "Moxidectin vs ivermectin MDA cluster trial (ClinicalTrials.gov NCT07145736)", url: "https://clinicaltrials.gov/study/NCT07145736" },
       { label: "WHO — onchocerciasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/onchocerciasis" },
@@ -50,6 +51,7 @@ export const registryTrials: RecordOf<"trials">[] = [
     intervention: "Acoziborole, single oral dose, in g-HAT-seropositive people",
     result: "Ongoing; co-primary outcomes are interruption of transmission of T. b. gambiense and safety assessment. Primary completion estimated end 2026.",
     registry: "ClinicalTrials.gov NCT07789743",
+    registryUrl: "https://clinicaltrials.gov/study/NCT07789743",
     links: [
       { label: "Stop Transmission of Gambiense HAT (ClinicalTrials.gov NCT07789743)", url: "https://clinicaltrials.gov/study/NCT07789743" },
       { label: "WHO — human African trypanosomiasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/trypanosomiasis-human-african-(sleeping-sickness)" },
@@ -74,6 +76,7 @@ export const registryTrials: RecordOf<"trials">[] = [
     intervention: "Ivermectin pre-treatment followed by IDA (ivermectin + diethylcarbamazine + albendazole)",
     result: "Testing safety and macrofilaricidal efficacy of IDA in onchocerciasis; reported through the registry record.",
     registry: "PACTR201906665550709",
+    registryUrl: "https://trialsearch.who.int/Trial2.aspx?TrialID=PACTR201906665550709",
     links: [
       { label: "IDA for Onchocerciasis (PACTR201906665550709)", url: "https://pactr.samrc.ac.za/TrialDisplay.aspx?TrialID=8210" },
       { label: "WHO — onchocerciasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/onchocerciasis" },
@@ -97,6 +100,7 @@ export const registryTrials: RecordOf<"trials">[] = [
     intervention: "Test-and-treat strategy for lymphatic filariasis",
     result: "Testing whether test-and-treat achieves elimination more efficiently than mass drug administration; reported through the registry record.",
     registry: "PACTR202409873380150",
+    registryUrl: "https://trialsearch.who.int/Trial2.aspx?TrialID=PACTR202409873380150",
     links: [
       { label: "TAKeOFF test-and-treat for LF (PACTR202409873380150)", url: "https://pactr.samrc.ac.za/TrialDisplay.aspx?TrialID=31895" },
       { label: "WHO — lymphatic filariasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/lymphatic-filariasis" },
@@ -120,6 +124,7 @@ export const registryTrials: RecordOf<"trials">[] = [
     intervention: "Bedaquiline added to multidrug therapy for multibacillary leprosy",
     result: "Completed; a pilot evaluation of bedaquiline-containing treatment for multibacillary leprosy.",
     registry: "PACTR202408643515316",
+    registryUrl: "https://trialsearch.who.int/Trial2.aspx?TrialID=PACTR202408643515316",
     links: [
       { label: "BDQ4LEP (PACTR202408643515316)", url: "https://pactr.samrc.ac.za/TrialDisplay.aspx?TrialID=31799" },
       { label: "WHO — leprosy (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/leprosy" },
@@ -141,6 +146,7 @@ export const registryTrials: RecordOf<"trials">[] = [
     intervention: "Praziquantel versus praziquantel plus antimalarial combinations",
     result: "Completed; compared cure with praziquantel alone versus combinations with antimalarials in children.",
     registry: "PACTR202001919442161",
+    registryUrl: "https://trialsearch.who.int/Trial2.aspx?TrialID=PACTR202001919442161",
     links: [
       { label: "SCHISTOACT (PACTR202001919442161)", url: "https://pactr.samrc.ac.za/TrialDisplay.aspx?TrialID=9591" },
       { label: "WHO — schistosomiasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/schistosomiasis" },
@@ -153,21 +159,26 @@ export const registryTrials: RecordOf<"trials">[] = [
     name: "Tokomeza Ebola: Sudan ebolavirus vaccine ring trial (Uganda)",
     tldr: "A PACTR-registered ring-vaccination trial of a Sudan ebolavirus vaccine in Uganda, launched during the 2025 outbreak.",
     summary:
-      "The 2022–2023 Sudan ebolavirus outbreak in Uganda had no licensed vaccine. A ring-vaccination trial was launched, using the same design that proved rVSV-ZEBOV worked in Guinea: vaccinate the contacts of each case and their contacts, and compare incidence inside and outside the rings. Tokomeza Ebola (Solidarity against Ebola) was registered in the Pan African Clinical Trials Registry in February 2025 and targets 150 participants. It matters because Sudan ebolavirus is a distinct virus from Zaire ebolavirus, the licensed vaccines do not cover it, and the trial is the fastest route from an outbreak to evidence.",
+      "The 2022–2023 Sudan ebolavirus outbreak in Uganda (164 cases, 77 deaths) had no licensed vaccine. When a second Sudan-virus outbreak was declared on 30 January 2025, researchers from Makerere University and the Uganda Virus Research Institute, with WHO, launched Tokomeza (Solidarity against Ebola) within four days — the first trial ever to assess efficacy of a Sudan-virus vaccine — using the ring design that proved rVSV-ZEBOV worked in Guinea: rings around every confirmed case were defined and randomised. IAVI donated its rVSV-vectored Sudan candidate (2,160 prepositioned doses were already in Kampala); MappBio and Gilead supplied a candidate monoclonal and remdesivir, though the therapeutics arm never received ethics approval and was not initiated. The outbreak ended on 26 April 2025 with only 14 cases, so the efficacy readout is constrained by small numbers — but the trial proved an African-led ring trial can be launched inside the response window, and its immuno add-on study (from 1 March 2025) banks the immunogenicity data the next outbreak will build on.",
     asOf: "2026-09",
     phase: "Randomised ring-vaccination trial",
-    status: "Recruiting (registered February 2025)",
-    sponsor: "Ugandan national programme with WHO and partners",
-    intervention: "Candidate Sudan ebolavirus vaccine, ring vaccination",
-    result: "Ongoing; comparing Ebola incidence in vaccinated versus unvaccinated rings.",
+    status: "Launched 3 Feb 2025; outbreak declared over 26 Apr 2025 (14 cases) — efficacy readout constrained by small numbers",
+    sponsor: "Makerere University and Uganda Virus Research Institute, with WHO",
+    intervention: "IAVI rVSV-vectored Sudan ebolavirus candidate vaccine, ring vaccination; Tokomeza-immuno add-on from 1 Mar 2025",
+    result: "Outbreak contained at 14 cases (12 confirmed, 2 probable; 4 deaths) before efficacy could be estimated; immunogenicity follow-up ongoing.",
     registry: "PACTR202502515126090",
+    registryUrl: "https://trialsearch.who.int/Trial2.aspx?TrialID=PACTR202502515126090",
     links: [
       { label: "Tokomeza Ebola (PACTR202502515126090)", url: "https://pactr.samrc.ac.za/TrialDisplay.aspx?TrialID=33374" },
-      { label: "WHO — Ebola disease (health topic)", url: "https://www.who.int/health-topics/ebola-disease" },
+      { label: "WHO — Sudan virus disease, Uganda (DON, Apr 2025)", url: "https://www.who.int/emergencies/disease-outbreak-news/item/2025-DON566" },
+      { label: "WHO — candidate vaccine and treatments enabled for Uganda (Jan 2025)", url: "https://www.who.int/news/item/31-01-2025-who-and-partners-enable-access-to-candidate-vaccine-and-treatments-for-outbreak-of-sudan-ebola-virus-disease-in-uganda" },
+      { label: "Kyobe Bosa et al. — Sudan virus disease in Uganda, 2025 (NEJM 2026)", url: "https://www.nejm.org/doi/full/10.1056/NEJMc2508159" },
     ],
     diseases: ["ebola"],
+    pathogens: ["ebolavirus"],
     technologies: ["ring-vaccination", "ebola-vaccines"],
     institutions: ["who"],
+    countries: ["uganda"],
     stats: [
       { label: "Target enrolment", value: "150", number: 150, unit: "participants", year: 2025, geography: "Uganda", source: { label: "PACTR202502515126090", url: "https://pactr.samrc.ac.za/TrialDisplay.aspx?TrialID=33374" } },
     ],
@@ -185,6 +196,7 @@ export const registryTrials: RecordOf<"trials">[] = [
     intervention: "Integrated human and bovine-targeted control of S. japonicum",
     result: "Reported in PLoS Neglected Tropical Diseases (2013); the integrated strategy reduced S. japonicum infection in the intervention area.",
     registry: "ChiCTR-PRC-12002405",
+    registryUrl: "https://trialsearch.who.int/Trial2.aspx?TrialID=ChiCTR-PRC-12002405",
     links: [
       { label: "Chinese Clinical Trial Registry (ChiCTR)", url: "https://www.chictr.org.cn/indexEN.html" },
       { label: "Assessing an integrated control strategy for S. japonicum (PLoS NTD 2013)", url: "https://doi.org/10.1371/journal.pntd.0002122" },
@@ -205,6 +217,7 @@ export const registryTrials: RecordOf<"trials">[] = [
     intervention: "R21/Matrix-M, three doses, mass vaccination of all age groups",
     result: "Primary outcome is PCR-confirmed malaria prevalence in all age groups at peak transmission season; no results posted in the registry.",
     registry: "ClinicalTrials.gov NCT06578572",
+    registryUrl: "https://clinicaltrials.gov/study/NCT06578572",
     links: [
       { label: "Seasonal R21 mass vaccination (ClinicalTrials.gov NCT06578572)", url: "https://clinicaltrials.gov/study/NCT06578572" },
       { label: "WHO — malaria (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/malaria" },
@@ -229,6 +242,7 @@ export const registryTrials: RecordOf<"trials">[] = [
     intervention: "Varespladib, intravenous followed by oral, added to standard of care",
     result: "Completed; primary outcomes were venom-severity score for viper bites and time to recovery of head-lift for elapid bites.",
     registry: "ClinicalTrials.gov NCT05717062",
+    registryUrl: "https://clinicaltrials.gov/study/NCT05717062",
     links: [
       { label: "BRAVIO varespladib trial (ClinicalTrials.gov NCT05717062)", url: "https://clinicaltrials.gov/study/NCT05717062" },
       { label: "WHO — snakebite envenoming (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/snakebite-envenoming" },
@@ -252,6 +266,7 @@ export const registryTrials: RecordOf<"trials">[] = [
     intervention: "Sm14 vaccine with GLA-SE adjuvant",
     result: "Completed; reported safety and immunogenicity in Senegalese school children.",
     registry: "ClinicalTrials.gov NCT03799510",
+    registryUrl: "https://clinicaltrials.gov/study/NCT03799510",
     links: [
       { label: "Sm14 Phase 2b in school children (ClinicalTrials.gov NCT03799510)", url: "https://clinicaltrials.gov/study/NCT03799510" },
       { label: "WHO — schistosomiasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/schistosomiasis" },
@@ -275,6 +290,7 @@ export const registryTrials: RecordOf<"trials">[] = [
     intervention: "Arpraziquantel 150 mg dispersible tablet",
     result: "Ongoing; primary outcome is platform performance for arpraziquantel distribution in preschool-aged children.",
     registry: "ClinicalTrials.gov NCT06698510",
+    registryUrl: "https://clinicaltrials.gov/study/NCT06698510",
     links: [
       { label: "Arpraziquantel introduction study (ClinicalTrials.gov NCT06698510)", url: "https://clinicaltrials.gov/study/NCT06698510" },
       { label: "WHO — schistosomiasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/schistosomiasis" },
@@ -299,6 +315,7 @@ export const registryTrials: RecordOf<"trials">[] = [
     intervention: "Ivermectin tablets, dose-finding in children under 5",
     result: "Ongoing; primary outcome is ivermectin drug exposure (area under the concentration–time curve).",
     registry: "ClinicalTrials.gov NCT05500326",
+    registryUrl: "https://clinicaltrials.gov/study/NCT05500326",
     links: [
       { label: "ITCHY study (ClinicalTrials.gov NCT05500326)", url: "https://clinicaltrials.gov/study/NCT05500326" },
       { label: "WHO — scabies (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/scabies" },
@@ -322,6 +339,7 @@ export const registryTrials: RecordOf<"trials">[] = [
     intervention: "Additional ivermectin treatment",
     result: "Completed; primary outcome was seizure freedom.",
     registry: "ClinicalTrials.gov NCT03852303",
+    registryUrl: "https://clinicaltrials.gov/study/NCT03852303",
     links: [
       { label: "OAETREAT (ClinicalTrials.gov NCT03852303)", url: "https://clinicaltrials.gov/study/NCT03852303" },
       { label: "WHO — onchocerciasis (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/onchocerciasis" },
@@ -345,6 +363,7 @@ export const registryTrials: RecordOf<"trials">[] = [
     intervention: "CHIKV virus-like-particle vaccine, single dose or booster",
     result: "Ongoing; primary outcomes are the proportion maintaining protective neutralising titres yearly to five years and the booster response rate.",
     registry: "ClinicalTrials.gov NCT06007183",
+    registryUrl: "https://clinicaltrials.gov/study/NCT06007183",
     links: [
       { label: "CHIKV VLP long-term follow-up (ClinicalTrials.gov NCT06007183)", url: "https://clinicaltrials.gov/study/NCT06007183" },
       { label: "WHO — chikungunya (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/chikungunya" },

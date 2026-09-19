@@ -23,10 +23,11 @@ export const foodborneTrematodiasesSpike: Spike = {
       geography: "global",
       source: { label: "WHO — foodborne trematodiases (fact sheet)", url: "https://www.who.int/news-room/fact-sheets/detail/foodborne-trematode-infections" },
     },
-    { label: "Species that infect people", value: "> 100", number: 100, unit: "species" },
-    { label: "Cancer link", value: "Group 1 carcinogen", note: "Clonorchis and Opisthorchis cause cholangiocarcinoma" },
-    { label: "Triclabendazole donated", value: "1.15 million patients", note: "2006–2016, via WHO" },
-    { label: "Treatment", value: "Praziquantel or triclabendazole", note: "single dose for most infections" },
+    { label: "Species that infect people", value: "> 100", number: 100, unit: "species", source: { label: "WHO — foodborne trematode infections", url: "https://www.who.int/news-room/fact-sheets/detail/foodborne-trematode-infections" } },
+    { label: "Cancer link", value: "Group 1 carcinogen", note: "Clonorchis sinensis and Opisthorchis viverrini cause cholangiocarcinoma; O. felineus not classified", source: { label: "WHO — foodborne trematode infections", url: "https://www.who.int/news-room/fact-sheets/detail/foodborne-trematode-infections" } },
+    { label: "Triclabendazole donated", value: "1.15 million patients", note: "2006–2016, via WHO (Novartis Egaten donation continues)", source: { label: "WHO — foodborne trematode infections", url: "https://www.who.int/news-room/fact-sheets/detail/foodborne-trematode-infections" } },
+    { label: "Treatment", value: "Praziquantel TID 2–3 days or 40 mg/kg single dose (liver flukes); triclabendazole 10 mg/kg single dose (fascioliasis)", note: "only fascioliasis/paragonimiasis preventive chemotherapy is single-dose", source: { label: "WHO — foodborne trematode infections", url: "https://www.who.int/news-room/fact-sheets/detail/foodborne-trematode-infections" } },
+    { label: "Burden", value: "> 2 million DALYs/year", number: 2000000, unit: "DALYs/year", note: "≈200,000 illnesses, >7,000 deaths (WHO FERG 2015)", source: { label: "WHO — foodborne trematode infections", url: "https://www.who.int/news-room/fact-sheets/detail/foodborne-trematode-infections" } },
   ],
 
   timeline: [
@@ -47,8 +48,18 @@ export const foodborneTrematodiasesSpike: Spike = {
     },
     {
       date: "2021",
-      text: "A cohort of children in highland Peru shows low cure rates with triclabendazole, especially after a single dose — evidence of emerging treatment failure.",
+      text: "A cohort of children in highland Peru shows low cure rates with triclabendazole, especially after a single dose — evidence of emerging treatment failure; later work shows 74% can still be cured with repeated doses, so 'resistance' needs biomarkers.",
       refs: ["triclabendazole", "nitazoxanide"],
+    },
+    {
+      date: "2023",
+      text: "A genetic cross maps triclabendazole resistance in Fasciola hepatica to a single 3.2 Mbp dominantly inherited locus — the first genome-wide resistance mapping in the parasite.",
+      refs: ["triclabendazole", "fasciola-cathepsin-l"],
+    },
+    {
+      date: "2026",
+      text: "Recruiting trials test the two escape routes: tribendimidine/praziquantel/albendazole head-to-head for clonorchiasis in Guangxi, and paediatric arpraziquantel dose-ranging for Opisthorchis in children.",
+      refs: ["tribendimidine", "praziquantel", "arpraziquantel", "tribendimidine-clonorchiasis-guangxi", "arpraziquantel-opisthorchis-children"],
     },
     {
       date: "2020s",
@@ -69,8 +80,8 @@ export const foodborneTrematodiasesSpike: Spike = {
       id: "resistance",
       title: "Two drugs, one of them failing",
       body:
-        "Praziquantel treats clonorchiasis and opisthorchiasis, and triclabendazole treats fascioliasis and paragonimiasis. For fascioliasis there is no real alternative — nitazoxanide, the only plausible substitute, cured only about 30% of patients in one Egyptian series, and was ineffective in a Peruvian case series of patients who had already failed triclabendazole.\n\nThe resistance problem has a clear origin. Triclabendazole has been used intensively in livestock for decades, and Fasciola in sheep and cattle developed resistance; human infections now show reduced cure rates, particularly after a single dose, and juvenile flukes are intrinsically less susceptible than adults. The response is better stewardship in animals, higher or repeated human doses, and research into new drugs — but for now a disease affecting millions rests on a single medicine that is losing its grip.",
-      refs: ["triclabendazole", "nitazoxanide", "praziquantel", "funding-gap"],
+        "Praziquantel treats clonorchiasis and opisthorchiasis, and triclabendazole treats fascioliasis and paragonimiasis. For fascioliasis there is no established alternative — nitazoxanide, the only plausible substitute, cured only about 30% of patients in one Egyptian series, and was ineffective in a Peruvian case series of patients who had already failed triclabendazole.\n\nThe resistance problem has a clear origin. Triclabendazole has been used intensively in livestock for decades, and Fasciola in sheep and cattle developed resistance; a 2023 genetic cross mapped it to a single 3.2 Mbp dominantly inherited locus. Human infections show reduced cure rates (11.6% failure in Cusco children), particularly after a single dose, and juvenile flukes are intrinsically less susceptible than adults — but a Peruvian salvage cohort cured 74% with repeated doses, so 'resistance' is over-diagnosed without biomarkers. The response is better stewardship in animals, higher or repeated human doses, and second drugs: tribendimidine (single 400 mg, ~90% cure in O. viverrini) is now in a head-to-head Phase 4 against praziquantel and albendazole for clonorchiasis, and paediatric arpraziquantel is dose-ranging in Opisthorchis-infected children.",
+      refs: ["triclabendazole", "nitazoxanide", "praziquantel", "tribendimidine", "arpraziquantel", "funding-gap"],
     },
     {
       id: "donation",
@@ -95,7 +106,9 @@ export const foodborneTrematodiasesSpike: Spike = {
     },
   ],
 
-  drugs: ["nitazoxanide"],
+  drugs: ["triclabendazole", "praziquantel", "tribendimidine", "nitazoxanide"],
+  trials: ["tribendimidine-clonorchiasis-guangxi", "arpraziquantel-opisthorchis-children", "egaten-fascioliasis-safety"],
+  targets: ["fasciola-cathepsin-l"],
   institutions: ["who", "cascap"],
   terms: ["cholangiocarcinoma"],
 };

@@ -386,12 +386,12 @@ export const TARGETS_EXTRA: { kind: Kind; records: unknown[] }[] = [
         name: "Kinetoplastid proteasome",
         tldr: "The parasite's protein-recycling machine, which the leishmaniasis candidate LXE408 blocks.",
         summary:
-          "The proteasome degrades proteins that the cell no longer needs, and blocking it kills Leishmania. LXE408 is a first-in-class oral compound developed by DNDi with Novartis that acts on the kinetoplastid proteasome and completed two Phase II proof-of-concept studies in 2025. Because the mechanism is new to the disease, it would also serve if resistance to current drugs emerges — and because proteasome inhibitors already exist for cancer, the class is chemically well understood.",
+          "The proteasome degrades proteins that the cell no longer needs, and blocking it kills Leishmania. LXE408 is a first-in-class oral compound developed by DNDi with Novartis that acts on the kinetoplastid proteasome; two Phase II studies — in India (95 patients) and Ethiopia (52 patients) — completed recruitment and follow-up in 2025, with results expected in 2026. Because the mechanism is new to the disease, it would also serve if resistance to current drugs emerges — and because proteasome inhibitors already exist for cancer, the class is chemically well understood.",
         ...R,
         targetType: "Macromolecular machine (proteasome)",
         organism: "Leishmania species",
         rationale: "Essential for protein turnover; the kinetoplastid proteasome differs enough from the human one for selective inhibition.",
-        druggability: "In clinical development, with promising efficacy reported in two Phase II studies.",
+        druggability: "In clinical development; Phase II results due 2026.",
         knownLigands: "LXE408.",
         links: [
           { label: "DNDi — LXE408 for visceral leishmaniasis", url: "https://dndi.org/research-development/portfolio/lxe408-novartis-visceral-leishmaniasis/" },
