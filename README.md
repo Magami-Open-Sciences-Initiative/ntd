@@ -1,8 +1,8 @@
 # Magami NTD
 
 An open, cited map of **neglected tropical diseases** — one page for every disease, pathogen,
-vector, treatment, diagnostic, target, technology, trial, institution, roadmap, bottleneck and
-idea, with a plain-English TL;DR on every page.
+vector, treatment, diagnostic, target, technology, trial, institution, country, person, roadmap,
+guideline, bottleneck, resistance finding and idea, with a plain-English TL;DR on every page.
 
 A project of [Magami Open Sciences Initiative](https://magamios.org).
 
@@ -38,16 +38,27 @@ npm run typecheck    # tsc --noEmit
 npm run lint         # eslint
 npm test             # vitest: corpus integrity tests
 npm run check:links  # check every primary source URL still resolves
+npm run equity       # economics × equity analysis (see below)
 npm run build        # validate → JSON API → llms.txt/llms-full.txt → static export into out/
 ```
 
-Two fetch scripts rebuild generated data (both need network); neither runs as part of `build`.
+Fetch scripts rebuild generated data (they need network); none runs as part of `build`.
 
 ```bash
 npm run fetch:structures  # PubChem structures for the drug records → src/data/structures.ts
 npm run fetch:targets     # UniProt/PDB/AlphaFold data for the target records → src/data/target-sequences.ts
 npm run verify:target     # resolve a target to its UniProt accession via the PDB (see below)
+
+# Price lists: parse UNICEF's official price PDFs into drug price patches
+python3 scripts/scrape-unicef-prices.py --price-data \
+    --emit-ts src/data/access-prices.generated.ts
 ```
+
+`scripts/scrape-unicef-prices.py` also scrapes the UNICEF Supply Hub catalogue directly
+(BeautifulSoup parse layer + a Playwright fetch layer, since the catalogue sits behind a
+Cloudflare challenge) and can batch-parse a directory of price PDFs (`--pdf-dir`) or emit the
+per-drug `pricing` patches the corpus merges (`--emit-ts`). `npm run equity` runs the
+economics × equity analysis over the built corpus.
 
 `npm run build` also emits `sitemap.xml` and `robots.txt` (from `src/app/sitemap.ts`
 and `src/app/robots.ts`), the static JSON API under `/api/v1/`, and the
@@ -59,14 +70,19 @@ used for canonical URLs, OpenGraph, JSON-LD and the sitemap.
 ## Layout
 
 ```
-src/data/            The corpus — one file per kind, all spread into ALL_INPUTS in index.ts
-src/lib/schema.ts    Zod schema per kind, KIND_META (labels/routes/blurbs), KIND_FIELDS (page layout)
-src/lib/graph.ts     Builds the graph: validates ids, resolves references, derives backlinks, search
-src/lib/nav.ts       Site metadata and navigation groups
-src/app/             Routes: /, /[kind], /[kind]/[id], /about, /search
-src/components/      EntityBrowser (index tables), EntityDetail (every object page), UI primitives
-scripts/validate.ts  Corpus check (fails the build on any error)
-scripts/build-api.ts Emits the static JSON API to public/api/v1/
+src/data/                      The corpus — one file per kind, all spread into ALL_INPUTS in index.ts
+src/data/access-2026.ts        Cost/access patch: drug pricing, donation & IP status
+src/data/access-prices.generated.ts  Generated drug price patches from the UNICEF scraper
+src/data/implementation-economics.ts Country equity flags, intervention costs & equity, analysis idea
+src/lib/schema.ts              Zod schema per kind, KIND_META (labels/routes/blurbs), KIND_FIELDS (page layout)
+src/lib/graph.ts               Builds the graph: validates ids, resolves references, derives backlinks, search
+src/lib/nav.ts                 Site metadata and navigation groups
+src/app/                       Routes: /, /[kind], /[kind]/[id], /about, /search, /cite, /status, /contribute, /fr
+src/components/                EntityBrowser (index tables), EntityDetail (every object page), UI primitives
+scripts/validate.ts            Corpus check (fails the build on any error)
+scripts/build-api.ts           Emits the static JSON API to public/api/v1/
+scripts/equity-analysis.ts     Economics × equity analysis over the corpus
+scripts/scrape-unicef-prices.py Price-list scraper/parser (UNICEF catalogue + official PDFs)
 ```
 
 ## Adding or fixing a record
@@ -87,17 +103,17 @@ entry, a colour in `src/lib/text.ts`, a data file spread into `ALL_INPUTS`, and 
 ## The corpus so far
 
 **27 diseases** — the WHO NTD list (dengue and chikungunya are given separate pages, so the 21 WHO
-entries become 22 pages), plus five adjacent diseases included for context — 25 pathogens, 9 vectors,
-55 treatments, 35 diagnostics, 46 targets, 47 technologies, 55 trials, 51 institutions, 27 countries,
-34 people, 7 roadmaps, 22 guidelines, 17 bottlenecks, 12 ideas and 40 glossary terms: **509 objects**,
-all interlinked. Counts are computed at build time.
+entries become 22 pages), plus five adjacent diseases included for context — 28 pathogens, 9 vectors,
+67 treatments, 48 diagnostics, 56 targets, 52 technologies, 105 trials, 100 institutions, 28 countries,
+210 people, 7 roadmaps, 33 guidelines, 17 bottlenecks, 17 resistance findings, 96 ideas and 48 glossary
+terms: **948 objects**, all interlinked. Counts are computed at build time.
 
-**Sourcing:** 418 of 509 records cite more than one primary source; 91 rest on a single one.
+**Sourcing:** 557 of 948 records cite more than one primary source; 391 rest on a single one.
 Those are mostly biographies, where one authoritative page is the honest answer — padding them
 with a generic second link would improve the number and not the sourcing. `npm run validate`
 reports the split, rejects placeholder sources (a link to a database homepage is not a citation)
 and checks that every `asOf` date is real and not in the future;
-`npm run check:links` verifies that all ~877 primary source URLs still resolve.
+`npm run check:links` verifies that every primary source URL still resolves.
 
 ### Figures are data, not decoration
 
@@ -137,6 +153,12 @@ panels, M. ulcerans LAMP, chikungunya serology, dengue molecular tests and funga
 mycetoma. Product lists are illustrative, not exhaustive, and a listing is not an endorsement or a
 statement of WHO prequalification.
 
+Each product row also carries a **product website** and, where the source records it,
+**regulatory approvals** — CE (IVDD), US FDA 510(k) or EUA, WHO EUL, or a national authority such
+as Brazil's ANVISA or Korea's MFDS — shown as chips beside the manufacturer. That distinction
+matters: a test can be manufactured and still not be cleared for use where the disease is, and the
+approval chip is the difference between "exists" and "usable here".
+
 ### Expert verification, and contributing without code
 
 Every page carries a verification control with three states — **expert verified**, **in review**,
@@ -155,7 +177,7 @@ explains it for a non-technical reader, and `CONTRIBUTING.md` for a developer.
 Every pathogen and every vector carries a **Where it occurs** paragraph and a
 **Countries where it is prevalent** list, so a pathogen or vector page names the countries in this
 corpus where it circulates and each country page lists the pathogens and vectors found there.
-Countries are also shown on diseases, people, bottlenecks and ideas. The lists cover the 27
+Countries are also shown on diseases, people, bottlenecks and ideas. The lists cover the 28
 countries in the corpus, not complete global distribution, and the prose carries what a list
 cannot — that Uganda is the only country where both forms of sleeping sickness circulate, or that
 the snail host differs by schistosome species and region.
@@ -182,6 +204,38 @@ sodium channel, not acetylcholinesterase; oxamniquine is activated by a schistos
 sulfotransferase; and fexinidazole is a nitroreductase-activated nitroimidazole, not a CYP51
 inhibitor.
 
+### Cost and access on treatments
+
+Every treatment carries cost and access as structured, filterable data rather than prose:
+
+- **Price & procurement** — unit prices from public catalogues: the UNICEF Supply Catalogue,
+  the MSH International Medical Products Price Guide, Brazil's CMED/ANVISA regulated price list,
+  India's NPPA ceiling prices, China's national centralized procurement (集采) winning bids, and
+  Stop TB's Global Drug Facility figures. Each row names the catalogue, unit, year and a source
+  link, and the kind of price is stated — a no-profit public-sector price (Gilead's AmBisome at
+  US$18 per vial), a national regulated ceiling (India, Brazil), or a pooled procurement price.
+  They are deliberately not presented as if they were comparable.
+- **Donation & access** — the donation programme and the endemic-country landscape (Mectizan,
+  GSK's albendazole, Pfizer's azithromycin, Novartis's leprosy MDT, the GDF price reductions).
+- **IP status** — off-patent versus licensed or patented, and where access is governed by a
+  donation or a licence rather than by generic competition.
+
+Prices arrive two ways: `scripts/scrape-unicef-prices.py` parses UNICEF's official price-list
+PDFs (and can scrape the Supply Hub catalogue itself through a browser session), while the
+national lists (CMED, NPPA, 集采, GDF) are extracted and written to `src/data/access-2026.ts`.
+30 of the 67 treatments currently carry at least one catalogue price, and all 67 carry donation
+and IP status; figures are only added where a source exists.
+
+### Resistance as a first-class object
+
+Resistance is its own kind rather than a paragraph on another page. A resistance record states
+the category (antimalarial, insecticide, anthelmintic, antifungal, antibiotic or antiviral), how
+widely it has emerged (documented, suspected, widespread, laboratory), what selects for it, how it
+works, where it has been detected, how it is monitored and what it threatens — and links to the
+drugs, vectors, pathogens, diseases, countries and institutions it involves. Because the graph
+derives backlinks, a drug page and a vector page both surface the resistance that affects them,
+and the reciprocal links are validated.
+
 ### Targets: sequence, PDB and AlphaFold
 
 A target is a protein, so where it is a single protein its page carries the **amino-acid
@@ -194,8 +248,8 @@ Three decisions are worth knowing:
   target is a complex (the ribosome, the proteasome), a process (haem detoxification), a lipid
   (ergosterol), a mixture (snake venom), an organism (*Wolbachia*), or simply has no usable
   standalone entry (the dengue proteins, which UniProt annotates as one polyprotein), the page
-  says why instead of borrowing a substitute. 24 of 45 targets have a sequence; the other 21 each
-  state why not — including the two whose exact entry is still unconfirmed.
+  says why instead of borrowing a substitute. 24 of the 56 targets carry a sequence; 28 state why
+  they do not, and a few are still to be curated.
 - **PDB counts match the exact protein.** Onchocerca beta-tubulin shows none, though the tubulin
   family is heavily crystallised in other organisms. Showing 0 is the honest answer.
 - **AlphaFold confidence is recorded, not just linked.** A predicted model is a hypothesis: Ebola
@@ -220,6 +274,42 @@ then confirmed by sequence (99.6% and 99.2% identical to the entries they replac
 structure exists, as for the praziquantel channel, the accession has to come from the paper via
 the organism's locus name, and those targets are listed as unconfirmed in
 `scripts/target-accessions.ts`. That file also records *how* to settle each one.
+
+### Implementation economics
+
+Interventions carry a `costs` list: each entry names the intervention, the cost, **what it is per**
+(per person treated, per case averted, per patient, per person-year protected) and a citable source,
+so cost per denominator can be compared across interventions and countries rather than only
+described. Current entries come from cost studies and render on diseases, treatments, diagnostics,
+technologies and guidelines: community-based MDA for schistosomiasis at **US$0.70–1.20 per person
+treated** (Uganda), trachoma MDA at **US$0.41** (Amhara, Ethiopia), routine lymphatic filariasis MDA
+at **US$0.83**, and visceral leishmaniasis treatment at **US$104.7 per patient** (Ethiopia; US$331
+second-line, US$214 household cost). Figures are added only where a source exists.
+
+### Economics × equity
+
+Countries and interventions carry explicit, machine-queryable **equity flags**. On countries they
+are deficits — `coverageGap`, `conflictAffected`, `genderInequality`, `disabilityGap`; on
+interventions they are mitigations — `genderResponsive`, `disabilityInclusive`, `conflictAdapted`.
+All 27 countries and a growing set of interventions and diagnostics carry flags with a short
+evidence note (the flags are conservative judgments, not measurements).
+
+`npm run equity` joins countries → the diseases they carry → the interventions those diseases use,
+and answers questions the prose could only hint at:
+
+```bash
+npm run equity                        # where a coverage gap and a security constraint coincide
+npm run equity -- --query gender      # genderInequality ∧ coverageGap
+npm run equity -- --query disability
+npm run equity -- --country dr-congo
+npm run equity -- --json
+```
+
+It reports the countries flagged both `coverageGap` and the chosen constraint, marks each disease's
+interventions as adapted or not, and lists the **unadapted country–disease pairs** — the operational
+gaps where the standard delivery model assumes an access that does not exist. The default query
+returns nine countries (Cameroon, Chad, DR Congo, Ethiopia, Mali, Nigeria, South Sudan, Sudan,
+Yemen) and pairs such as `Yemen → Leishmaniasis`, `DR Congo → HAT` and `Sudan → Mycetoma`.
 
 ## Citing, and data currency
 
@@ -257,11 +347,14 @@ A record can be deepened without rewriting its base file. `src/data/spikes/` hol
 records merged onto a base disease at load time, and `src/data/deep-drugs.ts` does the same for
 the treatments. The merge is generic: `stats` are unioned by label (a deep dive refreshes a
 figure), `timeline` is concatenated and sorted by year, `sections` are unioned by id, reference
-fields are unioned, and every other field is an override. All 21 diseases have a deep dive, and
-every treatment now carries prose sections rather than being a stub.
+fields are unioned, and every other field is an override. Most diseases have a deep dive (23 spike
+files), and every treatment carries prose sections rather than being a stub.
 
-Records added by later reviews live in `src/data/additions.ts`; the graph pools records from
-several files into one kind, so nothing in the base files needs editing.
+Records added by later reviews live in `src/data/additions.ts`, `src/data/additions-emerging.ts`
+and the per-disease `src/data/*-2026.ts` files; the graph pools records from several files into one
+kind, so nothing in the base files needs editing. The same per-record patch mechanism carries the
+drug access data (`access-2026.ts`, `access-prices.generated.ts`) and the economics × equity layer
+(`implementation-economics.ts`).
 
 ## Kinds
 
@@ -272,6 +365,7 @@ several files into one kind, so nothing in the base files needs editing.
 | Technologies, Trials | Vector control, vaccines, AI, diagnostic and drug-discovery methods; and the studies behind them |
 | Institutions, Countries, People | Who does the work, where the burden and elimination progress sit, and the people the corpus records — including African programme leaders and researchers |
 | Roadmaps, Guidelines | History-to-horizon for each technology family, and the recommendations that set what programmes do |
+| Resistance | Drug, insecticide and pesticide resistance as its own object — what is resisted, how it works, where it has been found, and who is watching for it |
 | Bottlenecks, Ideas, Terms | What is stuck — including conflict, drug resistance, cost, gender, mental health and workforce — the fixes proposed, and plain-English definitions |
 
 ## Licence, citation and machine access
